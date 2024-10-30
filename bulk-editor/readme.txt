@@ -5,9 +5,9 @@ Donate link: https://pluginus.net/affiliate/wordpress-posts-bulk-editor
 Plugin URI: https://bulk-editor.pro/
 Tags: bulk, bulk edit, bulk editor, posts editor, bulk delete
 Requires at least: 4.9
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 1.0.8.3
+Stable tag: 1.0.8.4
 
 WOLF (formerly WPBE) - a WordPress plugin for managing posts, pages, and custom types easily. Perfect for real estate, cars, etc.
 
@@ -86,7 +86,7 @@ WOLF (formerly WPBE) - a WordPress plugin for managing posts, pages, and custom 
 
 🌟 In the premium version of the plugin it is possible to manipulate with [all fields of the posts](https://bulk-editor.pro/) + Bulk Delete
 
-🌟 You can get premium version of the plugin [on CodeCanyon](https://pluginus.net/affiliate/wordpress-posts-bulk-editor)
+🌟 You can get premium version of the plugin [on CodeCanyon](https://codecanyon.pluginus.net/item/wordpress-posts-bulk-editor-professional/24376112)
 
 
 ### Make your site more profitable with next powerful scripts:
@@ -154,6 +154,9 @@ Use this plugin [https://wordpress.org/plugins/custom-post-type-ui/](https://wor
 
 == Changelog ==
 
+= 1.0.8.4 =
+* security fix - thanks to Trương Hữu Phúc (truonghuuphuc) from [patchstack.com](https://patchstack.com/)
+
 = 1.0.8.3 =
 * security fix - thanks to Elmini from [patchstack.com](https://patchstack.com/)
 
@@ -220,7 +223,7 @@ Use this plugin [https://wordpress.org/plugins/custom-post-type-ui/](https://wor
 
 == License ==
 
-This plugin is copyright pluginus.net &copy; 2012-2024 with [GNU General Public License][] by realmag777.
+This plugin is copyright pluginus.net &copy; 2012-2025 with [GNU General Public License][] by realmag777.
 
 This program is free software; you can redistribute it and/or modify it under the terms of the [GNU General Public License][] as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
