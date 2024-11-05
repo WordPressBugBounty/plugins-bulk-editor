@@ -7,7 +7,7 @@
   Tested up to: WP 6.7
   Author: realmag777
   Author URI: https://pluginus.net/
-  Version: 1.0.8.4
+  Version: 1.0.8.5
   Requires PHP: 5.6
   Tags: bulk,bulk edit,bulk editor,posts editor,bulk delete,real estate,posts manager,meta bulk edit
   Text Domain: bulk-editor
@@ -38,7 +38,7 @@ define('WPBE_LINK', plugin_dir_url(__FILE__));
 define('WPBE_ASSETS_LINK', WPBE_LINK . 'assets/');
 define('WPBE_DATA_PATH', WPBE_PATH . 'data/');
 define('WPBE_PLUGIN_NAME', plugin_basename(__FILE__));
-define('WPBE_VERSION', '1.0.8.4');
+define('WPBE_VERSION', '1.0.8.5');
 //define('WPBE_VERSION', uniqid('wpbe-')); //dev
 define('WPBE_MIN_WP_VERSION', '4.9');
 
