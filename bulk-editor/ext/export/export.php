@@ -184,7 +184,7 @@ final class WPBE_EXPORT extends WPBE_EXT {
         }
 
         $this->csv_delimiter = $_REQUEST['csv_delimiter'];
-        $file_postfix = sanitize_text_field($_REQUEST['file_postfix']);
+        $file_postfix = sanitize_key($_REQUEST['file_postfix']);
 
         $combination = array();
         if (isset($_REQUEST['combination'])) {

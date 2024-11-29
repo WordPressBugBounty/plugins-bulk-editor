@@ -7,7 +7,7 @@ Tags: bulk, bulk edit, bulk editor, posts editor, bulk delete
 Requires at least: 4.9
 Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 1.0.8.5
+Stable tag: 1.0.8.6
 
 WOLF (formerly WPBE) - a WordPress plugin for managing posts, pages, and custom types easily. Perfect for real estate, cars, etc.
 
@@ -154,20 +154,23 @@ Use this plugin [https://wordpress.org/plugins/custom-post-type-ui/](https://wor
 
 == Changelog ==
 
+= 1.0.8.6 =
+* security fix - thanks to Trương Hữu Phúc (truonghuuphuc) and [patchstack.com](https://patchstack.com/)
+
 = 1.0.8.5 =
-* security fix - thanks to Trương Hữu Phúc (truonghuuphuc) from [patchstack.com](https://patchstack.com/)
+* security fix - thanks to Trương Hữu Phúc (truonghuuphuc) and [patchstack.com](https://patchstack.com/)
 
 = 1.0.8.4 =
-* security fix - thanks to Trương Hữu Phúc (truonghuuphuc) from [patchstack.com](https://patchstack.com/)
+* security fix - thanks to Trương Hữu Phúc (truonghuuphuc) and [patchstack.com](https://patchstack.com/)
 
 = 1.0.8.3 =
-* security fix - thanks to Elmini from [patchstack.com](https://patchstack.com/)
+* security fix - thanks to Elmini and [patchstack.com](https://patchstack.com/)
 
 = 1.0.8.2 =
-* security fixes - thanks to Dhabaleshwar Das from [patchstack.com](https://patchstack.com/) and also thanks to Wordfence WordPress security provider
+* security fixes - thanks to Dhabaleshwar Das and [patchstack.com](https://patchstack.com/) and also thanks to Wordfence WordPress security provider
 
 = 1.0.8.1 =
-* security fix, thanks to thiennv from [patchstack.com](https://patchstack.com/)
+* security fix, thanks to thiennv and [patchstack.com](https://patchstack.com/)
 * minor fixes
 * Bulk Delete Operations feature is free for now!!
 
