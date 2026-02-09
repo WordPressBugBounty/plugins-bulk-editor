@@ -4,11 +4,11 @@
   Plugin URI: https://bulk-editor.pro/
   Description: Tools for managing and bulk edit posts, pages and all custom types data in the reliable and flexible way! Be professionals with managing data of your site!
   Requires at least: WP 4.9
-  Tested up to: WP 6.7
+  Tested up to: WP 6.9
   Author: realmag777
   Author URI: https://pluginus.net/
-  Version: 1.0.8.6
-  Requires PHP: 5.6
+  Version: 1.0.8.7
+  Requires PHP: 7.2
   Tags: bulk,bulk edit,bulk editor,posts editor,bulk delete,real estate,posts manager,meta bulk edit
   Text Domain: bulk-editor
   Domain Path: /languages
@@ -38,7 +38,7 @@ define('WPBE_LINK', plugin_dir_url(__FILE__));
 define('WPBE_ASSETS_LINK', WPBE_LINK . 'assets/');
 define('WPBE_DATA_PATH', WPBE_PATH . 'data/');
 define('WPBE_PLUGIN_NAME', plugin_basename(__FILE__));
-define('WPBE_VERSION', '1.0.8.6');
+define('WPBE_VERSION', '1.0.8.7');
 //define('WPBE_VERSION', uniqid('wpbe-')); //dev
 define('WPBE_MIN_WP_VERSION', '4.9');
 
@@ -56,7 +56,7 @@ include WPBE_PATH . 'classes/models/settings.php';
 include WPBE_PATH . 'classes/models/posts.php';
 include WPBE_PATH . 'classes/ext.php';
 
-//29-11-2024
+//19-01-2025
 final class WPBE {
 
     public $storage = NULL;
@@ -260,7 +260,7 @@ final class WPBE {
         );
 
         if ($this->show_notes) {
-            $wpbe_links[] = '<a target="_blank" href="https://pluginus.net/affiliate/wordpress-posts-bulk-editor"><span style="color: red; font-weight: bold;">&nbsp;Go Pro!</span></a>';
+            $wpbe_links[] = '<a target="_blank" href="https://codecanyon.pluginus.net/item/wordpress-posts-bulk-editor-professional/24376112"><span style="color: red; font-weight: bold;">&nbsp;Go Pro!</span></a>';
         }
 
         return array_merge($wpbe_links, $links);

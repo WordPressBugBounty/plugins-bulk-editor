@@ -179,7 +179,7 @@ final class WPBE_POSTS {
 
 //***
 
-        if (isset($fields[$field_key]['sanitize']) AND $fields[$field_key]['sanitize'] == 'array' AND!empty($value)) {
+        if (isset($fields[$field_key]['sanitize']) AND $fields[$field_key]['sanitize'] == 'array' AND !empty($value)) {
             $value = WPBE_HELPER::string_to_array($value); //in db its keeps as array, so lets conver it
         }
 
@@ -274,7 +274,7 @@ final class WPBE_POSTS {
                     $answer = $value;
                 }
                 if ($fields[$field_key]['edit_view'] == 'switcher') { //do switcher
-                        $value = WPBE_HELPER::over_switcher_swicher_to_val($value, $field_key);
+                    $value = WPBE_HELPER::over_switcher_swicher_to_val($value, $field_key);
                 }
                 update_post_meta($post_id, $field_key, $value);
                 $this->__call_hooks_after_post_update($post_id);
@@ -304,19 +304,34 @@ final class WPBE_POSTS {
                 update_post_meta($post_id, $field_key, $value);
 
                 $answer = WPBE_HELPER::render_html(WPBE_PATH . 'views/elements/draw_gallery_popup_editor_btn.php', array(
-                            'field_key' => $field_key,
-                            'post_id' => $post_id,
-                            'images' => $value
+                    'field_key' => $field_key,
+                    'post_id' => $post_id,
+                    'images' => $value
                 ));
 
                 break;
 
             default:
-
-                wp_update_post(array(
-                    'ID' => $post_id,
-                    $field_key => $value
-                ));
+                
+                //https://wordpress.org/support/topic/deleting-excerpt-or-content-does-not-work/
+                //Special handling for empty values in post_content and post_excerpt
+                if (in_array($field_key, ['post_content', 'post_excerpt']) && empty($value)) {
+                    global $wpdb;
+                    $wpdb->update(
+                            $wpdb->posts,
+                            [$field_key => ''],
+                            ['ID' => $post_id],
+                            ['%s'],
+                            ['%d']
+                    );
+                    // Clear the cache
+                    clean_post_cache($post_id);
+                } else {
+                    wp_update_post(array(
+                        'ID' => $post_id,
+                        $field_key => $value
+                    ));
+                }
 
                 $answer = get_post_field($field_key, $post_id);
 
@@ -380,7 +395,7 @@ final class WPBE_POSTS {
                 break;
 
             case 'array':
-                if (is_array($val) AND!empty($val)) {
+                if (is_array($val) AND !empty($val)) {
                     $res = WPBE_HELPER::array_to_string($val);
                 }
                 break;
@@ -523,13 +538,14 @@ final class WPBE_POSTS {
 
         return apply_filters('wpbe_apply_string_replacer', $val, $post_id);
     }
-	public function string_macros($val, $field_key, $post_id) {
-		if (!is_string($val)) {
-			return $val;
-		}		
-		$original_val = $this->get_post_field($post_id, $field_key);
-		
-		if (is_string($original_val)) {
+
+    public function string_macros($val, $field_key, $post_id) {
+        if (!is_string($val)) {
+            return $val;
+        }
+        $original_val = $this->get_post_field($post_id, $field_key);
+
+        if (is_string($original_val)) {
             if (stripos($val, '{DO_STRING_UP}') !== false) {
                 $val = str_ireplace('{DO_STRING_UP}', mb_strtoupper($original_val), $val);
             }
@@ -540,15 +556,14 @@ final class WPBE_POSTS {
                 $val = str_ireplace('{DO_STRING_TITLE}', mb_convert_case($original_val, MB_CASE_TITLE, "UTF-8"), $val);
             }
             if (stripos($val, '{DO_STRING_UP_FIRST}') !== false) {
-				$fc = mb_strtoupper(mb_substr($original_val, 0, 1));
-				$original_val = $fc . mb_substr($original_val, 1);				
+                $fc = mb_strtoupper(mb_substr($original_val, 0, 1));
+                $original_val = $fc . mb_substr($original_val, 1);
                 $val = str_ireplace('{DO_STRING_UP_FIRST}', $original_val, $val);
-            }			
-			
-			 
-		}
-		return $val;
-	}
+            }
+        }
+        return $val;
+    }
+
     public function is_current_user_can_edit_field($field_key) {
 
         if (!in_array($this->settings->current_user_role, apply_filters('wpbe_permit_special_roles', ['administrator']))) {
@@ -568,7 +583,7 @@ final class WPBE_POSTS {
 
         //***
         //for js arrays
-        if (isset($raw_data['keys']) AND!empty($raw_data['keys'])) {
+        if (isset($raw_data['keys']) AND !empty($raw_data['keys'])) {
             $tmp = array();
             foreach ($raw_data['keys'] as $kk => $kv) {
                 if (!is_null($kv)) {
@@ -597,7 +612,7 @@ final class WPBE_POSTS {
 
         //***
         //for js objects
-        if (isset($raw_data['keys2']) AND!empty($raw_data['keys2'])) {
+        if (isset($raw_data['keys2']) AND !empty($raw_data['keys2'])) {
             $tmp = array();
             foreach ($raw_data['keys2'] as $k => $keys) {
                 if (!empty($keys)) {
@@ -633,5 +648,4 @@ final class WPBE_POSTS {
         json_decode($string);
         return (json_last_error() == JSON_ERROR_NONE);
     }
-
 }

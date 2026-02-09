@@ -54,16 +54,16 @@ if (empty(WPBE_HELPER::filter_post_types())) {
 
             
              <?php if ($WPBE->show_notes): ?>
-                <?php if (time() < 1733094000): ?>
+                <?php if (time() < 1764676740): ?>
                     <div>
                         <br>
                             <a href="https://bulk-editor.pro/downloads" target="_blank">
-                                <img src="https://pluginus.net/wp-content/uploads/2024/11/envato-cybersale-2024.png" width="120" alt="Cybermonday AND Blackfriday" />
+                                <img src="https://pluginus.net/wp-content/uploads/2025/11/DiscountBanner_ItemPreviewBanner_Launch_616x215_50__x2.png" width="120" alt="Cybermonday AND Blackfriday" />
                             </a>
                     </div>
                 <?php else: ?>
                     <div>
-                        <br><a href="https://pluginus.net/affiliate/wordpress-posts-bulk-editor" target="_blank" class="wpbe-button button"><span class="icon-upload"></span><?php esc_html_e("Upgrade", 'bulk-editor') ?></a>
+                        <br><a href="https://codecanyon.pluginus.net/item/wordpress-posts-bulk-editor-professional/24376112" target="_blank" class="wpbe-button button"><span class="icon-upload"></span><?php esc_html_e("Upgrade", 'bulk-editor') ?></a>
                     </div>
                 <?php endif; ?>
             <?php endif; ?>

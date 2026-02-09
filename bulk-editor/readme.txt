@@ -5,9 +5,9 @@ Donate link: https://pluginus.net/affiliate/wordpress-posts-bulk-editor
 Plugin URI: https://bulk-editor.pro/
 Tags: bulk, bulk edit, bulk editor, posts editor, bulk delete
 Requires at least: 4.9
-Tested up to: 6.7
-Requires PHP: 5.6
-Stable tag: 1.0.8.6
+Tested up to: 6.9
+Requires PHP: 7.2
+Stable tag: 1.0.8.7
 
 WOLF (formerly WPBE) - a WordPress plugin for managing posts, pages, and custom types easily. Perfect for real estate, cars, etc.
 
@@ -144,6 +144,9 @@ See full list of fields and features on [the plugin site](https://bulk-editor.pr
 = How to create a custom taxomomy? = 
 Use this plugin [https://wordpress.org/plugins/custom-post-type-ui/](https://wordpress.org/plugins/custom-post-type-ui/)
 
+= Where can I send security bug report about the plugin? = 
+You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team help validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/bulk-editor)
+
 = More answers? = 
 [https://bulk-editor.pro/how-to-list/](https://bulk-editor.pro/how-to-list/)
 
@@ -153,6 +156,9 @@ Use this plugin [https://wordpress.org/plugins/custom-post-type-ui/](https://wor
 
 
 == Changelog ==
+
+= 1.0.8.7 =
+* some small fixes
 
 = 1.0.8.6 =
 * security fix - thanks to Trương Hữu Phúc (truonghuuphuc) and [patchstack.com](https://patchstack.com/)
@@ -229,7 +235,7 @@ Use this plugin [https://wordpress.org/plugins/custom-post-type-ui/](https://wor
 
 == License ==
 
-This plugin is copyright pluginus.net &copy; 2012-2025 with [GNU General Public License][] by realmag777.
+This plugin is copyright pluginus.net &copy; 2012-2026 with [GNU General Public License][] by realmag777.
 
 This program is free software; you can redistribute it and/or modify it under the terms of the [GNU General Public License][] as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
