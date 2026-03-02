@@ -7,8 +7,8 @@
   Tested up to: WP 6.9
   Author: realmag777
   Author URI: https://pluginus.net/
-  Version: 1.0.8.7
-  Requires PHP: 7.2
+  Version: 1.0.9
+  Requires PHP: 7.4
   Tags: bulk,bulk edit,bulk editor,posts editor,bulk delete,real estate,posts manager,meta bulk edit
   Text Domain: bulk-editor
   Domain Path: /languages
@@ -38,7 +38,7 @@ define('WPBE_LINK', plugin_dir_url(__FILE__));
 define('WPBE_ASSETS_LINK', WPBE_LINK . 'assets/');
 define('WPBE_DATA_PATH', WPBE_PATH . 'data/');
 define('WPBE_PLUGIN_NAME', plugin_basename(__FILE__));
-define('WPBE_VERSION', '1.0.8.7');
+define('WPBE_VERSION', '1.0.9');
 //define('WPBE_VERSION', uniqid('wpbe-')); //dev
 define('WPBE_MIN_WP_VERSION', '4.9');
 
@@ -56,7 +56,7 @@ include WPBE_PATH . 'classes/models/settings.php';
 include WPBE_PATH . 'classes/models/posts.php';
 include WPBE_PATH . 'classes/ext.php';
 
-//19-01-2025
+//20-02-2026
 final class WPBE {
 
     public $storage = NULL;
@@ -126,7 +126,7 @@ final class WPBE {
                                 'target' => '_blank',
                             ));
                             ?>
-                    <?php esc_html_e('please', 'bulk-editor') ?>
+                            <?php esc_html_e('please', 'bulk-editor') ?>
                         </p>
                         <a href="admin.php?page=wpbe&wpbe-notice-dismissed=1&notice_nonce=<?php echo esc_attr(wp_create_nonce('wpbe_notice_nonce')) ?>" class="notice-dismiss"></a>
                     </div>	
@@ -878,6 +878,8 @@ final class WPBE {
             global $wpdb;
 
             foreach ($_REQUEST['posts_ids'] as $post_id) {
+                $post_id = intval($post_id);
+
                 $post = get_post($post_id);
                 if (isset($post) && $post != null) {
 
@@ -908,8 +910,8 @@ final class WPBE {
                     }
 
                     //***                   
-
-                    $post_meta_infos = $wpdb->get_results("SELECT meta_key, meta_value FROM {$wpdb->postmeta} WHERE post_id={$post_id}");
+                    //$post_meta_infos = $wpdb->get_results("SELECT meta_key, meta_value FROM {$wpdb->postmeta} WHERE post_id={$post_id}");
+                    $post_meta_infos = $wpdb->get_results($wpdb->prepare("SELECT meta_key, meta_value FROM {$wpdb->postmeta} WHERE post_id=%d", $post_id));
 
                     if (count($post_meta_infos) !== 0) {
                         $sql_query = "INSERT INTO $wpdb->postmeta (post_id, meta_key, meta_value)";
@@ -918,8 +920,10 @@ final class WPBE {
                             if ($meta_key == '_wp_old_slug') {
                                 continue;
                             }
-                            $meta_value = addslashes($meta_info->meta_value);
-                            $sql_query_sel[] = "SELECT $new_post_id, '$meta_key', '$meta_value'";
+                            //$meta_value = addslashes($meta_info->meta_value);
+                            //$sql_query_sel[] = "SELECT $new_post_id, '$meta_key', '$meta_value'";
+                            $meta_value = $meta_info->meta_value;
+                            $sql_query_sel[] = $wpdb->prepare("SELECT %d, %s, %s", $new_post_id, $meta_key, $meta_value);
                         }
                         $sql_query .= implode(" UNION ALL ", $sql_query_sel);
                         $wpdb->query($sql_query);
@@ -1054,24 +1058,24 @@ final class WPBE {
                 //***
 
                 $res = WPBE_HELPER::draw_select(array(
-                            'field' => $field_key,
-                            'post_id' => $post_id,
-                            'class' => 'wpbe_data_select',
-                            'options' => $select_options,
-                            'selected' => (isset($val['selected']) ? $val['selected'] : $val),
-                            'disabled' => (isset($this->settings->active_fields[$field_key]['disabled']) ? $this->settings->active_fields[$field_key]['disabled'] : FALSE),
-                            'onchange' => 'wpbe_act_select(this)'
+                    'field' => $field_key,
+                    'post_id' => $post_id,
+                    'class' => 'wpbe_data_select',
+                    'options' => $select_options,
+                    'selected' => (isset($val['selected']) ? $val['selected'] : $val),
+                    'disabled' => (isset($this->settings->active_fields[$field_key]['disabled']) ? $this->settings->active_fields[$field_key]['disabled'] : FALSE),
+                    'onchange' => 'wpbe_act_select(this)'
                 ));
                 break;
 
             case 'multi_select':
 
                 $res = WPBE_HELPER::render_html(WPBE_PATH . 'views/elements/multi_select.php', array(
-                            'field_key' => $field_key,
-                            'post_id' => $post_id,
-                            'val' => $val,
-                            'active_fields' => $this->settings->active_fields,
-                            'post' => $post,
+                    'field_key' => $field_key,
+                    'post_id' => $post_id,
+                    'val' => $val,
+                    'active_fields' => $this->settings->active_fields,
+                    'post' => $post,
                 ));
                 break;
 
@@ -1133,8 +1137,8 @@ final class WPBE {
             case 'checkbox':
                 //using for posts selection
                 $res = WPBE_HELPER::draw_checkbox(array(
-                            'class' => 'wpbe_post_check',
-                            'data-post-id' => $post_id
+                    'class' => 'wpbe_post_check',
+                    'data-post-id' => $post_id
                 ));
                 break;
 
