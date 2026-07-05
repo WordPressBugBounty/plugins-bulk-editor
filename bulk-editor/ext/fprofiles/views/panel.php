@@ -1,6 +1,7 @@
 <?php
-if (!defined('ABSPATH'))
-    wp_die('No direct access allowed');
+if (!defined('ABSPATH')) {
+    exit;
+}
 
 global $WPBE;
 ?>

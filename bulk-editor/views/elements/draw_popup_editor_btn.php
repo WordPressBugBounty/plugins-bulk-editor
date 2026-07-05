@@ -24,10 +24,12 @@ if ($field_key == 'post_content' && $WPBE->settings->use_wp_editor) {
 	 data-wp_editor="<?php echo esc_attr($use_wp_editor); ?>" 
 	 data-text-title="<?php echo esc_attr(WPBE_HELPER::get_show_text_editor()) ?>" 
 	 onclick="wpbe_act_popupeditor(this, <?php echo intval($post['post_parent']) ?>)" 
-	 data-post_id="<?php echo esc_html($post['ID']) ?>" 
+	 data-post_id="<?php echo esc_attr($post['ID']) ?>" 
 	 id="popup_val_<?php echo esc_attr($field_key) ?>_<?php echo esc_attr($post['ID']) ?>" 
-	 data-key="<?php echo esc_html($field_key) ?>" 
+	 data-key="<?php echo esc_attr($field_key) ?>" 
 	 data-terms_ids="" 
-	 data-name="<?php esc_html_e(sprintf(esc_html__('Post: %s', 'bulk-editor'), $post['post_title'])) ?>">
+	 data-name="<?php echo esc_attr(sprintf(
+		 /* translators: %s: name */
+		 esc_html__('Post: %s', 'bulk-editor'), $post['post_title'])) ?>">
     <?php echo wp_kses_post($btn_text) ?>
 </div>

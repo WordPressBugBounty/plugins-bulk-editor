@@ -51,22 +51,30 @@ if (empty($images)) {
 		 id="popup_val_<?php echo esc_attr($field_key) ?>_<?php echo esc_attr($post_id) ?>" 
 		 data-key="<?php echo esc_attr($field_key) ?>" 
 		 data-terms_ids="" 
-		 data-name="<?php echo sprintf(esc_html__('Product: %s', 'woocommerce-bulk-editor'), esc_html($title)) ?>">
-        <?php printf(esc_html__('Images (%s)', 'woocommerce-bulk-editor'), esc_html($files_count)) ?>
+		 data-name="<?php 		 
+		 printf(
+			 /* translators: %s: product name */
+			 esc_html__('Product: %s', 'bulk-editor'), esc_html($title)) ?>">
+        <?php 
+		printf(
+			/* translators: %s: product name */
+			esc_html__('Images (%s)', 'bulk-editor'), esc_html($files_count)) ?>
     </div>
     <?php
 } else {
     ?>
     <a href="javascript: void(0);" 
 	   class="gallery_popup_editor_btn" 
-	   data-images='<?php echo json_encode($images_data) ?>' 
+	   data-images='<?php echo json_encode($images_data) ?>'
 	   onclick="wpbe_act_gallery_editor(this)" 
 	   data-count="<?php echo esc_attr($files_count) ?>" 
 	   data-post_id="<?php echo esc_attr($post_id) ?>" 
 	   id="popup_val_<?php echo esc_attr($field_key) ?>_<?php echo esc_attr($post_id) ?>" 
 	   data-key="<?php echo esc_attr($field_key) ?>" 
 	   data-terms_ids="" 
-	   data-name="<?php echo sprintf(esc_html__('Post: %s', 'bulk-editor'), esc_attr($title)) ?>">
+	   data-name="<?php echo sprintf(
+		   /* translators: %s: name */
+		   esc_html__('Post: %s', 'bulk-editor'), esc_attr($title)) ?>">
         <?php
         foreach ($images_data as $c => $d) {
             if ($c > 2) {

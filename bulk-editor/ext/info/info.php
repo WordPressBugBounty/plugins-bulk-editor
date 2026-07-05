@@ -16,15 +16,15 @@ final class WPBE_INFO extends WPBE_EXT {
     public function wpbe_ext_scripts() {
         ?>
         <script>
-            lang.<?php echo $this->slug ?> = {};
-            //lang.<?php echo $this->slug ?>.test = '<?php esc_html_e('test', 'bulk-editor') ?> ...';
+            lang.<?php echo esc_attr($this->slug) ?> = {};
+            //lang.<?php echo esc_attr($this->slug) ?>.test = '<?php esc_html_e('test', 'bulk-editor') ?> ...';
         </script>
         <?php
     }
 
     public function wpbe_ext_panel() {
         $data = array();
-        echo WPBE_HELPER::render_html($this->get_ext_path() . 'views/panel.php', $data);
+        WPBE_HELPER::render_html_e($this->get_ext_path() . 'views/panel.php', $data);
     }
 
 }

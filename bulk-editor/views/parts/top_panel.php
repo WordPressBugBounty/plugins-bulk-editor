@@ -1,6 +1,7 @@
 <?php
-if (!defined('ABSPATH'))
-    wp_die('No direct access allowed');
+if (!defined('ABSPATH')) {
+    exit;
+}
 ?>
 <div class="wpbe_top_panel_container">
 

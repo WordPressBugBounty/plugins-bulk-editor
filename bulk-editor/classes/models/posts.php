@@ -167,7 +167,7 @@ final class WPBE_POSTS {
 //***
         //should be clean text with commas only
         if (in_array($field_key, ['to_ping', 'pinged'])) {
-            $value = trim(strip_tags($value));
+            $value = trim(wp_strip_all_tags($value));
         }
 
         /*
@@ -312,7 +312,7 @@ final class WPBE_POSTS {
                 break;
 
             default:
-                
+
                 //https://wordpress.org/support/topic/deleting-excerpt-or-content-does-not-work/
                 //Special handling for empty values in post_content and post_excerpt
                 if (in_array($field_key, ['post_content', 'post_excerpt']) && empty($value)) {

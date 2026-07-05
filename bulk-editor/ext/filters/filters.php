@@ -23,7 +23,7 @@ final class WPBE_FILTERS extends WPBE_EXT {
         //tabs
         $this->add_tab($this->slug, 'top_panel', esc_html__('Filters', 'bulk-editor'), 'filter');
         add_action('wpbe_ext_top_panel_' . $this->slug, array($this, 'wpbe_ext_panel'), 1);
-        
+
         add_action('wpbe_tools_panel_buttons_end', array($this, 'wpbe_tools_panel_buttons_end'), 20);
     }
 
@@ -31,16 +31,16 @@ final class WPBE_FILTERS extends WPBE_EXT {
         wp_enqueue_script('wpbe_ext_' . $this->slug, $this->get_ext_link() . 'assets/js/' . $this->slug . '.js', [], WPBE_VERSION);
         ?>
         <script>
-            lang.<?php echo $this->slug ?> = {};
-            lang.<?php echo $this->slug ?>.filtering = "<?php esc_html_e('Filtering', 'bulk-editor') ?> ...";
-            lang.<?php echo $this->slug ?>.filtered = "<?php esc_html_e('Filtered! Table redrawing ...', 'bulk-editor') ?>";
+            lang.<?php echo esc_attr($this->slug) ?> = {};
+            lang.<?php echo esc_attr($this->slug) ?>.filtering = "<?php esc_html_e('Filtering', 'bulk-editor') ?> ...";
+            lang.<?php echo esc_attr($this->slug) ?>.filtered = "<?php esc_html_e('Filtered! Table redrawing ...', 'bulk-editor') ?>";
         </script>
         <?php
     }
 
     public function wpbe_ext_panel() {
         $data = array();
-        echo WPBE_HELPER::render_html($this->get_ext_path() . 'views/panel.php', $data);
+        WPBE_HELPER::render_html_e($this->get_ext_path() . 'views/panel.php', $data);
     }
 
     //ajax
@@ -271,7 +271,7 @@ final class WPBE_FILTERS extends WPBE_EXT {
                             'field' => 'term_id', //term_id, slug
                             'terms' => $terms_ids,
                             'include_children' => $children
-                                
+
                         );
 
                         //if ($wpbe_filter['taxonomies_operators'][$tax_key] != 'OR') {
@@ -458,7 +458,7 @@ final class WPBE_FILTERS extends WPBE_EXT {
                 $_REQUEST['wpbe_txt_search'][$skey] = $wpbe_filter[$skey]['value'];
                 if ($wpbe_filter[$skey]['behavior'] == 'empty') {
                     $_REQUEST['wpbe_txt_search'][$skey] = 'empty';
-                }                
+                }
                 $_REQUEST['wpbe_txt_search_behavior'][$skey] = $wpbe_filter[$skey]['behavior'];
             }
         }
@@ -574,7 +574,7 @@ final class WPBE_FILTERS extends WPBE_EXT {
 					'key' => '_thumbnail_id',
 					'compare' => 'NOT EXISTS'
 				);
-				
+
 			}
 
 		}
@@ -621,7 +621,7 @@ final class WPBE_FILTERS extends WPBE_EXT {
 
         return $args;
     }
-    
+
     public function wpbe_tools_panel_buttons_end() {
         global $WPBE;
         ?>
@@ -633,44 +633,42 @@ final class WPBE_FILTERS extends WPBE_EXT {
                 'not' => __('NOT', 'bulk-editor'),
                 'begin' => __('BEGIN', 'bulk-editor'),
                 'end' => __('END', 'bulk-editor'),
-            );                    
-            
+            );
+
             $search_options = apply_filters('wpbe_quick_search_options', array(
                 'post_title' => __('Title', 'bulk-editor'),
                 'post__in' => __('ID', 'bulk-editor'),
             ));
-            
+
             $fields = $this->settings->quick_search_fieds;
             if ($fields) {
                 $fields = WPBE_HELPER::string_to_array($fields);
                 $search_options = array_merge($search_options, $fields);
-            }                    
-                    
-                    
-            ?>
+            }
 
+            ?>
                 <div class='tools_panel_filter-unit-wrap'>
                     <div class="col-lg-6">
 
                         <div style="padding-right: 2px;">
-                            <input type="text" placeholder="<?php _e('quick search by ...', 'bulk-editor') ?>" name="wpbe_filter_form_tools_value" value="" />
+                            <input type="text" placeholder="<?php esc_attr_e('quick search by ...', 'bulk-editor') ?>" name="wpbe_filter_form_tools_value" value="" />
                         </div>
-                        
+
                     </div>
                     <div class="col-lg-2">
 
                         <select name="wpbe_filter_tools_options" class="wpbe_filter_tools_select">
                             <?php foreach ($search_options as $key => $title) : ?>
-                                <option value="<?php echo $key ?>"><?php echo $title ?></option>
+                                <option value="<?php echo esc_attr($key) ?>"><?php echo esc_html($title) ?></option>
                             <?php endforeach; ?>
                         </select>
 
-                    </div>                              
+                    </div>
                     <div class="col-lg-2">
 
                         <select name="wpbe_filter_tools_behavior">
                             <?php foreach ($behavior_options as $key => $title) : ?>
-                                <option value="<?php echo $key ?>"><?php echo $title ?></option>
+                                <option value="<?php echo esc_attr($key) ?>"><?php echo esc_html($title) ?></option>
                             <?php endforeach; ?>
                         </select>
 
@@ -678,7 +676,7 @@ final class WPBE_FILTERS extends WPBE_EXT {
 
                     <div class="col-lg-2">
                         <a href="#" class="button button-primary button-large" id="wpbe_filter_btn_tools_panel"></a>
-                    </div>    
+                    </div>
                     <div style="clear: both;"></div>
 
                 </div>

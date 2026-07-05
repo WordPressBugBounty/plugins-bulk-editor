@@ -1,13 +1,13 @@
 === WOLF - WordPress Posts Bulk Editor and Manager Professional ===
 Author: RealMag777
 Contributors: RealMag777
-Donate link: https://pluginus.net/affiliate/wordpress-posts-bulk-editor
+Donate link: https://bulk-editor.pro/downloads
 Plugin URI: https://bulk-editor.pro/
 Tags: bulk, bulk edit, bulk editor, posts editor, bulk delete
-Requires at least: 4.9
-Tested up to: 6.9
+Requires at least: 5.0
+Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.0.9
+Stable tag: 1.1.0
 
 WOLF (formerly WPBE) - a WordPress plugin for managing posts, pages, and custom types easily. Perfect for real estate, cars, etc.
 
@@ -63,7 +63,7 @@ WOLF (formerly WPBE) - a WordPress plugin for managing posts, pages, and custom 
 
 
 * [📚 Documentation](https://bulk-editor.pro/documentation/)
-* [🌟 Get the premium version](https://pluginus.net/affiliate/wordpress-posts-bulk-editor)
+* [🌟 Get the premium version](https://bulk-editor.pro/downloads)
 * [💬 Support](https://pluginus.net/support/forum/wpbe-wordpress-posts-bulk-editor-professional/)
 
 
@@ -86,7 +86,7 @@ WOLF (formerly WPBE) - a WordPress plugin for managing posts, pages, and custom 
 
 🌟 In the premium version of the plugin it is possible to manipulate with [all fields of the posts](https://bulk-editor.pro/) + Bulk Delete
 
-🌟 You can get premium version of the plugin [on CodeCanyon](https://codecanyon.pluginus.net/item/wordpress-posts-bulk-editor-professional/24376112)
+🌟 You can get premium version of the plugin [on the site](https://bulk-editor.pro/downloads)
 
 
 ### Make your site more profitable with next powerful scripts:
@@ -133,7 +133,7 @@ You need if you want to change a posts data in bulk: title, content, meta fields
 See full list of fields and features on [the plugin site](https://bulk-editor.pro)
 
 = Where can I get the Premium version of WOLF =
-[Get it on CodeCanyon](https://pluginus.net/affiliate/wordpress-posts-bulk-editor)
+[Get it on the plugin site](https://bulk-editor.pro/downloads)
 
 = Documentation? =
 [https://bulk-editor.pro/documentation/](https://bulk-editor.pro/documentation/)
@@ -156,6 +156,9 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 
 
 == Changelog ==
+
+= 1.1.0 =
+* security fix from wordpress.org
 
 = 1.0.9 =
 * security fix - thanks to Nguyen Ba Khanh and [patchstack.com](https://patchstack.com/)

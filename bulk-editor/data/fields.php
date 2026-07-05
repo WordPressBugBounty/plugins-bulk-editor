@@ -92,7 +92,7 @@ function wpbe_get_fields() {
             'editable' => TRUE,
             'edit_view' => 'popupeditor',
             'order' => FALSE,
-            'direct' => !$WPBE->show_notes,
+            'direct' => false,
             'css_classes' => 'not-for-variations',
             'site_editor_visibility' => 1
         ),
@@ -105,7 +105,7 @@ function wpbe_get_fields() {
             'edit_view' => 'textinput',
             'sanitize' => 'urldecode',
             'order' => FALSE,
-            'direct' => !$WPBE->show_notes,
+            'direct' => false,
             //'prohibit_post_types' => array(),
             'css_classes' => 'not-for-variations',
             'site_editor_visibility' => 1
@@ -136,7 +136,7 @@ function wpbe_get_fields() {
                 'closed' => esc_html__('Closed', 'bulk-editor'), //false
             ),
             'order' => FALSE,
-            'direct' => !$WPBE->show_notes,
+            'direct' => false,
             //'allow_post_types' => array(),
             'prohibit_post_types' => array('attachment'),
             'site_editor_visibility' => 1,
@@ -155,7 +155,7 @@ function wpbe_get_fields() {
                 'closed' => esc_html__('Closed', 'bulk-editor'), //false
             ),
             'order' => FALSE,
-            'direct' => !$WPBE->show_notes,
+            'direct' => false,
             //'allow_post_types' => array(),
             'prohibit_post_types' => array('attachment'),
             'site_editor_visibility' => 1,
@@ -170,7 +170,7 @@ function wpbe_get_fields() {
             'editable' => TRUE,
             'edit_view' => 'popupeditor',
             'order' => FALSE,
-            'direct' => !$WPBE->show_notes,
+            'direct' => false,
             'prohibit_post_types' => array('attachment'),
             'site_editor_visibility' => 1
         ),
@@ -225,7 +225,7 @@ function wpbe_get_fields() {
             'edit_view' => 'select',
             'select_options' => $users,
             'order' => FALSE,
-            'direct' => !$WPBE->show_notes,
+            'direct' => false,
             'css_classes' => 'not-for-variations',
             'site_editor_visibility' => 1
         ),
@@ -251,7 +251,7 @@ function wpbe_get_fields() {
             'editable' => TRUE,
             'edit_view' => 'calendar',
             'order' => TRUE,
-            'direct' => !$WPBE->show_notes,
+            'direct' => false,
             //'prohibit_post_types' => array(),
             'css_classes' => 'not-for-variations',
             'site_editor_visibility' => 1
@@ -265,7 +265,7 @@ function wpbe_get_fields() {
             'editable' => TRUE,
             'edit_view' => 'calendar',
             'order' => TRUE,
-            'direct' => !$WPBE->show_notes,
+            'direct' => false,
             'css_classes' => 'not-for-variations',
             'site_editor_visibility' => 1
         ),
@@ -291,7 +291,7 @@ function wpbe_get_fields() {
             'edit_view' => 'textinput',
             'sanitize' => 'intval',
             'order' => FALSE,
-            'direct' => !$WPBE->show_notes,
+            'direct' => false,
             //'allow_post_types' => array(),
             //'prohibit_post_types' => array('attachment'),
             'site_editor_visibility' => 1
@@ -305,7 +305,7 @@ function wpbe_get_fields() {
             'edit_view' => 'select',
             'select_options' => WPBE_HELPER::filter_post_types(),
             'order' => FALSE,
-            'direct' => !$WPBE->show_notes,
+            'direct' => false,
             //'prohibit_post_types' => array(),
             'prohibit_post_types' => array('attachment'),
             'site_editor_visibility' => 1

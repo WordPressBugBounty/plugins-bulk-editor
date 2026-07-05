@@ -25,10 +25,12 @@ if (empty($btn_title)) {
 	 onclick="wpbe_act_meta_popup_editor(this)" 
 	 id="meta_popup_<?php echo esc_attr($field_key) ?>_<?php echo esc_attr($post_id) ?>" 
 	 data-count="0" 
-	 data-post_id="<?php echo esc_html($post_id) ?>" 
-	 data-key="<?php echo esc_html($field_key) ?>" 
+	 data-post_id="<?php echo esc_attr($post_id) ?>" 
+	 data-key="<?php echo esc_attr($field_key) ?>" 
 	 data-terms_ids="" 
-	 data-name="<?php echo sprintf(esc_html__('Post: %s', 'bulk-editor'), esc_html($title)) ?>">
+	 data-name="<?php echo esc_attr(sprintf(
+		 /* translators: %s: name */
+		 esc_html__('Post: %s', 'bulk-editor'), esc_html($title))) ?>">
     <div style="display: none;" class="meta_popup_btn_data"><?php echo json_encode($meta_data, JSON_HEX_QUOT | JSON_HEX_TAG); ?></div>
     <?php echo esc_html($btn_title) ?>
 </div>

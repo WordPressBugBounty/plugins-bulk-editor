@@ -40,7 +40,7 @@ if (!defined('ABSPATH')) {
 
 
         <div class="wpbe-float-left">
-            <a href="#" class="page-title-action wpbe_multi_select_cell_new" data-tax-key="<?php esc_html_e($field_key) ?>"><?php esc_html_e('new', 'bulk-editor') ?></a>
+            <a href="#" class="page-title-action wpbe_multi_select_cell_new" data-tax-key="<?php echo esc_attr($field_key) ?>"><?php esc_html_e('new', 'bulk-editor') ?></a>
         </div>
 
 

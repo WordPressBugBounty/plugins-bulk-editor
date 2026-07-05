@@ -940,7 +940,7 @@ function __wpbe_recursive_search(terms, term_id){
 	    return false;
 	}
 	if(d.childs.length) {
-	    current_val = __woobe_recursive_search(d.childs, term_id);
+	    current_val = __wpbe_recursive_search(d.childs, term_id);
 	    if (Object.keys(current_val).length) {
 		return false;
 	    }
@@ -1190,7 +1190,8 @@ function wpbe_act_popupeditor(_this, post_parent) {
             action: 'wpbe_get_post_field',
             post_id: post_id,
             field: key,
-            post_parent: post_parent
+            post_parent: post_parent,
+            wpbe_nonce: wpbe_field_update_nonce
         },
         success: function (content) {
 
@@ -1518,7 +1519,8 @@ function wpbe_redraw_table_row(row, do_trigger = true) {
             action: 'wpbe_redraw_table_row',
             post_id: post_id,
             field: jQuery(row).data('field'),
-            value: jQuery(row).val()
+            value: jQuery(row).val(),
+            wpbe_nonce: wpbe_field_update_nonce
         },
         success: function (row_data) {
 
@@ -1770,7 +1772,9 @@ function __wpbe_init_gallery(key) {
                     if (uploaded_images.length) {
                         for (var i = 0; i < uploaded_images.length; i++) {
                             var html = jQuery('#wpbe_gallery_li_tpl').html();
-                            html = html.replace(/__IMG_URL__/gi, uploaded_images[i]['sizes']['thumbnail']['url']);
+                            var img_sizes = uploaded_images[i]['sizes'];
+                            var img_url = (img_sizes && img_sizes['thumbnail'] && img_sizes['thumbnail']['url']) ? img_sizes['thumbnail']['url'] : ((img_sizes && img_sizes['full'] && img_sizes['full']['url']) ? img_sizes['full']['url'] : uploaded_images[i]['url']);
+                            html = html.replace(/__IMG_URL__/gi, img_url);
                             html = html.replace(/__ATTACHMENT_ID__/gi, uploaded_images[i]['id']);
                             html = html.replace(/__KEY__/gi, key);
                             jQuery('#gallery_popup_editor form .wpbe_fields_tmp').prepend(html);

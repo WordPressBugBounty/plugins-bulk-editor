@@ -21,7 +21,7 @@ final class WPBE_CALCULATOR extends WPBE_EXT {
 
     public function wpbe_page_end() {
         $data = array();
-        echo WPBE_HELPER::render_html($this->get_ext_path() . 'views/panel.php', $data);
+        WPBE_HELPER::render_html_e($this->get_ext_path() . 'views/panel.php', $data);
     }
 
 }

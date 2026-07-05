@@ -100,11 +100,10 @@ final class WPBE_SETTINGS {
             $this->per_page = 100;
         }
 
-        if ($WPBE->show_notes) {
             if (intval($this->per_page) > 10) {
                 $this->per_page = 10;
             }
-        }
+        
     }
 
     public function get_options() {
@@ -138,14 +137,12 @@ final class WPBE_SETTINGS {
                           }
                          */
 
-                        if ($WPBE->show_notes) {
+                        
                             $direct = FALSE;
                             if ($t->name === 'category' OR $counter === 0) {
                                 $direct = TRUE;
                             }
-                        } else {
-                            $direct = TRUE;
-                        }
+                       
                         $tax_fileds[$t->name] = array(
                             'show' => 0,
                             'title' => ucfirst(trim(str_replace('Post ', '', $t->label))),
@@ -196,7 +193,7 @@ final class WPBE_SETTINGS {
                         }
 
                         if (isset($v['title'])) {
-                            $title = strip_tags(trim($v['title']));
+                            $title = wp_strip_all_tags(trim($v['title']));
                             if (!empty($title)) {
                                 if (!isset($fields[$key]['title_static'])) {
                                     $fields[$key]['title'] = $title;

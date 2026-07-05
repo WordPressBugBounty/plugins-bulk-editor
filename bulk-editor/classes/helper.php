@@ -66,6 +66,92 @@ final class WPBE_HELPER {
 
         <?php
     }
+	
+	public static function draw_select_e($data, $is_multi = false) {
+        $multiple = '';
+        if ($is_multi) {
+            $multiple = 'multiple size=2';
+        }
+
+        $disabled = '';
+        if (isset($data['disabled']) AND $data['disabled']) {
+            $disabled = "disabled=''";
+        }
+
+        if (isset($data['id']) AND $data['id']) {
+            $id = $data['id'];
+        } else {
+            $id = "mselect_{$data['field']}_{$data['post_id']}";
+        }
+
+        $selected = '';
+        if (isset($data['selected'])) {
+            if (is_array($data['selected'])) {
+                $selected = implode(',', $data['selected']);
+            } else {
+                $selected = $data['selected'];
+            }
+        }
+        ?>
+        <div class='select-wrap'>
+            <select <?php echo esc_attr($multiple) ?>
+                <?php if (isset($data['name'])) { ?>
+                    name="<?php echo esc_attr($data['name']) ?>"
+                <?php } ?>
+                <?php if (isset($data['onchange'])) { ?>
+                    onchange="<?php echo esc_attr($data['onchange']) ?>;"
+                <?php } ?>
+                <?php if (isset($data['onmouseover'])) { ?>
+                    onmouseover="<?php echo esc_attr($data['onmouseover']) ?>;"
+                <?php } ?>
+                <?php echo esc_attr($disabled) ?>
+                id="<?php echo esc_attr($id) ?>"
+                data-field="<?php echo esc_attr($data['field']) ?>"
+                data-post-id="<?php echo esc_attr($data['post_id']) ?>"
+                data-placeholder=" "
+                data-selected="<?php echo esc_attr($selected) ?>"
+                class="<?php echo esc_attr($data['class']) ?>"
+                >
+                <?php
+                if (isset($data['options'])) {
+                    $in_selected = array();
+
+                    if (isset($data['selected'])) {
+                        if (is_array($data['selected'])) {
+                            $in_selected = $data['selected'];
+                        } else {
+                            $in_selected[] = $data['selected'];
+                        }
+                    }
+
+                    foreach ($data['options'] as $key => $title) {
+                        $sel = false;
+                        if (in_array($key, $in_selected)) {
+                            $sel = true;
+                        }
+                        ?>
+                        <option <?php echo selected($sel, true, false) ?> value="<?php echo esc_attr($key) ?>"><?php echo esc_html($title) ?></option>
+                        <?php
+                    }
+                }
+                ?>
+            </select>
+        </div>
+        <?php
+    }
+	
+	public static function draw_advanced_switcher_e($is, $numcheck, $name, $labels, $vals, $trigger_target = '', $css_classes = '') {
+        self::render_html_e(WPBE_PATH . 'views/elements/draw_advanced_switcher.php', array(
+                    'is' => $is,
+                    'numcheck' => $numcheck,
+                    'name' => $name,
+                    'labels' => $labels,
+                    'vals' => $vals,
+                    'trigger_target' => $trigger_target,
+                    'css_classes' => $css_classes
+        ));
+    }
+	
     public static function get_users() {
 
         if (empty(self::$users)) {
@@ -255,7 +341,7 @@ final class WPBE_HELPER {
 
     public static function draw_tooltip($text, $direction = 'down') {
         ?>
-        <a class="info_helper zebra_tips1" title="<?= esc_html($text) ?>"><span class="icon-info"></span></a>
+        <a class="info_helper zebra_tips1" title="<?php echo esc_attr($text) ?>"><span class="icon-info"></span></a>
         <?php
     }
 
@@ -543,9 +629,4 @@ final class WPBE_HELPER {
     public static function get_site_editors_post_types() {
         return get_option('wpbe_site_editors_post_types', '');
     }
-	public static function write_log($message){
-		$path = WPBE_PATH . 'wpbe.log';
-		$data_log = date("Y-m-d H:i:s") . " - " . $message . PHP_EOL;
-		file_put_contents($path, $data_log, FILE_APPEND);
-	}	
 }

@@ -23,8 +23,8 @@ final class WPBE_FPROFILES extends WPBE_EXT {
         wp_enqueue_style('wpbe_ext_' . $this->slug, $this->get_ext_link() . 'assets/css/' . $this->slug . '.css',[],WPBE_VERSION);
         ?>
         <script>
-            lang.<?php echo $this->slug ?> = {};
-            //lang.<?php echo $this->slug ?>.test = '<?php esc_html_e('test', 'bulk-editor') ?>';
+            lang.<?php echo esc_attr($this->slug) ?> = {};
+            //lang.<?php echo esc_attr($this->slug) ?>.test = '<?php esc_html_e('test', 'bulk-editor') ?>';
         </script>
         <?php
     }
@@ -38,7 +38,7 @@ final class WPBE_FPROFILES extends WPBE_EXT {
     public function wpbe_page_end() {
         $data = array();
         $data['fprofiles'] = $this->fprofiles->get();
-        echo WPBE_HELPER::render_html($this->get_ext_path() . 'views/panel.php', $data);
+        WPBE_HELPER::render_html_e($this->get_ext_path() . 'views/panel.php', $data);
     }
 
 }

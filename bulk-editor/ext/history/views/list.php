@@ -1,6 +1,7 @@
 <?php
-if (!defined('ABSPATH'))
-    wp_die('No direct access allowed');
+if (!defined('ABSPATH')) {
+    exit;
+}
 ?>
 
 <?php if (!empty($history)): ?>
@@ -8,7 +9,7 @@ if (!defined('ABSPATH'))
         <?php foreach ($history as $operation) : ?>
             <?php $is_solo = isset($operation['field_key']) ? true : false; ?>
 
-            <li class="wpbe_options_li <?php echo($is_solo ? 'solo_li' : 'bulk_li') ?> wpbe_history_item wpbe_history_li_show" id="wpbe_history_<?php echo($is_solo ? $operation['id'] : $operation['bulk_key']) ?>">
+            <li class="wpbe_options_li <?php echo($is_solo ? 'solo_li' : 'bulk_li') ?> wpbe_history_item wpbe_history_li_show" id="wpbe_history_<?php echo esc_attr($is_solo ? $operation['id'] : $operation['bulk_key']) ?>">
                 <?php
                 $filds = "";
                 if ($is_solo) {
@@ -22,15 +23,17 @@ if (!defined('ABSPATH'))
                     }
                 }
                 ?>
-                <div class="wpbe_history_data wpbe_history_hidden" data-types="<?php echo($is_solo ? 1 : 2) ?>" data-author="<?php esc_html_e($operation['user_id']) ?>"  data-date="<?php echo esc_html_e(($is_solo) ? $operation["mod_date"] : $operation['started']); ?>" data-fields="<?php esc_html_e($filds) ?>">
+                <div class="wpbe_history_data wpbe_history_hidden" data-types="<?php echo($is_solo ? 1 : 2) ?>" data-author="<?php echo esc_attr($operation['user_id']) ?>"  data-date="<?php echo esc_attr(($is_solo) ? $operation["mod_date"] : $operation['started']); ?>" data-fields="<?php echo esc_attr($filds) ?>">
                 </div>   
                 <div class="col-lg-4">
                     <?php if ($is_solo): ?>
-                        <h5><?php echo '#' . $operation['post_id'] . '. ' . get_the_title($operation['post_id']) ?></h5>
-                        <h6>[<?php echo $operation['field_key'] ?>]</h6>
+                        <h5><?php echo '#' . esc_html($operation['post_id']) . '. ' . esc_html(get_the_title($operation['post_id'])) ?></h5>
+                        <h6>[<?php echo esc_html($operation['field_key']) ?>]</h6>
                     <?php else: ?>
                         <h5><?php esc_html_e('Bulk operation', 'bulk-editor') ?></h5>
-                        [<span style="color: <?php echo($operation['state'] == 'completed' ? 'green' : 'red') ?>;"><small><?php printf(esc_html__('state: %s', 'bulk-editor'), $operation['state']) ?></small></span>]
+                        [<span style="color: <?php echo($operation['state'] == 'completed' ? 'green' : 'red') ?>;"><small><?php
+                            /* translators: %s: operation state */
+                            printf(esc_html__('state: %s', 'bulk-editor'), esc_html($operation['state'])) ?></small></span>]
                     <?php endif; ?>
                 </div>
 
@@ -38,11 +41,11 @@ if (!defined('ABSPATH'))
                     <small>
                         <?php
                         if ($is_solo) {
-                            echo date(get_option('date_format') . ' ' . get_option('time_format'), $operation['mod_date']);
+                            echo esc_html(gmdate(get_option('date_format') . ' ' . get_option('time_format'), $operation['mod_date']));
                         } else {
-                            echo date(get_option('date_format') . ' ' . get_option('time_format'), $operation['started']);
+                            echo esc_html(gmdate(get_option('date_format') . ' ' . get_option('time_format'), $operation['started']));
                             if ($operation['state'] !== 'terminated') {
-                                echo ' - ' . date(get_option('date_format') . ' ' . get_option('time_format'), $operation['finished']);
+                                echo ' - ' . esc_html(gmdate(get_option('date_format') . ' ' . get_option('time_format'), $operation['finished']));
                             }
                         }
                         ?>
@@ -60,13 +63,15 @@ if (!defined('ABSPATH'))
                                 $sanitize = $settings_fields[$operation['field_key']]['sanitize'];
                             }
                             if ($show_val) {
-                                printf(esc_html__('value been: %s', 'bulk-editor'), '<i>' . substr($posts_obj->__sanitize_answer_value($operation['field_key'], $sanitize, $operation['prev_val']), 0, 120) . '</i>');
+                                /* translators: %s: previous field value */
+                                printf(esc_html__('value been: %s', 'bulk-editor'), '<i>' . esc_html(substr($posts_obj->__sanitize_answer_value($operation['field_key'], $sanitize, $operation['prev_val']), 0, 120)) . '</i>');
                             } else {
                                 echo '&nbsp;';
                             }
                         } else {
 
                             if (isset($operation['posts_count'])) {
+                                /* translators: %s: number of bulked posts */
                                 printf(esc_html__('posts bulked: %s', 'bulk-editor'), '<b>' . intval($operation['posts_count']) . '</b>');
                             }
 
@@ -80,7 +85,8 @@ if (!defined('ABSPATH'))
                                 }
                                 $names = implode(', ', $names);
                                 echo '<br />';
-                                printf(esc_html__('columns: %s', 'bulk-editor'), '<b>' . $names . '</b>');
+                                /* translators: %s: columns list */
+                                printf(esc_html__('columns: %s', 'bulk-editor'), '<b>' . esc_html($names) . '</b>');
                             }
                         }
                         ?>
@@ -90,15 +96,15 @@ if (!defined('ABSPATH'))
 
                 <div class="col-lg-2 wpbe-text-align-right">
                     <?php if ($is_solo): ?>
-                        <a href="javascript: wpbe_history_revert_solo(<?php echo $operation['id'] ?>, <?php echo $operation['post_id'] ?>);void(0);" class="button button-primary wpbe_history_btn wpbe_history_revert" title="<?php esc_html_e('revert', 'bulk-editor') ?>"></a>
-                        <a href="javascript: wpbe_history_delete_solo(<?php echo $operation['id'] ?>);void(0);" class="button button-primary wpbe_history_btn wpbe_history_delete" title="<?php esc_html_e('delete', 'bulk-editor') ?>"></a><br />
+                        <a href="javascript: wpbe_history_revert_solo(<?php echo esc_js($operation['id']) ?>, <?php echo esc_js($operation['post_id']) ?>);void(0);" class="button button-primary wpbe_history_btn wpbe_history_revert" title="<?php esc_attr_e('revert', 'bulk-editor') ?>"></a>
+                        <a href="javascript: wpbe_history_delete_solo(<?php echo esc_js($operation['id']) ?>);void(0);" class="button button-primary wpbe_history_btn wpbe_history_delete" title="<?php esc_attr_e('delete', 'bulk-editor') ?>"></a><br />
                     <?php else: ?>
 
-                        <a href="javascript: wpbe_history_revert_bulk('<?php echo $operation['bulk_key'] ?>', <?php echo $operation['id'] ?>);void(0);" class="button button-primary wpbe_history_btn wpbe_history_revert" title="<?php esc_html_e('revert', 'bulk-editor') ?>"></a>
-                        <a href="javascript: wpbe_history_delete_bulk('<?php echo $operation['bulk_key'] ?>');void(0);" class="button button-primary wpbe_history_btn wpbe_history_delete" title="<?php esc_html_e('delete', 'bulk-editor') ?>"></a><br />
+                        <a href="javascript: wpbe_history_revert_bulk('<?php echo esc_js($operation['bulk_key']) ?>', <?php echo esc_js($operation['id']) ?>);void(0);" class="button button-primary wpbe_history_btn wpbe_history_revert" title="<?php esc_attr_e('revert', 'bulk-editor') ?>"></a>
+                        <a href="javascript: wpbe_history_delete_bulk('<?php echo esc_js($operation['bulk_key']) ?>');void(0);" class="button button-primary wpbe_history_btn wpbe_history_delete" title="<?php esc_attr_e('delete', 'bulk-editor') ?>"></a><br />
 
                         <div class="wpbe_progress" style="display: none;">
-                            <div class="wpbe_progress_in" id="wpbe_bulk_progress_<?php echo $operation['id'] ?>">0%</div>
+                            <div class="wpbe_progress_in" id="wpbe_bulk_progress_<?php echo esc_attr($operation['id']) ?>">0%</div>
                         </div>
 
                     <?php endif; ?>

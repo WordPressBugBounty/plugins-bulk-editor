@@ -1,7 +1,8 @@
 <?php
 
-if (!defined('ABSPATH'))
-    wp_die('No direct access allowed');
+if (!defined('ABSPATH')) {
+    exit;
+}
 
 //keeps current user data
 final class WPBE_STORAGE {

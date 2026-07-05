@@ -1,6 +1,7 @@
 <?php
-if (!defined('ABSPATH'))
-    wp_die('No direct access allowed');
+if (!defined('ABSPATH')) {
+    exit;
+}
 
 global $WPBE;
 ?>
@@ -39,7 +40,7 @@ global $WPBE;
 
 <form id="metaform" method="post" action="">
     <input type="hidden" name="wpbe_meta_fields[]" value="" />
-	<input type="hidden"  id="wpbe_meta_nonce" value="<?php echo  wp_create_nonce( 'wpbe_meta_nonce' ); ?>"  />  
+	<input type="hidden"  id="wpbe_meta_nonce" value="<?php echo esc_attr(wp_create_nonce( 'wpbe_meta_nonce' )); ?>"  />  
     <ul class="wpbe_fields" id="wpbe_meta_list">
 
         <?php
@@ -75,7 +76,7 @@ global $WPBE;
 function wpbe_meta_print_li($m) {
     ?>
     <li class="wpbe_options_li">
-        <a href="#" class="help_tip wpbe_drag_and_drope" title="<?php esc_html_e('drag and drop', 'bulk-editor') ?>"><img src="<?php echo WPBE_ASSETS_LINK ?>images/move.png" alt="<?php esc_html_e('move', 'bulk-editor') ?>" /></a>
+        <a href="#" class="help_tip wpbe_drag_and_drope" title="<?php echo esc_attr('drag and drop', 'bulk-editor') ?>"><img src="<?php echo esc_url(WPBE_ASSETS_LINK) ?>images/move.png" alt="<?php esc_html_e('move', 'bulk-editor') ?>" /></a>
 
         <div class="col-lg-4">
             <input type="text" name="wpbe_meta_fields[<?php echo esc_attr($m['meta_key']) ?>][meta_key]" value="<?php echo esc_attr($m['meta_key']) ?>" readonly="" class="wpbe_column_li_option wpbe_column_li_option1" />&nbsp;
@@ -87,7 +88,7 @@ function wpbe_meta_print_li($m) {
         </div>
         <div class="col-lg-2">
             <div class="select-wrap">
-                <select name="wpbe_meta_fields[<?php echo $m['meta_key'] ?>][edit_view]" class="wpbe_meta_view_selector">
+                <select name="wpbe_meta_fields[<?php echo esc_attr($m['meta_key']) ?>][edit_view]" class="wpbe_meta_view_selector">
                     <option <?php selected($m['edit_view'], 'textinput') ?> value="textinput"><?php esc_html_e('textinput', 'bulk-editor') ?></option>
                     <option <?php selected($m['edit_view'], 'popupeditor') ?> value="popupeditor"><?php esc_html_e('textarea', 'bulk-editor') ?></option>
                     <option <?php selected($m['edit_view'], 'switcher') ?> value="switcher"><?php esc_html_e('checkbox', 'bulk-editor') ?></option>
@@ -99,7 +100,7 @@ function wpbe_meta_print_li($m) {
         </div>
         <div class="col-lg-1">
             <div class="select-wrap" <?php if (in_array($m['edit_view'], array('popupeditor', 'switcher', 'meta_popup_editor', 'gallery_popup_editor', 'calendar'))): ?>style="display: none;"<?php endif; ?>>
-                <select name="wpbe_meta_fields[<?php echo $m['meta_key'] ?>][type]" class="wpbe_meta_type_selector">
+                <select name="wpbe_meta_fields[<?php echo esc_attr($m['meta_key']) ?>][type]" class="wpbe_meta_type_selector">
                     <option <?php selected($m['type'], 'string') ?> value="string"><?php esc_html_e('string', 'bulk-editor') ?></option>
                     <option <?php selected($m['type'], 'number') ?> value="number"><?php esc_html_e('number', 'bulk-editor') ?></option>
                 </select>
