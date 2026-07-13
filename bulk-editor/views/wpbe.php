@@ -469,13 +469,13 @@ if (empty(WPBE_HELPER::filter_post_types())) {
 
                                                                 <?php if ($f['field_type'] !== 'none'): ?>
                                                                     <?php if (isset($f['title_static']) AND $f['title_static']): ?>
-                                                                        <input type="text" name="wpbe_options[fields][<?php esc_attr($key) ?>][title]" value="<?php echo esc_attr($settings_fields[$key]['title']) ?>" readonly="" class="wpbe_column_li_option" /><br />
+                                                                        <input type="text" name="wpbe_options[fields][<?php echo esc_attr($key) ?>][title]" value="<?php echo esc_attr($settings_fields[$key]['title']) ?>" readonly="" class="wpbe_column_li_option" /><br />
                                                                     <?php else: ?>
-                                                                        <input type="text" name="wpbe_options[fields][<?php esc_attr($key) ?>][title]" value="<?php echo esc_attr($f['title']) ?>" class="wpbe_column_li_option" /><br />
+                                                                        <input type="text" name="wpbe_options[fields][<?php echo esc_attr($key) ?>][title]" value="<?php echo esc_attr($f['title']) ?>" class="wpbe_column_li_option" /><br />
                                                                     <?php endif; ?>
                                                                 <?php else: ?>
                                                                     <?php echo wp_kses_post($f['desc']) ?><br />
-                                                                    <input type="hidden" name="wpbe_options[fields][<?php esc_attr($key) ?>][title]" value="" /><br />
+                                                                    <input type="hidden" name="wpbe_options[fields][<?php echo esc_attr($key) ?>][title]" value="" /><br />
                                                                     <div class="wpbe-h10px"></div>
                                                                 <?php endif; ?>
 
@@ -484,13 +484,13 @@ if (empty(WPBE_HELPER::filter_post_types())) {
                                                                 <?php if (!in_array($key, array('__checker', 'ID')) AND in_array($current_user_role, apply_filters('wpbe_permit_special_roles', ['administrator']))): ?>
 
 
-                                                                        <input type="checkbox" value="1" disabled="" <?php checked($f['site_editor_visibility']) ?> class="site_editor_visibility" data-key="<?php echo esc_html($key) ?>" id="site_editor_visibility_<?php esc_attr($key) ?>" />
-                                                                        &nbsp;<label for="site_editor_visibility_<?php esc_attr($key) ?>"><?php esc_html_e('visible for the site editor', 'bulk-editor') ?>
+                                                                        <input type="checkbox" value="1" disabled="" <?php checked($f['site_editor_visibility']) ?> class="site_editor_visibility" data-key="<?php echo esc_html($key) ?>" id="site_editor_visibility_<?php echo esc_attr($key) ?>" />
+                                                                        &nbsp;<label for="site_editor_visibility_<?php echo esc_attr($key) ?>"><?php esc_html_e('visible for the site editor', 'bulk-editor') ?>
                                                                             <br /><small class="wpbe-free-version">(<?php esc_html_e('premium version', 'bulk-editor') ?>)</small></label><br />
 
                                                                
 
-                                                                    <input type="hidden" name="wpbe_options[fields][<?php esc_attr($key) ?>][site_editor_visibility]" value="<?php echo esc_attr($f['site_editor_visibility']) ?>" />
+                                                                    <input type="hidden" name="wpbe_options[fields][<?php echo esc_attr($key) ?>][site_editor_visibility]" value="<?php echo esc_attr($f['site_editor_visibility']) ?>" />
 
 
                                                                 <?php endif; ?>
@@ -523,9 +523,9 @@ if (empty(WPBE_HELPER::filter_post_types())) {
                                                                 );
                                                                 ?>
                                                                 <div class="wpbe_column_color_pickers">
-                                                                    <input type="text" name="wpbe_options[fields][<?php esc_attr($key) ?>][col_color]" value="<?php echo esc_attr($col_color) ?>" class="wpbe-color-picker" />
-                                                                    <input type="text" name="wpbe_options[fields][<?php esc_attr($key) ?>][txt_color]" value="<?php echo esc_attr($txt_color) ?>" class="wpbe-color-picker" />
-                                                                    <input type="number" name="wpbe_options[fields][<?php esc_attr($key) ?>][font_size]" placeholder="<?php esc_html_e('cell text or number size', 'bulk-editor') ?>" value="<?php echo esc_attr($font_size) ?>" />
+                                                                    <input type="text" name="wpbe_options[fields][<?php echo esc_attr($key) ?>][col_color]" value="<?php echo esc_attr($col_color) ?>" class="wpbe-color-picker" />
+                                                                    <input type="text" name="wpbe_options[fields][<?php echo esc_attr($key) ?>][txt_color]" value="<?php echo esc_attr($txt_color) ?>" class="wpbe-color-picker" />
+                                                                    <input type="number" name="wpbe_options[fields][<?php echo esc_attr($key) ?>][font_size]" placeholder="<?php esc_html_e('cell text or number size', 'bulk-editor') ?>" value="<?php echo esc_attr($font_size) ?>" />
                                                                 </div>
 
 
@@ -533,7 +533,7 @@ if (empty(WPBE_HELPER::filter_post_types())) {
 
                                                             <?php if (isset($f['move'])): ?>
                                                                 <!-------------------- always visible and not switchable ----------------------------->
-                                                                <input type="hidden" value="1" name="wpbe_options[fields][<?php esc_attr($key) ?>][show]" />
+                                                                <input type="hidden" value="1" name="wpbe_options[fields][<?php echo esc_attr($key) ?>][show]" />
                                                             <?php else: ?>
                                                                 <div class="col-lg-2 wpbe-text-align-right">
 
@@ -683,7 +683,7 @@ if (empty(WPBE_HELPER::filter_post_types())) {
                                                         ?>
                                                         <select name="wpbe_site_separate_settings" disabled>
                                                             <?php foreach ($opt as $key => $val) : ?>
-															<option <?php selected($key == $current_opt) ?> value="<?php esc_attr($key) ?>"><?php echo esc_html($val) ?></option>
+															<option <?php selected($key == $current_opt) ?> value="<?php echo esc_attr($key) ?>"><?php echo esc_html($val) ?></option>
                                                             <?php endforeach; ?>
                                                         </select>
 
@@ -720,7 +720,7 @@ if (empty(WPBE_HELPER::filter_post_types())) {
                                                         ?>
                                                         <select name="wpbe_show_text_editor" disabled>
                                                             <?php foreach ($opt as $key => $val) : ?>
-															<option <?php selected($key == $current_opt) ?> value="<?php esc_attr($key) ?>"><?php echo esc_html($val) ?></option>
+															<option <?php selected($key == $current_opt) ?> value="<?php echo esc_attr($key) ?>"><?php echo esc_html($val) ?></option>
                                                             <?php endforeach; ?>
                                                         </select>
 
@@ -1053,7 +1053,7 @@ if (empty(WPBE_HELPER::filter_post_types())) {
             <?php endif; ?>
 
             <?php if (!empty($colors['font_size'])): ?>
-                td[data-field="<?php esc_attr($key) ?>"] {
+                td[data-field="<?php echo esc_attr($key) ?>"] {
                     font-size: <?php echo esc_html($colors['font_size']) ?>px !important;
                     line-height: <?php echo esc_html($colors['font_size'] + intval($colors['font_size'] / 2)) ?>px !important;
                 }

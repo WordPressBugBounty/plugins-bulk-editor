@@ -7,7 +7,7 @@ Tags: bulk, bulk edit, bulk editor, posts editor, bulk delete
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 
 WOLF (formerly WPBE) - a WordPress plugin for managing posts, pages, and custom types easily. Perfect for real estate, cars, etc.
 
@@ -156,6 +156,9 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 
 
 == Changelog ==
+
+= 1.1.1 =
+* fixed issue with saving of options. After update to fix titles: go to tab Settings -> for each field remove broken title "-", click button Save
 
 = 1.1.0 =
 * security fix from wordpress.org
