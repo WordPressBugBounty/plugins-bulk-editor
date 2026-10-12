@@ -75,18 +75,26 @@ final class WPBE_FILTERS extends WPBE_EXT {
     }
 
     public function posts_txt_where($where = '') {
+        global $wpdb;
+
+        // Columns allowed in text search, the key goes into SQL as a column name
+        $allowed_keys = array('post_title', 'post_content', 'post_excerpt', 'post_name', 'post_password');
 
         $txt_where_sql = "";
 
-        if (!empty($_REQUEST['wpbe_txt_search'])) {
+        if (!empty($_REQUEST['wpbe_txt_search']) AND is_array($_REQUEST['wpbe_txt_search'])) {
             foreach ($_REQUEST['wpbe_txt_search'] as $skey => $svalue) {
+
+                if (!in_array($skey, $allowed_keys, true) OR !is_scalar($svalue)) {
+                    continue;
+                }
 
                 if (empty($svalue) AND $svalue !== "0") {
                     continue;
                 }
 
-                $behavior = $_REQUEST['wpbe_txt_search_behavior'][$skey];
-                $wpbe_text = wp_specialchars_decode(trim(urldecode($svalue)));
+                $behavior = isset($_REQUEST['wpbe_txt_search_behavior'][$skey]) ? sanitize_key($_REQUEST['wpbe_txt_search_behavior'][$skey]) : 'like';
+                $wpbe_text = wp_specialchars_decode(trim(urldecode(wp_unslash($svalue))));
 
                 //***
 
@@ -98,79 +106,67 @@ final class WPBE_FILTERS extends WPBE_EXT {
 
                 $wpbe_text = trim(WPBE_HELPER::strtolower($wpbe_text));
                 $wpbe_text = preg_replace('/\s+/', ' ', $wpbe_text);
-                //$wpbe_text = preg_quote($wpbe_text, '&');
-                //$wpbe_text = str_replace(' ', '?(.*)', $wpbe_text);
-                $wpbe_text = str_replace("\&#039;", "\'", $wpbe_text);
 
                 //http://dev.mysql.com/doc/refman/5.7/en/regexp.html
-                //***
-
-                $search_by_full_word = FALSE; //OPTION!!
-
-                if ($search_by_full_word) {
-                    $wpbe_text = '[[:<:]]' . $wpbe_text . '[[:>:]]';
-                }
-
-                //***
+                // Operator and pattern prefix/suffix for each behavior
+                $operator = 'REGEXP';
+                $prefix = '';
+                $suffix = '';
 
                 switch ($behavior) {
                     case 'exact':
-                        $text_where = "  LOWER({$skey}) = '__WPBE_TEXT__'";
+                        $operator = '=';
                         break;
 
                     case 'not':
-                        $text_where = "  LOWER({$skey}) NOT REGEXP '__WPBE_TEXT__'";
+                        $operator = 'NOT REGEXP';
                         break;
 
                     case 'begin':
-                        $text_where = "  LOWER({$skey}) REGEXP '^__WPBE_TEXT__'";
+                        $prefix = '^';
                         break;
 
                     case 'end':
-                        $text_where = "  LOWER({$skey}) REGEXP '__WPBE_TEXT__$'";
+                        $suffix = '$';
                         break;
+
                     case 'empty':
-                        $text_where = "  LOWER({$skey}) =''";
                         break;
+
                     default:
-                        //like
-                        $text_where = "  LOWER({$skey}) REGEXP '__WPBE_TEXT__'";
+                        $behavior = 'like';
                         break;
                 }
 
                 //***
 
-                if (substr_count($wpbe_text, '^') > 0) {
-                    $wpbe_text = explode('^', $wpbe_text);
+                if ($behavior === 'empty') {
+                    $text_where = " LOWER({$skey}) =''";
+                } elseif (substr_count($wpbe_text, '^') > 0) {
                     $sql_tpl = '(';
-
-                    //***
                     $not_been_not = 0; //for operation (!) at the end
-                    foreach ($wpbe_text as $st) {
-                        $sql = $text_where;
+
+                    foreach (explode('^', $wpbe_text) as $st) {
+                        $op = $operator;
                         $cond = 'OR';
-                        if (substr($st, 0,1) =='~') {
+                        if (substr($st, 0, 1) == '~') {
                             $st = substr($st, 1);
                             $cond = 'AND';
                         }
-                        if ($behavior == 'like') {
-                            if (substr($st, 0,1) == '!') {
-                                $st = substr($st, 1);
-                                $sql = str_replace('REGEXP', 'NOT REGEXP', $sql);
+                        if ($behavior == 'like' AND substr($st, 0, 1) == '!') {
+                            $st = substr($st, 1);
+                            $op = 'NOT REGEXP';
 
-                                if (!$not_been_not) {
-                                    $cond = ') AND (';
-                                } else {
-                                    $cond = 'AND';
-                                }
-                                $not_been_not += 1;
+                            if (!$not_been_not) {
+                                $cond = ') AND (';
+                            } else {
+                                $cond = 'AND';
                             }
+                            $not_been_not += 1;
                         }
 
-                        //***
-
-                        $tmp = $cond . ' ' . (str_replace('__WPBE_TEXT__', $st, $sql)) . ' ';
-                        $sql_tpl .= $tmp;
+                        // The search value is always bound through prepare(), never pasted into SQL
+                        $sql_tpl .= $cond . ' ' . $wpdb->prepare(" LOWER({$skey}) {$op} %s", $prefix . $st . $suffix) . ' ';
                     }
 
                     //***
@@ -181,9 +177,7 @@ final class WPBE_FILTERS extends WPBE_EXT {
 
                     $text_where = $sql_tpl;
                 } else {
-                    $sql = $text_where;
-                    $st = $wpbe_text;
-                    $text_where = str_replace('__WPBE_TEXT__', $st, $sql);
+                    $text_where = $wpdb->prepare(" LOWER({$skey}) {$operator} %s", $prefix . $wpbe_text . $suffix);
                 }
 
                 //***
@@ -195,11 +189,11 @@ final class WPBE_FILTERS extends WPBE_EXT {
 
             $txt_where_sql = trim($txt_where_sql, ' AND');
 
-            $where .= " AND ( " . $txt_where_sql . " ) ";
+            if (!empty($txt_where_sql)) {
+                $where .= " AND ( " . $txt_where_sql . " ) ";
+            }
         }
 
-        //***
-        //echo $where;
         return $where;
     }
 
@@ -213,18 +207,28 @@ final class WPBE_FILTERS extends WPBE_EXT {
     }
 
     public function wpbe_post_from_to($where = '') {
+        global $wpdb;
 
-        if (isset($_REQUEST['wpbe_from']) AND ! empty($_REQUEST['wpbe_from'])) {
+        // Only these wp_posts columns can be ranged, values always go through prepare()
+        $allowed_keys = array('menu_order', 'post_parent', 'post_date', 'post_date_gmt', 'post_modified', 'post_modified_gmt');
+
+        if (isset($_REQUEST['wpbe_from']) AND ! empty($_REQUEST['wpbe_from']) AND is_array($_REQUEST['wpbe_from'])) {
             foreach ($_REQUEST['wpbe_from'] as $ff => $value) {
-                $where .= " AND {$ff} >= '{$value}'";
+                if (!in_array($ff, $allowed_keys, true) OR !is_scalar($value) OR $value === '') {
+                    continue;
+                }
+                $where .= $wpdb->prepare(" AND {$ff} >= %s", wp_unslash($value));
             }
         }
 
 
-        if (isset($_REQUEST['wpbe_to']) AND ! empty($_REQUEST['wpbe_to'])) {
+        if (isset($_REQUEST['wpbe_to']) AND ! empty($_REQUEST['wpbe_to']) AND is_array($_REQUEST['wpbe_to'])) {
             foreach ($_REQUEST['wpbe_to'] as $ff => $value) {
+                if (!in_array($ff, $allowed_keys, true) OR !is_scalar($value)) {
+                    continue;
+                }
                 if (intval($value) > 0) {
-                    $where .= " AND {$ff} <= '{$value}'";
+                    $where .= $wpdb->prepare(" AND {$ff} <= %s", wp_unslash($value));
                 }
             }
         }
