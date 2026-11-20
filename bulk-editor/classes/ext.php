@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-//https://bulk-editor.pro/document/creating-an-extension/
+//https://bulk-editor.pro/document/creating-a-custom-extensions
 abstract class WPBE_EXT {
 
     protected $slug;

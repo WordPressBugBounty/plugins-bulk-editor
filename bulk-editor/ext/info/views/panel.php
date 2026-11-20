@@ -52,26 +52,25 @@ $wpbe_link_allowed = array(
 <h4><?php esc_html_e('Some little hints', 'bulk-editor') ?>:</h4>
 
 <ul>
-    <li><span class="icon-right"></span>&nbsp;<?php esc_html_e('If to click on an empty space of the black wp-admin bar, it will get you back to the top of the page', 'bulk-editor') ?></li>
-
-
-    <li><span class="icon-right"></span>&nbsp;<?php        
+    <li><span class="icon-right"></span>&nbsp;<?php
         printf(
-			/* translators: %s: link to cyr-to-lat plugin */
-			esc_html__('If your site is on the Russian language you should install %s for the correct working of WOLF with Cyrillic', 'bulk-editor'), wp_kses(WPBE_HELPER::draw_link(array(
-                    'href' => 'https://ru.wordpress.org/plugins/cyr3lat/',
-                    'title' => esc_html__('this plugin', 'bulk-editor'),
+			/* translators: %s: link to the MCP server documentation */
+			esc_html__('Can I connect an AI assistant (Claude, ChatGPT, Cursor and others) to WOLF and edit posts by chatting with it? Yes - %s', 'bulk-editor'), wp_kses(WPBE_HELPER::draw_link(array(
+                    'href' => 'https://bulk-editor.pro/document/mcp-server/',
+                    'title' => esc_html__('here is how to connect it', 'bulk-editor'),
                     'target' => '_blank'
         )), $wpbe_link_allowed))
         ?>
     </li>
+
+    <li><span class="icon-right"></span>&nbsp;<?php esc_html_e('If to click on an empty space of the black wp-admin bar, it will get you back to the top of the page', 'bulk-editor') ?></li>
 
 
     <li><span class="icon-right"></span>&nbsp;<?php        
         printf(
 			/* translators: %s: link to binded editing howto */
 			esc_html__('How to set the same value for some posts on the same time - %s', 'bulk-editor'), wp_kses(WPBE_HELPER::draw_link(array(
-                    'href' => 'https://bulk-editor.pro/howto/how-to-set-the-same-value-for-some-posts-on-the-same-time/',
+                    'href' => 'https://bulk-editor.pro/how-to-set-the-same-value-for-some-posts-on-the-same-time/',
                     'title' => esc_html__('binded editing', 'bulk-editor'),
                     'target' => '_blank'
         )), $wpbe_link_allowed))
@@ -134,7 +133,12 @@ $wpbe_link_allowed = array(
 
 <br>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xQISdAtm2KA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<?php // the short demo with music first, the detailed walkthrough of 2019 below it ?>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cYXqcF-oBLE" title="WOLF - WordPress Posts Bulk Editor: demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br><br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xQISdAtm2KA" title="WOLF - WordPress Posts Bulk Editor: detailed walkthrough" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br>
 

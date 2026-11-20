@@ -386,7 +386,25 @@ final class WPBE_EXPORT extends WPBE_EXT {
 		return $data;
 	}
 
-	private function get_post_fields($post_id, $fields) {
+	/**
+	 * The header row of a CSV export, the same titles the Export tab writes
+	 * (without its hand made quoting - fputcsv() quotes). Public for the MCP
+	 * export, which must not drift away from what this screen produces.
+	 */
+	public function get_csv_titles($fields) {
+		$titles = array();
+
+		foreach ($fields as $field_key => $field) {
+			if (!in_array($field_key, $this->exlude_keys)) {
+				$titles[] = ('meta' === $field['field_type']) ? 'Meta: ' . $field_key : $field['title'];
+			}
+		}
+
+		return $titles;
+	}
+
+	//public for the MCP export, see get_csv_titles()
+	public function get_post_fields($post_id, $fields) {
 		$answer = array();
 		if (!empty($fields)) {
 
@@ -485,13 +503,15 @@ final class WPBE_EXPORT extends WPBE_EXT {
 	//**********************************************************************
 
 	public function get_active_fields() {
-		static $fields_observed = array(); //cache
+		static $fields_observed = array(); //cache, per post type: one MCP request can export several
 
-		if (empty($fields_observed)) {
-			$fields_observed = $this->settings->active_fields;
+		$pt = $this->settings->current_post_type;
+
+		if (empty($fields_observed[$pt])) {
+			$fields_observed[$pt] = $this->settings->active_fields;
 		}
 
-		return $fields_observed;
+		return $fields_observed[$pt];
 	}
 
 	public function check_export_files() {

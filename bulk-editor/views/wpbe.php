@@ -54,6 +54,27 @@ if (empty(WPBE_HELPER::filter_post_types())) {
 
             </div>
 
+             <?php
+             //the MCP mark of the header, coloured by the state of the MCP server: red off, amber on without
+             //two-factor connection, green on with it. Next to Upgrade when there is one, as BEAR has it, else
+             //on its own at the right edge
+             $wpbe_mcp_on = class_exists('WPBE_MCP_BOOT') && WPBE_MCP_BOOT::option('mcp_enabled');
+             $wpbe_mcp_2fa = $wpbe_mcp_on && WPBE_MCP_BOOT::two_factor_on();
+             if (!$wpbe_mcp_on) {
+                 $wpbe_mcp_color = '#d63638';
+                 $wpbe_mcp_title = esc_attr__('MCP server is off. Connect your AI assistant to WOLF: switch it on in the Settings tab - click to read how', 'bulk-editor');
+             } elseif (!$wpbe_mcp_2fa) {
+                 $wpbe_mcp_color = '#dba617';
+                 $wpbe_mcp_title = esc_attr__('MCP server is on, two-factor connection is off - switching it on in the Settings tab is recommended. Click to read how to connect your AI assistant', 'bulk-editor');
+             } else {
+                 $wpbe_mcp_color = '#00a32a';
+                 $wpbe_mcp_title = esc_attr__('MCP server is on, with two-factor connection. Click to read how to connect your AI assistant', 'bulk-editor');
+             }
+             $wpbe_mcp_link = '<a href="https://bulk-editor.pro/document/mcp-server/" target="_blank" rel="noopener" class="wpbe-mcp-link" title="' . $wpbe_mcp_title . '" aria-label="' . $wpbe_mcp_title . '">'
+                     . '<svg width="40" height="16" viewBox="0 0 40 16" role="img" aria-hidden="true" focusable="false"><text x="20" y="13" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="1" fill="' . esc_attr($wpbe_mcp_color) . '">MCP</text></svg>'
+                     . '</a>';
+             $wpbe_mcp_link_shown = false;
+             ?>
              <?php if ($WPBE->show_notes): ?>
                 <?php if (time() < 1733094000): ?>
                     <div>
@@ -65,11 +86,17 @@ if (empty(WPBE_HELPER::filter_post_types())) {
                 <?php else: ?>
                     <div>
                         <br><a href="https://bulk-editor.pro/downloads" target="_blank" class="wpbe-button button"><span class="icon-upload"></span><?php esc_html_e("Upgrade", 'bulk-editor') ?></a>
+                        <?php echo $wpbe_mcp_link; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built above from escaped parts; wp_kses_post() would strip the svg
+                        $wpbe_mcp_link_shown = true; ?>
                     </div>
                 <?php endif; ?>
             <?php endif; ?>
 
             <?php echo wp_kses_post(apply_filters('wpbe_right_top_notice', '')) ?>
+
+            <?php if (!$wpbe_mcp_link_shown): ?>
+                <?php echo $wpbe_mcp_link; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built above from escaped parts ?>
+            <?php endif; ?>
 
         </div>
 
@@ -335,7 +362,7 @@ if (empty(WPBE_HELPER::filter_post_types())) {
                                                     <h4><?php esc_html_e('REMEMBER: sequence of data maybe have sense (and maybe not), so be attentive! Do not mix in the same popup window data of array and object data!', 'bulk-editor') ?></h4>
                                                 </div>
                                                 <div class="col-lg-2">
-                                                    &nbsp;<a href="https://bulk-editor.pro/document/bulk-edit-of-serialized-jsoned-meta-data/" target="_blank" class="button button-primary wpbe-info-btn"><span class="icon-book"></span>&nbsp;<?php esc_html_e('Documentation', 'bulk-editor') ?></a>
+                                                    &nbsp;<a href="https://bulk-editor.pro/document/bulk-edit-of-serialized-jsoned-wordpress-posts-meta-data" target="_blank" class="button button-primary wpbe-info-btn"><span class="icon-book"></span>&nbsp;<?php esc_html_e('Documentation', 'bulk-editor') ?></a>
                                                 </div>
                                             </div>
 
@@ -483,12 +510,18 @@ if (empty(WPBE_HELPER::filter_post_types())) {
 
                                                                 <?php if (!in_array($key, array('__checker', 'ID')) AND in_array($current_user_role, apply_filters('wpbe_permit_special_roles', ['administrator']))): ?>
 
+                                                                    <?php if ($show_notes): ?>
 
                                                                         <input type="checkbox" value="1" disabled="" <?php checked($f['site_editor_visibility']) ?> class="site_editor_visibility" data-key="<?php echo esc_html($key) ?>" id="site_editor_visibility_<?php echo esc_attr($key) ?>" />
                                                                         &nbsp;<label for="site_editor_visibility_<?php echo esc_attr($key) ?>"><?php esc_html_e('visible for the site editor', 'bulk-editor') ?>
                                                                             <br /><small class="wpbe-free-version">(<?php esc_html_e('premium version', 'bulk-editor') ?>)</small></label><br />
 
-                                                               
+                                                                    <?php else: ?>
+
+                                                                        <input type="checkbox" value="1" <?php checked($f['site_editor_visibility']) ?> class="site_editor_visibility" data-key="<?php echo esc_html($key) ?>" id="site_editor_visibility_<?php echo esc_attr($key) ?>" />
+                                                                        &nbsp;<label for="site_editor_visibility_<?php echo esc_attr($key) ?>"><?php esc_html_e('visible for the site editor', 'bulk-editor') ?></label><br />
+
+                                                                    <?php endif; ?>
 
                                                                     <input type="hidden" name="wpbe_options[fields][<?php echo esc_attr($key) ?>][site_editor_visibility]" value="<?php echo esc_attr($f['site_editor_visibility']) ?>" />
 
@@ -676,12 +709,13 @@ if (empty(WPBE_HELPER::filter_post_types())) {
                                                             1 => esc_html__('Yes', 'bulk-editor'),
                                                         );
 
+                                                        if ($show_notes) {
                                                             unset($opt[1]);
-                                                        
+                                                        }
 
                                                         $current_opt = WPBE_HELPER::get_site_separate_settings();
                                                         ?>
-                                                        <select name="wpbe_site_separate_settings" disabled>
+                                                        <select name="wpbe_site_separate_settings" <?php if ($show_notes): ?>disabled<?php endif; ?>>
                                                             <?php foreach ($opt as $key => $val) : ?>
 															<option <?php selected($key == $current_opt) ?> value="<?php echo esc_attr($key) ?>"><?php echo esc_html($val) ?></option>
                                                             <?php endforeach; ?>
@@ -713,12 +747,13 @@ if (empty(WPBE_HELPER::filter_post_types())) {
                                                             1 => esc_html__('Yes', 'bulk-editor'),
                                                         );
 
+                                                        if ($show_notes) {
                                                             unset($opt[1]);
-                                                        
+                                                        }
 
                                                         $current_opt = WPBE_HELPER::get_show_text_editor();
                                                         ?>
-                                                        <select name="wpbe_show_text_editor" disabled>
+                                                        <select name="wpbe_show_text_editor" <?php if ($show_notes): ?>disabled<?php endif; ?>>
                                                             <?php foreach ($opt as $key => $val) : ?>
 															<option <?php selected($key == $current_opt) ?> value="<?php echo esc_attr($key) ?>"><?php echo esc_html($val) ?></option>
                                                             <?php endforeach; ?>
@@ -737,7 +772,17 @@ if (empty(WPBE_HELPER::filter_post_types())) {
                                             </div>
                                         </div>										
 
+                                        <?php
+                                        // the MCP server block, administrators only, drawn by the MCP
+                                        // extension itself so it escapes its own output
+                                        if (class_exists('WPBE_MCP_BOOT')) {
+                                            WPBE_MCP_BOOT::render_settings();
+                                        }
+                                        ?>
+
                                     <?php endif; ?>
+
+                                    <?php do_action('wpbe_general_settings_after'); //the MCP grant list and the personal MCP block, see ext/mcp/access.php ?>
 
                                     <hr />
 
@@ -1010,8 +1055,6 @@ if (empty(WPBE_HELPER::filter_post_types())) {
                 <h3><?php esc_html_e("WPCS - WordPress Currency Switcher", 'bulk-editor') ?>:</h3>
                 <a href="https://wp-currency.com/" target="_blank"><img src="<?php echo esc_url(WPBE_LINK) ?>assets/images/wpcs_banner.png" width="300" alt="<?php esc_html_e("WPCS - WordPress Currency Switcher", 'bulk-editor'); ?>" /></a>
             </td>
-
-
 
         </tr>
     </table>

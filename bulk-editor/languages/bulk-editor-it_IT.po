@@ -1,0 +1,2273 @@
+# Copyright (C) 2026 realmag777
+# This file is distributed under the GPLv2 or later и License URI: https://www.gnu.org/licenses/gpl-2.0.html.
+msgid ""
+msgstr ""
+"Project-Id-Version: WOLF - WordPress Posts Bulk Editor and Manager Professional 2.1.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bulk-editor\n"
+"Last-Translator: realmag777\n"
+"Language-Team: Italian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-20T14:15:27+00:00\n"
+"PO-Revision-Date: 2026-11-20 15:00+0000\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: bulk-editor\n"
+"Language: it_IT\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Plugin Name of the plugin
+#: index.php
+msgid "WOLF - WordPress Posts Bulk Editor and Manager Professional"
+msgstr "WOLF - WordPress Posts Bulk Editor and Manager Professional"
+
+#. Plugin URI of the plugin
+#: index.php
+msgid "https://bulk-editor.pro/"
+msgstr "https://bulk-editor.pro/"
+
+#. Description of the plugin
+#: index.php
+msgid "Tools for managing and bulk edit posts, pages and all custom types data in the reliable and flexible way! Be professionals with managing data of your site!"
+msgstr "Strumenti per gestire e modificare in blocco articoli, pagine e dati di tutti i tipi di contenuto personalizzati, in modo affidabile e flessibile! Gestisci i dati del tuo sito da vero professionista!"
+
+#. Author of the plugin
+#: index.php
+msgid "realmag777"
+msgstr "realmag777"
+
+#. Author URI of the plugin
+#: index.php
+msgid "https://pluginus.net/"
+msgstr "https://pluginus.net/"
+
+#: classes/helper.php:511
+msgid "no rounding"
+msgstr "nessun arrotondamento"
+
+#: classes/models/posts.php:159
+msgid "forbidden"
+msgstr "vietato"
+
+#: classes/models/profiles.php:45
+msgid "Default"
+msgstr "Predefinito"
+
+#: data/fields.php:29
+msgid "Checkboxes for the posts selection. Use SHIFT button on your keyboard to select multiple rows."
+msgstr "Caselle per la selezione degli articoli. Tieni premuto MAIUSC sulla tastiera per selezionare più righe."
+
+#: data/fields.php:53
+#: ext/filters/views/panel.php:412
+msgid "Thumbnail"
+msgstr "Miniatura"
+
+#: data/fields.php:66
+#: ext/filters/filters.php:648
+msgid "Title"
+msgstr "Titolo"
+
+#: data/fields.php:78
+#: views/elements/draw_popup_editor_btn.php:7
+msgid "Content"
+msgstr "Contenuto"
+
+#: data/fields.php:89
+msgid "Excerpt"
+msgstr "Riassunto"
+
+#: data/fields.php:101
+msgid "Slug"
+msgstr "Slug"
+
+#: data/fields.php:115
+msgid "Status"
+msgstr "Stato"
+
+#: data/fields.php:128
+#: ext/filters/views/panel.php:323
+msgid "Comment status"
+msgstr "Stato dei commenti"
+
+#: data/fields.php:129
+msgid "Can users comment post or not."
+msgstr "Gli utenti possono commentare l'articolo o no."
+
+#: data/fields.php:135
+#: data/fields.php:154
+msgid "Open"
+msgstr "Aperti"
+
+#: data/fields.php:136
+#: data/fields.php:155
+msgid "Closed"
+msgstr "Chiusi"
+
+#: data/fields.php:147
+#: ext/filters/views/panel.php:339
+msgid "Ping status"
+msgstr "Stato dei ping"
+
+#: data/fields.php:148
+msgid "A ping is a [this site has new content] notification that invites search engine bots to visit your blog."
+msgstr "Un ping è una notifica [questo sito ha nuovi contenuti] che invita i bot dei motori di ricerca a visitare il tuo blog."
+
+#: data/fields.php:166
+msgid "Send trackbacks to"
+msgstr "Invia trackback a"
+
+#: data/fields.php:167
+msgid "Separate multiple URLs with spaces. Ping status should be open! Remove 2 links separated by space, save. After opening you will not see links as they had been pinged! No sense for roll back, its sending is instant. Trackbacks are a way to notify legacy blog systems that you’ve linked to them. If you link other WordPress sites, they’ll be notified automatically using pingbacks, no other action necessary. Do not use these fields for something else. They are parsed many times in core code (69 matches for to_ping); their format is fixed."
+msgstr "Separa più URL con spazi. Lo stato dei ping deve essere aperto! Rimuovi 2 link separati da uno spazio e salva: riaprendo non vedrai più i link, perché sono già stati pingati! Il ripristino è inutile, l'invio è immediato. I trackback servono a notificare i vecchi sistemi di blog che hai inserito un link verso di loro. Se linki altri siti WordPress, vengono avvisati automaticamente tramite pingback, senza altre azioni. Non usare questi campi per altro scopo: vengono analizzati molte volte nel codice del core (69 occorrenze di to_ping) e il loro formato è fisso."
+
+#: data/fields.php:194
+msgid "Post password"
+msgstr "Password dell'articolo"
+
+#: data/fields.php:195
+msgid "Password for private posts"
+msgstr "Password per gli articoli privati"
+
+#: data/fields.php:208
+msgid "Menu order"
+msgstr "Ordine del menu"
+
+#: data/fields.php:209
+msgid "Custom ordering position."
+msgstr "Posizione di ordinamento personalizzata."
+
+#: data/fields.php:221
+msgid "Author"
+msgstr "Autore"
+
+#: data/fields.php:234
+msgid "Date Published"
+msgstr "Data di pubblicazione"
+
+#: data/fields.php:247
+msgid "Date Published GMT"
+msgstr "Data di pubblicazione GMT"
+
+#: data/fields.php:261
+msgid "Date modified"
+msgstr "Data di modifica"
+
+#: data/fields.php:274
+msgid "Date modified GMT"
+msgstr "Data di modifica GMT"
+
+#: data/fields.php:287
+msgid "Post parent"
+msgstr "Genitore dell'articolo"
+
+#: data/fields.php:301
+msgid "Post type"
+msgstr "Tipo di contenuto"
+
+#: data/fields.php:316
+#: ext/filters/views/panel.php:355
+msgid "Post mime type"
+msgstr "Tipo MIME dell'articolo"
+
+#: data/fields.php:317
+msgid "Not in bulk edit as there is no built-uploader here, so no sense change mime type. Filtering only! The function is designed specifically for attached records."
+msgstr "Non disponibile nella modifica in blocco: qui non c'è un uploader integrato, quindi cambiare il tipo MIME non ha senso. Solo filtro! La funzione è pensata per i record allegati."
+
+#: data/fields.php:331
+msgid "Sticky"
+msgstr "In evidenza"
+
+#: data/fields.php:332
+msgid "Stick this post to the front page"
+msgstr "Fissa questo articolo in prima pagina"
+
+#: data/fields.php:338
+#: data/settings.php:38
+#: data/settings.php:48
+#: data/settings.php:58
+#: data/settings.php:68
+#: ext/filters/views/panel.php:498
+#: ext/mcp/bootstrap.php:1086
+#: ext/meta/meta.php:181
+#: ext/meta/meta.php:357
+#: views/wpbe.php:709
+#: views/wpbe.php:747
+msgid "Yes"
+msgstr "Sì"
+
+#: data/fields.php:339
+#: data/settings.php:39
+#: data/settings.php:49
+#: data/settings.php:59
+#: data/settings.php:69
+#: ext/filters/views/panel.php:499
+#: ext/mcp/bootstrap.php:1085
+#: ext/meta/meta.php:182
+#: ext/meta/meta.php:358
+#: views/wpbe.php:708
+#: views/wpbe.php:746
+msgid "No"
+msgstr "No"
+
+#: data/settings.php:10
+msgid "Default posts count per page"
+msgstr "Numero predefinito di articoli per pagina"
+
+#: data/settings.php:11
+msgid "How many rows shows per page in tab Posts Editor. Max possible value is 100!"
+msgstr "Quante righe mostrare per pagina nella scheda Editor degli articoli. Il valore massimo è 100!"
+
+#: data/settings.php:16
+msgid "Default sort by"
+msgstr "Ordinamento predefinito per"
+
+#: data/settings.php:17
+msgid "Select column by which posts sorting is going after plugin page loaded"
+msgstr "Seleziona la colonna per cui ordinare gli articoli dopo il caricamento della pagina del plugin"
+
+#: data/settings.php:23
+msgid "Default sort"
+msgstr "Ordinamento predefinito"
+
+#: data/settings.php:24
+msgid "Select sort direction for Default sort"
+msgstr "Seleziona la direzione dell'ordinamento predefinito"
+
+#: data/settings.php:33
+msgid "Show button in admin bar"
+msgstr "Mostra il pulsante nella barra di amministrazione"
+
+#: data/settings.php:34
+msgid "Show Bulk Editor button in admin bar for quick access to the Posts Editor"
+msgstr "Mostra il pulsante Bulk Editor nella barra di amministrazione per accedere rapidamente all'Editor degli articoli"
+
+#: data/settings.php:43
+msgid "Show thumbnail preview"
+msgstr "Mostra l'anteprima della miniatura"
+
+#: data/settings.php:44
+msgid "Show bigger thumbnail preview on mouse over"
+msgstr "Mostra una miniatura più grande al passaggio del mouse"
+
+#: data/settings.php:53
+msgid "Load beauty switchers"
+msgstr "Carica gli interruttori grafici"
+
+#: data/settings.php:54
+msgid "Load beauty switchers instead of checkboxes in the Posts Editor."
+msgstr "Carica gli interruttori grafici al posto delle caselle nell'Editor degli articoli."
+
+#: data/settings.php:63
+msgid "Use gutenberg"
+msgstr "Usa Gutenberg"
+
+#: data/settings.php:64
+msgid "Allows to edit content with the gutenberg editor if its enabled for the selected post type"
+msgstr "Permette di modificare il contenuto con l'editor Gutenberg se è attivo per il tipo di contenuto selezionato"
+
+#: data/settings.php:73
+msgid "Add fields to the quick search"
+msgstr "Aggiungi campi alla ricerca rapida"
+
+#: data/settings.php:74
+msgid "Adds more fields to quick search fields drop-down on the tools panel. Works only for text fields. Syntax: post_name:Post slug,post_content:Content"
+msgstr "Aggiunge altri campi all'elenco a discesa della ricerca rapida nel pannello degli strumenti. Funziona solo con i campi di testo. Sintassi: post_name:Slug dell'articolo,post_content:Contenuto"
+
+#: data/settings.php:79
+msgid "Override meta checkbox"
+msgstr "Sostituisci valori della casella meta"
+
+#: data/settings.php:80
+msgid "By default, the checkbox works with 1 and 0. If you need to redefine these values for example to \"yes\" or \"true\". Syntax: meta_key1:yes,meta_key2:true"
+msgstr "Di default la casella funziona con 1 e 0. Se devi ridefinire questi valori, ad esempio in \"yes\" o \"true\". Sintassi: meta_key1:yes,meta_key2:true"
+
+#: ext/bulk/bulk.php:34
+msgid "Bulk Edit"
+msgstr "Modifica in blocco"
+
+#: ext/bulk/bulk.php:45
+msgid "Will be edited next:"
+msgstr "Verranno modificati:"
+
+#. translators: %s: name
+#: ext/bulk/bulk.php:49
+#, php-format
+msgid "Sure? Delete [%s]?"
+msgstr "Sicuro? Eliminare [%s]?"
+
+#: ext/bulk/bulk.php:51
+#: ext/bulk/views/panel.php:116
+msgid "Bulk deleting"
+msgstr "Eliminazione in blocco"
+
+#. translators: %s: name
+#: ext/bulk/bulk.php:55
+#, php-format
+msgid "[%s](s) deleted!"
+msgstr "[%s]: eliminazione completata!"
+
+#: ext/bulk/bulk.php:57
+msgid "Bulk editing"
+msgstr "Modifica in blocco"
+
+#. translators: %s: name
+#: ext/bulk/bulk.php:61
+#, php-format
+msgid "[%s](s) edited! Table redrawing ..."
+msgstr "[%s]: modifica completata! Ridisegno della tabella ..."
+
+#. translators: %s: name(s)
+#: ext/bulk/bulk.php:66
+#, php-format
+msgid "[%s](s) edited!"
+msgstr "[%s]: modifica completata!"
+
+#: ext/bulk/bulk.php:68
+msgid "ATTENTION: Bulk operation is going!"
+msgstr "ATTENZIONE: operazione in blocco in corso!"
+
+#: ext/bulk/bulk.php:77
+#: ext/info/views/panel.php:74
+msgid "binded editing"
+msgstr "modifica collegata"
+
+#. translators: %s: name of fileds
+#: ext/bulk/bulk.php:96
+#, php-format
+msgid "In FREE version of the plugin you can change only next fields: %s"
+msgstr "Nella versione FREE del plugin puoi modificare solo questi campi: %s"
+
+#. translators: 1: post type name, 2: post type name
+#: ext/bulk/bulk.php:104
+#, php-format
+msgid "In this mode to the all selected [%1$s](s) will be set the value of a [%2$s] field which been edited"
+msgstr "In questa modalità a tutti i [%1$s] selezionati verrà assegnato il valore del campo [%2$s] che hai modificato"
+
+#: ext/bulk/bulk.php:120
+msgid "Select post type you want to manage"
+msgstr "Seleziona il tipo di contenuto da gestire"
+
+#: ext/bulk/bulk.php:639
+msgid "title"
+msgstr "titolo"
+
+#: ext/bulk/bulk.php:643
+msgid "content"
+msgstr "contenuto"
+
+#: ext/bulk/bulk.php:647
+msgid "excerpt"
+msgstr "riassunto"
+
+#: ext/bulk/bulk.php:651
+msgid "slug"
+msgstr "slug"
+
+#: ext/bulk/bulk.php:655
+msgid "password"
+msgstr "password"
+
+#: ext/bulk/bulk.php:659
+msgid "send trackbacks to"
+msgstr "invia trackback a"
+
+#: ext/bulk/bulk.php:666
+msgid "post status"
+msgstr "stato dell'articolo"
+
+#: ext/bulk/bulk.php:672
+msgid "post type"
+msgstr "tipo di contenuto"
+
+#: ext/bulk/bulk.php:678
+msgid "comment status"
+msgstr "stato dei commenti"
+
+#: ext/bulk/bulk.php:684
+msgid "ping status"
+msgstr "stato dei ping"
+
+#: ext/bulk/bulk.php:693
+msgid "sticky posts"
+msgstr "articoli in evidenza"
+
+#: ext/bulk/bulk.php:702
+#: ext/bulk/bulk.php:710
+#: ext/bulk/bulk.php:723
+#: ext/bulk/bulk.php:735
+#: ext/bulk/views/panel.php:554
+#: ext/meta/meta.php:329
+msgid "increase by value"
+msgstr "aumenta del valore"
+
+#: ext/bulk/bulk.php:703
+#: ext/bulk/bulk.php:711
+#: ext/bulk/bulk.php:724
+#: ext/bulk/bulk.php:736
+#: ext/bulk/views/panel.php:555
+#: ext/meta/meta.php:330
+msgid "decrease by value"
+msgstr "diminuisci del valore"
+
+#: ext/bulk/bulk.php:704
+#: ext/bulk/bulk.php:725
+#: ext/meta/meta.php:331
+msgid "increase by %"
+msgstr "aumenta del %"
+
+#: ext/bulk/bulk.php:705
+#: ext/bulk/bulk.php:726
+#: ext/meta/meta.php:332
+msgid "decrease by %"
+msgstr "diminuisci del %"
+
+#: ext/bulk/bulk.php:706
+#: ext/bulk/bulk.php:713
+#: ext/bulk/bulk.php:727
+#: ext/bulk/bulk.php:737
+#: ext/bulk/views/panel.php:553
+#: ext/meta/meta.php:328
+msgid "set new"
+msgstr "imposta nuovo"
+
+#: ext/bulk/bulk.php:712
+#: ext/history/views/list.php:109
+#: ext/history/views/list.php:113
+#: ext/meta/views/panel.php:110
+#: index.php:307
+msgid "delete"
+msgstr "elimina"
+
+#: ext/bulk/bulk.php:720
+msgid "post parent"
+msgstr "genitore dell'articolo"
+
+#: ext/bulk/bulk.php:732
+msgid "menu order"
+msgstr "ordine del menu"
+
+#. translators: %s: posts selection
+#: ext/bulk/views/panel.php:14
+#, php-format
+msgid "Bulk editing will be applied to: %s"
+msgstr "La modifica in blocco verrà applicata a: %s"
+
+#. translators: %s: posts selection
+#. translators: %s: selection
+#: ext/bulk/views/panel.php:14
+#: ext/export/views/panel.php:14
+#: index.php:363
+#, php-format
+msgid "all the [%s] on the site"
+msgstr "tutti i [%s] del sito"
+
+#: ext/bulk/views/panel.php:27
+msgid "text"
+msgstr "testo"
+
+#: ext/bulk/views/panel.php:44
+msgid "numeric"
+msgstr "numerico"
+
+#: ext/bulk/views/panel.php:59
+msgid "statuses and types"
+msgstr "stati e tipi"
+
+#: ext/bulk/views/panel.php:107
+msgid "Do Bulk Edit"
+msgstr "Avvia modifica in blocco"
+
+#: ext/bulk/views/panel.php:108
+msgid "terminate bulk operation"
+msgstr "interrompi operazione in blocco"
+
+#. translators: %s: name
+#: ext/bulk/views/panel.php:122
+#, php-format
+msgid "Delete [%s]!"
+msgstr "Elimina [%s]!"
+
+#: ext/bulk/views/panel.php:130
+msgid "Notes"
+msgstr "Note"
+
+#: ext/bulk/views/panel.php:133
+msgid "In red containers wrapped fields which are not possible modify in bulk in FREE version of the plugin!"
+msgstr "I campi racchiusi in contenitori rossi non possono essere modificati in blocco nella versione FREE del plugin!"
+
+#: ext/bulk/views/panel.php:136
+msgid "In the case of an aborted bulk-operation you can roll back changes in the tab History"
+msgstr "Se un'operazione in blocco viene interrotta, puoi annullare le modifiche nella scheda Cronologia"
+
+#. translators: %s: link to backup plugin
+#: ext/bulk/views/panel.php:140
+#, php-format
+msgid "Time by time (one time per week for example) - make the backup of your site database. For example by %s"
+msgstr "Ogni tanto (ad esempio una volta a settimana) fai un backup del database del sito. Ad esempio con %s"
+
+#: ext/bulk/views/panel.php:143
+msgid "this plugin"
+msgstr "questo plugin"
+
+#: ext/bulk/views/panel.php:150
+#: ext/export/views/panel.php:78
+#: ext/filters/views/panel.php:47
+#: index.php:288
+#: views/wpbe.php:365
+#: views/wpbe.php:425
+msgid "Documentation"
+msgstr "Documentazione"
+
+#: ext/bulk/views/panel.php:186
+#: ext/bulk/views/panel.php:300
+#: ext/bulk/views/panel.php:463
+#: ext/bulk/views/panel.php:517
+#: ext/bulk/views/panel.php:578
+#: ext/bulk/views/panel.php:620
+#: ext/bulk/views/panel.php:663
+msgid "select it to use"
+msgstr "selezionalo per usarlo"
+
+#: ext/bulk/views/panel.php:217
+#: ext/bulk/views/panel.php:251
+msgid "variable"
+msgstr "variabile"
+
+#: ext/bulk/views/panel.php:218
+#: ext/bulk/views/panel.php:252
+msgid "TITLE"
+msgstr "TITOLO"
+
+#: ext/bulk/views/panel.php:220
+#: ext/bulk/views/panel.php:254
+msgid "MENU ORDER"
+msgstr "ORDINE DEL MENU"
+
+#: ext/bulk/views/panel.php:226
+#: ext/bulk/views/panel.php:481
+msgid "append"
+msgstr "aggiungi in coda"
+
+#: ext/bulk/views/panel.php:227
+msgid "prepend"
+msgstr "aggiungi in testa"
+
+#: ext/bulk/views/panel.php:228
+#: views/elements/multi_select.php:43
+msgid "new"
+msgstr "nuovo"
+
+#: ext/bulk/views/panel.php:229
+#: ext/bulk/views/panel.php:482
+msgid "replace"
+msgstr "sostituisci"
+
+#: ext/bulk/views/panel.php:239
+msgid "same case"
+msgstr "maiuscole/minuscole identiche"
+
+#: ext/bulk/views/panel.php:240
+msgid "ignore case"
+msgstr "ignora maiuscole/minuscole"
+
+#: ext/bulk/views/panel.php:245
+msgid "replace to text"
+msgstr "sostituisci con il testo"
+
+#. translators: %s: link
+#: ext/bulk/views/panel.php:327
+#, php-format
+msgid "Select how to round float values fractions in the numeric fields. Works for numeric meta fields. Read more %s."
+msgstr "Seleziona come arrotondare i decimali nei campi numerici. Funziona per i campi meta numerici. Maggiori informazioni %s."
+
+#: ext/bulk/views/panel.php:328
+#: ext/info/views/panel.php:45
+msgid "here"
+msgstr "qui"
+
+#: ext/bulk/views/panel.php:336
+msgid "Selected num fields"
+msgstr "Campi numerici selezionati"
+
+#: ext/bulk/views/panel.php:370
+msgid "You can select numeric field then make math operation with another numeric field using [+ - * /] value"
+msgstr "Puoi selezionare un campo numerico e applicarvi un'operazione matematica con un altro campo numerico usando [+ - * /] valore"
+
+#: ext/bulk/views/panel.php:376
+msgid "Random number"
+msgstr "Numero casuale"
+
+#: ext/bulk/views/panel.php:387
+msgid "Decimal"
+msgstr "Decimale"
+
+#: ext/bulk/views/panel.php:399
+msgid "From:"
+msgstr "Da:"
+
+#: ext/bulk/views/panel.php:405
+msgid "To:"
+msgstr "A:"
+
+#: ext/bulk/views/panel.php:412
+msgid "You can create random numbers for test filling fields or for SEO tasks"
+msgstr "Puoi creare numeri casuali per riempire campi di prova o per attività SEO"
+
+#: ext/bulk/views/panel.php:429
+msgid "taxonomies"
+msgstr "tassonomie"
+
+#: ext/bulk/views/panel.php:483
+#: ext/fprofiles/views/panel.php:41
+#: views/wpbe.php:933
+msgid "remove"
+msgstr "rimuovi"
+
+#. translators: %s: name
+#: ext/bulk/views/panel.php:525
+#, php-format
+msgid "Set: %s"
+msgstr "Imposta: %s"
+
+#: ext/bulk/views/panel.php:571
+msgid "other"
+msgstr "altro"
+
+#: ext/bulk/views/panel.php:587
+msgid "select thumbnail"
+msgstr "seleziona miniatura"
+
+#: ext/calculator/views/panel.php:19
+msgid "enter operation value"
+msgstr "inserisci il valore dell'operazione"
+
+#: ext/export/export.php:27
+msgid "Export"
+msgstr "Esporta"
+
+#: ext/export/export.php:39
+msgid "Should the export be started?"
+msgstr "Avviare l'esportazione?"
+
+#: ext/export/export.php:40
+msgid "Exporting"
+msgstr "Esportazione"
+
+#: ext/export/export.php:41
+msgid "Exported"
+msgstr "Esportato"
+
+#: ext/export/export.php:42
+msgid "ATTENTION: Export operation is going!"
+msgstr "ATTENZIONE: esportazione in corso!"
+
+#. translators: %s: selection
+#: ext/export/views/panel.php:14
+#, php-format
+msgid "Export will be applied to: %s"
+msgstr "L'esportazione verrà applicata a: %s"
+
+#. translators: %s: name
+#: ext/export/views/panel.php:24
+#, php-format
+msgid "Note: you can change columns set and then set their order in the tab Settings, then save it as columns profile which in future will help you with exporting the [%s] data format quickly without necessary each time set columns order and their set!"
+msgstr "Nota: puoi cambiare l'insieme delle colonne e il loro ordine nella scheda Impostazioni, poi salvarlo come profilo di colonne: in futuro ti permetterà di esportare rapidamente i dati di [%s] nel formato desiderato, senza dover impostare ogni volta ordine e insieme delle colonne!"
+
+#: ext/export/views/panel.php:31
+msgid "Export to CSV"
+msgstr "Esporta in CSV"
+
+#: ext/export/views/panel.php:32
+msgid "Export to XML"
+msgstr "Esporta in XML"
+
+#: ext/export/views/panel.php:33
+msgid "Export to Excel"
+msgstr "Esporta in Excel"
+
+#: ext/export/views/panel.php:34
+msgid "download"
+msgstr "scarica"
+
+#: ext/export/views/panel.php:35
+msgid "download XML"
+msgstr "scarica XML"
+
+#: ext/export/views/panel.php:36
+msgid "cancel export"
+msgstr "annulla esportazione"
+
+#: ext/export/views/panel.php:41
+msgid "Current export functionality is just for simple operations and data share, if you need something complex find and use especial plugin for Export WordPress data!"
+msgstr "L'esportazione attuale serve solo per operazioni semplici e per condividere i dati: per esigenze complesse cerca e usa un plugin speciale per l'esportazione dei dati di WordPress!"
+
+#: ext/export/views/panel.php:55
+msgid "Select CSV data delimiter."
+msgstr "Seleziona il delimitatore dei dati CSV."
+
+#: ext/filters/filters.php:24
+msgid "Filters"
+msgstr "Filtri"
+
+#: ext/filters/filters.php:35
+msgid "Filtering"
+msgstr "Filtraggio"
+
+#: ext/filters/filters.php:36
+msgid "Filtered! Table redrawing ..."
+msgstr "Filtrato! Ridisegno della tabella ..."
+
+#: ext/filters/filters.php:640
+#: ext/filters/views/panel.php:144
+#: ext/meta/meta.php:213
+msgid "LIKE"
+msgstr "CONTIENE"
+
+#: ext/filters/filters.php:641
+#: ext/filters/views/panel.php:145
+#: ext/filters/views/panel.php:155
+msgid "EXACT"
+msgstr "ESATTO"
+
+#: ext/filters/filters.php:642
+#: ext/filters/views/panel.php:146
+msgid "NOT"
+msgstr "NON"
+
+#: ext/filters/filters.php:643
+#: ext/filters/views/panel.php:147
+msgid "BEGIN"
+msgstr "INIZIA"
+
+#: ext/filters/filters.php:644
+#: ext/filters/views/panel.php:148
+msgid "END"
+msgstr "FINISCE"
+
+#: ext/filters/filters.php:649
+msgid "ID"
+msgstr "ID"
+
+#: ext/filters/filters.php:663
+msgid "quick search by ..."
+msgstr "ricerca rapida per ..."
+
+#: ext/filters/views/panel.php:42
+#: ext/history/views/panel.php:88
+msgid "Filter"
+msgstr "Filtra"
+
+#: ext/filters/views/panel.php:43
+#: ext/history/views/panel.php:88
+msgid "Reset"
+msgstr "Azzera"
+
+#: ext/filters/views/panel.php:149
+#: ext/filters/views/panel.php:412
+#: ext/meta/meta.php:217
+msgid "Empty"
+msgstr "Vuoto"
+
+#: ext/filters/views/panel.php:154
+msgid "ID(s). Use comma or/and minus for range"
+msgstr "ID. Usa virgole e/o trattini per gli intervalli"
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:160
+#, php-format
+msgid "[%s] title ..."
+msgstr "Titolo di [%s] ..."
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:166
+#, php-format
+msgid "[%s] content ..."
+msgstr "Contenuto di [%s] ..."
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:172
+#, php-format
+msgid "[%s] excerpt ..."
+msgstr "Riassunto di [%s] ..."
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:178
+#, php-format
+msgid "[%s] slug ..."
+msgstr "Slug di [%s] ..."
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:184
+#, php-format
+msgid "[%s] password ..."
+msgstr "Password di [%s] ..."
+
+#: ext/filters/views/panel.php:278
+msgid "Menu order from"
+msgstr "Ordine del menu da"
+
+#: ext/filters/views/panel.php:283
+msgid "Menu order to"
+msgstr "Ordine del menu a"
+
+#: ext/filters/views/panel.php:292
+msgid "Post parent from"
+msgstr "Genitore dell'articolo da"
+
+#: ext/filters/views/panel.php:297
+msgid "Post parent to"
+msgstr "Genitore dell'articolo a"
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:308
+#, php-format
+msgid "[%s] status"
+msgstr "Stato di [%s]"
+
+#: ext/filters/views/panel.php:372
+msgid "Sticky posts"
+msgstr "Articoli in evidenza"
+
+#: ext/filters/views/panel.php:398
+msgid "By author"
+msgstr "Per autore"
+
+#: ext/filters/views/panel.php:412
+msgid "Not empty"
+msgstr "Non vuoto"
+
+#. translators: %s: field title
+#. translators: %s: time
+#: ext/filters/views/panel.php:442
+#: ext/filters/views/panel.php:464
+#: ext/meta/meta.php:240
+#, php-format
+msgid "%s from"
+msgstr "%s da"
+
+#. translators: %s: field title
+#. translators: %s: time
+#: ext/filters/views/panel.php:451
+#: ext/filters/views/panel.php:473
+#: ext/meta/meta.php:243
+#, php-format
+msgid "%s to"
+msgstr "%s a"
+
+#: ext/fprofiles/fprofiles.php:27
+#: ext/info/info.php:20
+msgid "test"
+msgstr "prova"
+
+#: ext/fprofiles/fprofiles.php:34
+#: ext/fprofiles/views/panel.php:14
+msgid "Filters profiles"
+msgstr "Profili dei filtri"
+
+#: ext/fprofiles/views/panel.php:21
+msgid "Profiles"
+msgstr "Profili"
+
+#: ext/fprofiles/views/panel.php:22
+msgid "Here you can load previously saved filters profile. After pressing on the load button, Posts Editor data reloading will start immediately!"
+msgstr "Qui puoi caricare un profilo di filtri salvato in precedenza. Dopo aver premuto il pulsante di caricamento, i dati dell'Editor degli articoli si ricaricheranno subito!"
+
+#: ext/fprofiles/views/panel.php:30
+msgid "Select filter profile to load"
+msgstr "Seleziona il profilo di filtri da caricare"
+
+#: ext/fprofiles/views/panel.php:40
+#: views/wpbe.php:932
+msgid "load"
+msgstr "carica"
+
+#: ext/fprofiles/views/panel.php:51
+msgid "New Filter Profile"
+msgstr "Nuovo profilo di filtri"
+
+#: ext/fprofiles/views/panel.php:52
+msgid "Here you can type any title and save current filters set. Type here any title and then press Save button OR press Enter button on your keyboard!"
+msgstr "Qui puoi digitare un titolo qualsiasi e salvare l'insieme di filtri attuale. Scrivi un titolo e premi il pulsante Salva OPPURE il tasto Invio sulla tastiera!"
+
+#: ext/fprofiles/views/panel.php:66
+msgid "You can save filter profile only when you applying filters to the posts."
+msgstr "Puoi salvare un profilo di filtri solo quando applichi dei filtri agli articoli."
+
+#: ext/fprofiles/views/panel.php:74
+msgid "Save"
+msgstr "Salva"
+
+#: ext/fprofiles/views/panel.php:75
+#: views/wpbe.php:956
+msgid "Close"
+msgstr "Chiudi"
+
+#: ext/history/history.php:43
+#: ext/history/views/panel.php:9
+msgid "History"
+msgstr "Cronologia"
+
+#: ext/history/history.php:59
+msgid "Reverting"
+msgstr "Ripristino"
+
+#: ext/history/history.php:60
+msgid "Reverted!"
+msgstr "Ripristinato!"
+
+#: ext/history/history.php:61
+msgid "Wait please while data reverting is going!"
+msgstr "Attendi, il ripristino dei dati è in corso!"
+
+#: ext/history/history.php:62
+msgid "History clearing ..."
+msgstr "Pulizia della cronologia ..."
+
+#: ext/history/history.php:63
+msgid "History is cleared!"
+msgstr "Cronologia svuotata!"
+
+#: ext/history/history.php:64
+msgid "ATTENTION: History operation is going!"
+msgstr "ATTENZIONE: operazione sulla cronologia in corso!"
+
+#: ext/history/history.php:66
+msgid "This clears the history of all users for this post type, including the AI agent rows. It cannot be undone. Continue?"
+msgstr "Questa operazione svuota la cronologia di tutti gli utenti per questo tipo di contenuto, comprese le righe dell'agente IA. Non può essere annullata. Continuare?"
+
+#: ext/history/history.php:66
+msgid "This clears your own history for this post type. It cannot be undone. Continue?"
+msgstr "Questa operazione svuota la tua cronologia per questo tipo di contenuto. Non può essere annullata. Continuare?"
+
+#: ext/history/history.php:168
+msgid "WOLF cannot create the database table! Make sure that your mysql user has the CREATE privilege! Do it manually using your host panel phpmyadmin!"
+msgstr "WOLF non riesce a creare la tabella del database! Verifica che il tuo utente MySQL abbia il privilegio CREATE! Fallo manualmente dal pannello del tuo hosting con phpMyAdmin!"
+
+#: ext/history/history.php:502
+#: ext/history/views/panel.php:57
+msgid "AI agent"
+msgstr "Agente IA"
+
+#. translators: %d: id of a user who no longer exists
+#: ext/history/history.php:506
+#, php-format
+msgid "user #%d"
+msgstr "utente #%d"
+
+#. translators: %s: name of the user whose AI agent made the change
+#: ext/history/history.php:509
+#, php-format
+msgid "%s (AI agent)"
+msgstr "%s (agente IA)"
+
+#: ext/history/history.php:661
+msgid "This history entry is not yours. Only an administrator can roll back or delete the changes of other users."
+msgstr "Questa voce della cronologia non è tua. Solo un amministratore può annullare o eliminare le modifiche di altri utenti."
+
+#: ext/history/views/list.php:33
+msgid "Bulk operation"
+msgstr "Operazione in blocco"
+
+#. translators: %s: operation state
+#: ext/history/views/list.php:36
+#, php-format
+msgid "state: %s"
+msgstr "stato: %s"
+
+#. translators: %s: previous field value
+#: ext/history/views/list.php:76
+#, php-format
+msgid "value been: %s"
+msgstr "valore precedente: %s"
+
+#. translators: %s: number of bulked posts
+#: ext/history/views/list.php:84
+#, php-format
+msgid "posts bulked: %s"
+msgstr "articoli modificati: %s"
+
+#. translators: %s: columns list
+#: ext/history/views/list.php:98
+#, php-format
+msgid "columns: %s"
+msgstr "colonne: %s"
+
+#: ext/history/views/list.php:108
+#: ext/history/views/list.php:112
+msgid "revert"
+msgstr "ripristina"
+
+#: ext/history/views/list.php:129
+msgid "History is empty!"
+msgstr "La cronologia è vuota!"
+
+#: ext/history/views/panel.php:10
+msgid "Works for edit-operations and not work with delete-operations!"
+msgstr "Funziona con le operazioni di modifica, non con quelle di eliminazione!"
+
+#: ext/history/views/panel.php:14
+msgid "In FREE version of the plugin it is possible to roll back 2 last operations."
+msgstr "Nella versione FREE del plugin è possibile annullare le ultime 2 operazioni."
+
+#: ext/history/views/panel.php:20
+msgid "Per page:"
+msgstr "Per pagina:"
+
+#: ext/history/views/panel.php:25
+msgid "ALL"
+msgstr "TUTTI"
+
+#: ext/history/views/panel.php:29
+msgid "Clear the History"
+msgstr "Svuota la cronologia"
+
+#: ext/history/views/panel.php:37
+msgid "all"
+msgstr "tutte"
+
+#: ext/history/views/panel.php:38
+msgid "solo operations"
+msgstr "operazioni singole"
+
+#: ext/history/views/panel.php:39
+msgid "bulk operations"
+msgstr "operazioni in blocco"
+
+#: ext/history/views/panel.php:46
+msgid "by Author"
+msgstr "per autore"
+
+#: ext/history/views/panel.php:75
+msgid "by date from"
+msgstr "dalla data"
+
+#: ext/history/views/panel.php:77
+#: ext/history/views/panel.php:82
+#: views/elements/draw_calendar.php:20
+msgid "clear"
+msgstr "svuota"
+
+#: ext/history/views/panel.php:80
+msgid "by date to"
+msgstr "alla data"
+
+#: ext/history/views/panel.php:85
+msgid "by fields"
+msgstr "per campi"
+
+#: ext/history/views/panel.php:100
+msgid "Prev"
+msgstr "Prec."
+
+#: ext/history/views/panel.php:101
+msgid "of"
+msgstr "di"
+
+#: ext/history/views/panel.php:102
+#: index.php:358
+msgid "Next"
+msgstr "Succ."
+
+#: ext/info/info.php:12
+#: ext/info/views/panel.php:13
+msgid "Help"
+msgstr "Aiuto"
+
+#. translators: 1: documentation link, 2: translations link, 3: FAQ link, 4: support link
+#: ext/info/views/panel.php:20
+#, php-format
+msgid "The plugin has next info: %1$s, %2$s, %3$s. Also if you have troubles you can %4$s!"
+msgstr "Il plugin offre queste informazioni: %1$s, %2$s, %3$s. Inoltre, se hai problemi puoi %4$s!"
+
+#: ext/info/views/panel.php:22
+msgid "documentation"
+msgstr "documentazione"
+
+#: ext/info/views/panel.php:26
+msgid "translations"
+msgstr "traduzioni"
+
+#: ext/info/views/panel.php:30
+msgid "FAQ"
+msgstr "FAQ"
+
+#: ext/info/views/panel.php:34
+msgid "ask for support here"
+msgstr "chiedere supporto qui"
+
+#. translators: %s: link to versions comparison
+#: ext/info/views/panel.php:43
+#, php-format
+msgid "Current version of the plugin is FREE. See the difference between FREE and PREMIUM versions %s"
+msgstr "La versione attuale del plugin è FREE. Scopri le differenze tra le versioni FREE e PREMIUM %s"
+
+#: ext/info/views/panel.php:52
+msgid "Some little hints"
+msgstr "Piccoli suggerimenti"
+
+#. translators: %s: link to the MCP server documentation
+#: ext/info/views/panel.php:58
+#, php-format
+msgid "Can I connect an AI assistant (Claude, ChatGPT, Cursor and others) to WOLF and edit posts by chatting with it? Yes - %s"
+msgstr "Posso collegare un assistente IA (Claude, ChatGPT, Cursor e altri) a WOLF e modificare gli articoli chattando con lui? Sì - %s"
+
+#: ext/info/views/panel.php:60
+msgid "here is how to connect it"
+msgstr "ecco come collegarlo"
+
+#: ext/info/views/panel.php:66
+msgid "If to click on an empty space of the black wp-admin bar, it will get you back to the top of the page"
+msgstr "Se clicchi su uno spazio vuoto della barra nera di wp-admin, torni all'inizio della pagina"
+
+#. translators: %s: link to binded editing howto
+#: ext/info/views/panel.php:72
+#, php-format
+msgid "How to set the same value for some posts on the same time - %s"
+msgstr "Come impostare lo stesso valore per più articoli contemporaneamente - %s"
+
+#. translators: %s: link to gallery field howto
+#: ext/info/views/panel.php:84
+#, php-format
+msgid "How to use - %s"
+msgstr "Come si usa - %s"
+
+#: ext/info/views/panel.php:86
+msgid "meta field Gallery"
+msgstr "campo meta Galleria"
+
+#: ext/info/views/panel.php:93
+msgid "Search by posts slugs, which are in non-latin symbols does not work because in the data base they are keeps in the encoded format!"
+msgstr "La ricerca per slug degli articoli con caratteri non latini non funziona, perché nel database vengono salvati in formato codificato!"
+
+#: ext/info/views/panel.php:98
+msgid "Click ID of the post in the Posts Editor to see it on the site front."
+msgstr "Clicca sull'ID dell'articolo nell'Editor degli articoli per vederlo sul sito."
+
+#: ext/info/views/panel.php:103
+msgid "Use Enter keyboard button in the Posts Editor for moving to the next posts row cell with saving of changes while edit textinputs. Use arrow Up or arrow Down keyboard buttons in the Posts Editor for moving to the next/previous posts row without saving of changes."
+msgstr "Nell'Editor degli articoli usa il tasto Invio per passare alla cella successiva della riga salvando le modifiche mentre modifichi i campi di testo. Usa le frecce Su e Giù per passare alla riga successiva/precedente senza salvare le modifiche."
+
+#: ext/info/views/panel.php:107
+msgid "To select range of posts using checkboxes - select first post, press SHIFT key on your PC keyboard and click last post."
+msgstr "Per selezionare un intervallo di articoli con le caselle: seleziona il primo articolo, premi MAIUSC sulla tastiera e clicca l'ultimo."
+
+#. translators: %s: link to reviews page
+#: ext/info/views/panel.php:117
+#, php-format
+msgid "If you like WOLF %s about what you liked and what you want to see in future versions of the plugin"
+msgstr "Se ti piace WOLF %s su cosa ti è piaciuto e cosa vorresti vedere nelle prossime versioni del plugin"
+
+#: ext/info/views/panel.php:120
+msgid "write us feedback please"
+msgstr "scrivici un feedback"
+
+#. translators: %s: link to support forum
+#: ext/info/views/panel.php:125
+#, php-format
+msgid "If you have an idea you can %s"
+msgstr "Se hai un'idea puoi %s"
+
+#: ext/info/views/panel.php:128
+msgid "share it with us here"
+msgstr "condividerla con noi qui"
+
+#: ext/info/views/panel.php:140
+msgid "Requirements"
+msgstr "Requisiti"
+
+#: ext/info/views/panel.php:142
+msgid "Recommended min RAM"
+msgstr "RAM minima consigliata"
+
+#: ext/info/views/panel.php:143
+msgid "Minimal PHP version is"
+msgstr "La versione minima di PHP è"
+
+#: ext/info/views/panel.php:144
+msgid "Recommended PHP version"
+msgstr "Versione di PHP consigliata"
+
+#: ext/mcp/access.php:143
+#: ext/mcp/access.php:216
+msgid "Type part of a name, login or e-mail"
+msgstr "Digita parte di un nome, login o e-mail"
+
+#: ext/mcp/access.php:144
+msgid "No matching user who can work with WOLF"
+msgstr "Nessun utente corrispondente che possa lavorare con WOLF"
+
+#: ext/mcp/access.php:145
+#: ext/mcp/bootstrap.php:567
+msgid "Working..."
+msgstr "Elaborazione..."
+
+#: ext/mcp/access.php:146
+#: ext/mcp/access.php:230
+#: ext/mcp/access.php:277
+#: ext/mcp/bootstrap.php:568
+#: ext/mcp/bootstrap.php:629
+msgid "Disconnect"
+msgstr "Disconnetti"
+
+#: ext/mcp/access.php:147
+msgid "Issue a new key? The old key stops working at once and the assistant using it is disconnected."
+msgstr "Generare una nuova chiave? La vecchia chiave smette di funzionare subito e l'assistente che la usa viene disconnesso."
+
+#: ext/mcp/access.php:148
+#: ext/mcp/bootstrap.php:569
+msgid "Something went wrong. Reload the page and try again."
+msgstr "Qualcosa è andato storto. Ricarica la pagina e riprova."
+
+#: ext/mcp/access.php:189
+msgid "cannot connect: this user can no longer work with WOLF"
+msgstr "impossibile connettersi: questo utente non può più lavorare con WOLF"
+
+#: ext/mcp/access.php:193
+msgid "no key yet - it is issued when the user opens his settings"
+msgstr "ancora nessuna chiave: viene generata quando l'utente apre le sue impostazioni"
+
+#: ext/mcp/access.php:212
+msgid "MCP access for users"
+msgstr "Accesso MCP per gli utenti"
+
+#: ext/mcp/access.php:238
+msgid "Save the settings after changing the list. A user taken off the list loses his key and his connection at once."
+msgstr "Salva le impostazioni dopo aver modificato l'elenco. Un utente tolto dall'elenco perde subito la sua chiave e la sua connessione."
+
+#: ext/mcp/access.php:243
+msgid "Users picked here get a personal MCP key in their own settings and connect an AI assistant under their own WordPress account: the assistant can do exactly what they can do by hand, with their role and field visibility, never more. Two-factor connection is always on for personal keys. Only users who can work with WOLF are offered. The site-wide key above is not affected and stays yours."
+msgstr "Gli utenti scelti qui ricevono una chiave MCP personale nelle proprie impostazioni e collegano un assistente IA con il proprio account WordPress: l'assistente può fare esattamente ciò che l'utente può fare a mano, con il suo ruolo e la visibilità dei campi, mai di più. La connessione a due fattori è sempre attiva per le chiavi personali. Vengono proposti solo gli utenti che possono lavorare con WOLF. La chiave valida per tutto il sito qui sopra non cambia e resta tua."
+
+#: ext/mcp/access.php:257
+msgid "Your MCP access"
+msgstr "Il tuo accesso MCP"
+
+#: ext/mcp/access.php:262
+#: ext/mcp/bootstrap.php:1146
+msgid "Address for the assistant:"
+msgstr "Indirizzo per l'assistente:"
+
+#: ext/mcp/access.php:266
+msgid "Your personal key:"
+msgstr "La tua chiave personale:"
+
+#: ext/mcp/access.php:268
+msgid "Regenerate key"
+msgstr "Rigenera chiave"
+
+#: ext/mcp/access.php:271
+msgid "Give the assistant the address and this key as a request header: Authorization, with the value \"Bearer\" followed by a space and the key. Two-factor connection is always on for a personal key: every session starts with a token the assistant shows you, which you confirm below."
+msgstr "Fornisci all'assistente l'indirizzo e questa chiave come intestazione della richiesta: Authorization, con valore \"Bearer\" seguito da uno spazio e dalla chiave. La connessione a due fattori è sempre attiva per la chiave personale: ogni sessione inizia con un token che l'assistente ti mostra e che confermi qui sotto."
+
+#: ext/mcp/access.php:281
+#: ext/mcp/bootstrap.php:633
+msgid "Confirm assistant connection - paste the token the assistant gave you:"
+msgstr "Conferma la connessione dell'assistente - incolla il token che ti ha dato:"
+
+#: ext/mcp/access.php:283
+#: ext/mcp/bootstrap.php:635
+msgid "Confirm connection"
+msgstr "Conferma connessione"
+
+#: ext/mcp/access.php:288
+msgid "The administrator gave you MCP access. An assistant connected with your key works as you: it can do what you can do by hand in this plugin, with your role and field visibility. Keep the key private; if it may have leaked, press Regenerate key - the old key and its connection stop working at once."
+msgstr "L'amministratore ti ha dato accesso MCP. Un assistente collegato con la tua chiave lavora come te: può fare ciò che puoi fare a mano in questo plugin, con il tuo ruolo e la visibilità dei campi. Tieni la chiave privata; se potrebbe essere trapelata, premi Rigenera chiave: la vecchia chiave e la sua connessione smettono di funzionare subito."
+
+#: ext/mcp/access.php:308
+msgid "You cannot work with WOLF on this site."
+msgstr "Non puoi lavorare con WOLF su questo sito."
+
+#: ext/mcp/access.php:312
+msgid "Only an administrator can do this."
+msgstr "Solo un amministratore può farlo."
+
+#: ext/mcp/access.php:327
+msgid "You have no MCP access on this site. Ask the administrator to grant it."
+msgstr "Non hai accesso MCP su questo sito. Chiedi all'amministratore di concedertelo."
+
+#: ext/mcp/access.php:390
+msgid "No user given."
+msgstr "Nessun utente indicato."
+
+#: ext/mcp/access.php:397
+#: ext/mcp/access.php:464
+#: ext/mcp/bootstrap.php:532
+msgid "Disconnected."
+msgstr "Disconnesso."
+
+#: ext/mcp/access.php:416
+msgid "A new key is issued. The old one no longer works - update it in your assistant."
+msgstr "È stata generata una nuova chiave. La vecchia non funziona più: aggiornala nel tuo assistente."
+
+#: ext/mcp/access.php:435
+#: ext/mcp/bootstrap.php:491
+msgid "That is not a connection token. Copy the whole token the assistant gave you - four groups of eight characters separated by dashes."
+msgstr "Questo non è un token di connessione. Copia l'intero token ricevuto dall'assistente: quattro gruppi di otto caratteri separati da trattini."
+
+#: ext/mcp/access.php:444
+#: ext/mcp/bootstrap.php:510
+msgid "Connected. Go back to the assistant and tell it you have confirmed."
+msgstr "Connesso. Torna all'assistente e digli che hai confermato."
+
+#: ext/mcp/bootstrap.php:459
+msgid "Not connected"
+msgstr "Non connesso"
+
+#. translators: %d: minutes since the assistant last used the connection
+#: ext/mcp/bootstrap.php:469
+#, php-format
+msgid "Connected, last activity %d min ago"
+msgstr "Connesso, ultima attività %d min fa"
+
+#: ext/mcp/bootstrap.php:485
+msgid "Only an administrator can confirm a connection."
+msgstr "Solo un amministratore può confermare una connessione."
+
+#: ext/mcp/bootstrap.php:525
+msgid "Only an administrator can end a connection."
+msgstr "Solo un amministratore può terminare una connessione."
+
+#: ext/mcp/bootstrap.php:584
+msgid "No assistant is connected."
+msgstr "Nessun assistente connesso."
+
+#. translators: 1: time the connection was confirmed, 2: time it expires if left idle
+#: ext/mcp/bootstrap.php:589
+#, php-format
+msgid "An assistant is connected since %1$s. If it stays idle, the connection ends at %2$s."
+msgstr "Un assistente è connesso dalle %1$s. Se resta inattivo, la connessione termina alle %2$s."
+
+#. translators: %s: how long a connection may stay idle, e.g. "3600 seconds (60 minutes)"
+#: ext/mcp/bootstrap.php:612
+#, php-format
+msgid "Recommended: turn on two-factor connection. Without it, anyone who gets hold of the MCP key - from a screenshot, a shared config or a stolen laptop - can work with your site. With it, every assistant session also needs a token that you confirm here yourself, and that expires after %s without use."
+msgstr "Consigliato: attiva la connessione a due fattori. Senza di essa, chiunque entri in possesso della chiave MCP - da uno screenshot, una configurazione condivisa o un portatile rubato - può lavorare sul tuo sito. Con essa, ogni sessione dell'assistente richiede anche un token che confermi tu stesso qui e che scade dopo %s di inattività."
+
+#: ext/mcp/bootstrap.php:1092
+msgid "Enable the MCP server"
+msgstr "Abilita il server MCP"
+
+#: ext/mcp/bootstrap.php:1108
+msgid "The MCP server is on: assistants can connect at the address below."
+msgstr "Il server MCP è attivo: gli assistenti possono connettersi all'indirizzo qui sotto."
+
+#: ext/mcp/bootstrap.php:1110
+msgid "The MCP server is off and no assistant can connect. Choose Yes here: the key and the other MCP settings appear below, and Save switches the server on."
+msgstr "Il server MCP è spento e nessun assistente può collegarsi. Scegli Sì qui: la chiave e le altre impostazioni MCP compaiono qui sotto, e Salva accende il server."
+
+#: ext/mcp/bootstrap.php:1135
+msgid "Off by default. The MCP server lets an AI assistant read and edit the posts of this site over a REST endpoint. While it is off, the endpoint is not registered at all and nothing can reach it. Turn it on only when you are about to connect an assistant, and turn it back off if you stop using one."
+msgstr "Disattivato di default. Il server MCP permette a un assistente IA di leggere e modificare gli articoli di questo sito tramite un endpoint REST. Finché è disattivato, l'endpoint non è nemmeno registrato e nulla può raggiungerlo. Attivalo solo quando stai per collegare un assistente e disattivalo di nuovo se smetti di usarlo."
+
+#: ext/mcp/bootstrap.php:1141
+msgid "MCP secret key"
+msgstr "Chiave segreta MCP"
+
+#: ext/mcp/bootstrap.php:1149
+msgid "Not active: the MCP server is switched off above."
+msgstr "Non attivo: il server MCP è disattivato qui sopra."
+
+#: ext/mcp/bootstrap.php:1156
+msgid "Adding it in claude.ai: its server check will say \"Couldn't check the server\" with 403. That is expected for a server that signs in with a key - press \"Continue anyway\" and add the header Authorization with the value \"Bearer\" followed by a space and the key."
+msgstr "Aggiungendolo in claude.ai: il controllo del server dirà \"Couldn't check the server\" con errore 403. È normale per un server che richiede una chiave per l'accesso: premi \"Continue anyway\" e aggiungi l'intestazione Authorization con valore \"Bearer\" seguito da uno spazio e dalla chiave."
+
+#: ext/mcp/bootstrap.php:1157
+msgid "How to connect an AI assistant"
+msgstr "Come collegare un assistente IA"
+
+#: ext/mcp/bootstrap.php:1161
+msgid "Lets an AI assistant work with the posts of this site through a chat: find them, change them in bulk, roll changes back. Give the assistant the address below and this key as a request header named Authorization, with the value \"Bearer\" followed by a space and the key. Some clients call it an API key header instead - X-WPBE-KEY works the same way. The key is never accepted in the address itself, because anything written into a URL ends up in server logs, browser history and every proxy along the way. Clear this field and press Save to issue a new key: the old one stops working at once and every connected assistant has to be reconnected."
+msgstr "Permette a un assistente IA di lavorare con gli articoli di questo sito tramite chat: trovarli, modificarli in blocco, annullare le modifiche. Fornisci all'assistente l'indirizzo qui sotto e questa chiave come intestazione della richiesta chiamata Authorization, con valore \"Bearer\" seguito da uno spazio e dalla chiave. Alcuni client la chiamano invece intestazione della chiave API - X-WPBE-KEY funziona allo stesso modo. La chiave non viene mai accettata nell'indirizzo stesso, perché tutto ciò che è scritto in un URL finisce nei log del server, nella cronologia del browser e in ogni proxy lungo il percorso. Svuota questo campo e premi Salva per generare una nuova chiave: la vecchia smette di funzionare subito e ogni assistente connesso deve essere ricollegato."
+
+#: ext/mcp/bootstrap.php:1167
+msgid "MCP two-factor connection"
+msgstr "Connessione MCP a due fattori"
+
+#: ext/mcp/bootstrap.php:1167
+msgid "recommended"
+msgstr "consigliato"
+
+#: ext/mcp/bootstrap.php:1178
+msgid "This does not switch the MCP server on - that is \"Enable the MCP server\" above. Two-factor connection takes effect once the server is on."
+msgstr "Questo non attiva il server MCP - quello si fa con \"Abilita il server MCP\" qui sopra. La connessione a due fattori ha effetto quando il server è attivo."
+
+#. translators: %s: how long a connection may stay idle
+#: ext/mcp/bootstrap.php:1187
+#, php-format
+msgid "Off by default, recommended. With it on, the MCP key alone is not enough: every assistant session starts by showing you a token, you paste it below and confirm, and only then can the assistant work. The connection ends by itself after %s without activity, so a leaked key is useless without you. One assistant is connected at a time."
+msgstr "Disattivata di default, consigliata. Se attiva, la sola chiave MCP non basta: ogni sessione dell'assistente inizia mostrandoti un token, che incolli qui sotto e confermi, e solo allora l'assistente può lavorare. La connessione termina da sola dopo %s di inattività, così una chiave trapelata è inutile senza di te. Un solo assistente alla volta può essere connesso."
+
+#: ext/mcp/bootstrap.php:1276
+#: index.php:330
+msgid "Upload images"
+msgstr "Carica immagini"
+
+#: ext/mcp/bootstrap.php:1289
+msgid "Add images to your site"
+msgstr "Aggiungi immagini al tuo sito"
+
+#. translators: %s: post title
+#: ext/mcp/bootstrap.php:1294
+#, php-format
+msgid "The first one becomes the featured image of %s."
+msgstr "La prima diventa l'immagine in evidenza di %s."
+
+#: ext/mcp/bootstrap.php:1296
+msgid "They go into the media library, ready to put on a post."
+msgstr "Vanno nella libreria dei media, pronte da inserire in un articolo."
+
+#: ext/mcp/bootstrap.php:1302
+msgid "Drop images here"
+msgstr "Trascina qui le immagini"
+
+#: ext/mcp/bootstrap.php:1303
+msgid "or click to choose them"
+msgstr "o clicca per sceglierle"
+
+#: ext/meta/meta.php:29
+#: ext/meta/views/panel.php:9
+msgid "Meta Fields"
+msgstr "Campi meta"
+
+#: ext/meta/meta.php:51
+msgid "Meta key cannot be empty!"
+msgstr "La chiave meta non può essere vuota!"
+
+#: ext/meta/meta.php:52
+msgid "Enter a post ID!"
+msgstr "Inserisci l'ID di un articolo!"
+
+#: ext/meta/meta.php:53
+msgid "No meta keys found!"
+msgstr "Nessuna chiave meta trovata!"
+
+#: ext/meta/meta.php:54
+msgid "New meta key"
+msgstr "Nuova chiave meta"
+
+#: ext/meta/meta.php:214
+msgid "EXACT (=)"
+msgstr "ESATTO (=)"
+
+#: ext/meta/meta.php:215
+msgid "NOT EXACT (!=)"
+msgstr "NON ESATTO (!=)"
+
+#: ext/meta/meta.php:216
+msgid "NOT LIKE"
+msgstr "NON CONTIENE"
+
+#: ext/meta/meta.php:218
+msgid "NOT Empty"
+msgstr "NON vuoto"
+
+#: ext/meta/views/panel.php:14
+msgid "In FREE version of the plugin it is possible manipulate with 2 meta fields."
+msgstr "Nella versione FREE del plugin è possibile gestire 2 campi meta."
+
+#: ext/meta/views/panel.php:19
+msgid "Add Custom key by hands"
+msgstr "Aggiungi chiave personalizzata a mano"
+
+#: ext/meta/views/panel.php:21
+msgid "Add"
+msgstr "Aggiungi"
+
+#: ext/meta/views/panel.php:26
+msgid "Get meta keys from any post by its ID"
+msgstr "Ottieni le chiavi meta da qualsiasi articolo tramite il suo ID"
+
+#: ext/meta/views/panel.php:27
+msgid "enter post ID"
+msgstr "inserisci ID articolo"
+
+#: ext/meta/views/panel.php:28
+msgid "Get"
+msgstr "Ottieni"
+
+#: ext/meta/views/panel.php:34
+msgid "Meta quick search ..."
+msgstr "Ricerca rapida meta ..."
+
+#: ext/meta/views/panel.php:59
+msgid "Save meta fields"
+msgstr "Salva campi meta"
+
+#: ext/meta/views/panel.php:79
+#: index.php:303
+#: views/parts/post-upsells.php:19
+#: views/wpbe.php:396
+#: views/wpbe.php:406
+#: views/wpbe.php:494
+msgid "move"
+msgstr "sposta"
+
+#: ext/meta/views/panel.php:86
+msgid "enter title"
+msgstr "inserisci il titolo"
+
+#: ext/meta/views/panel.php:92
+msgid "textinput"
+msgstr "campo di testo"
+
+#: ext/meta/views/panel.php:93
+msgid "textarea"
+msgstr "area di testo"
+
+#: ext/meta/views/panel.php:94
+msgid "checkbox"
+msgstr "casella"
+
+#: ext/meta/views/panel.php:95
+msgid "calendar"
+msgstr "calendario"
+
+#: ext/meta/views/panel.php:96
+msgid "array"
+msgstr "array"
+
+#: ext/meta/views/panel.php:97
+msgid "gallery"
+msgstr "galleria"
+
+#: ext/meta/views/panel.php:104
+msgid "string"
+msgstr "stringa"
+
+#: ext/meta/views/panel.php:105
+msgid "number"
+msgstr "numero"
+
+#: index.php:28
+msgid "Hello, looks like you bought and installed premium version of WOLF - WordPress Posts Bulk Editor and Manager Professional, please deactivate free version before, then uninstall it. 2 versions of the same plugin cannot be activated on the same time!"
+msgstr "Ciao, sembra che tu abbia acquistato e installato la versione premium di WOLF - WordPress Posts Bulk Editor and Manager Professional: disattiva prima la versione gratuita e poi disinstallala. Due versioni dello stesso plugin non possono essere attive contemporaneamente!"
+
+#: index.php:145
+msgid "If you not familiar with the plugin, firstly"
+msgstr "Se non conosci il plugin, prima"
+
+#: index.php:148
+msgid "visit this page"
+msgstr "visita questa pagina"
+
+#: index.php:153
+msgid "please"
+msgstr "per favore"
+
+#: index.php:171
+#: index.php:183
+msgid "WOLF Bulk Editor"
+msgstr "WOLF Bulk Editor"
+
+#: index.php:287
+#: views/wpbe.php:124
+msgid "Posts Editor"
+msgstr "Editor degli articoli"
+
+#: index.php:304
+msgid "Search"
+msgstr "Cerca"
+
+#: index.php:305
+msgid "Failed"
+msgstr "Non riuscito"
+
+#: index.php:306
+msgid "Error"
+msgstr "Errore"
+
+#: index.php:308
+msgid "ignore"
+msgstr "ignora"
+
+#: index.php:309
+msgid "This is not deletable!"
+msgstr "Questo non può essere eliminato!"
+
+#: index.php:310
+#: views/elements/draw_attribute_list_btn.php:13
+#: views/elements/draw_taxonomy_popup_btn.php:19
+msgid "no items"
+msgstr "nessun elemento"
+
+#: index.php:311
+msgid "none"
+msgstr "nessuno"
+
+#: index.php:312
+msgid "no data"
+msgstr "nessun dato"
+
+#: index.php:313
+msgid "Loading"
+msgstr "Caricamento"
+
+#: index.php:314
+msgid "Loaded"
+msgstr "Caricato"
+
+#: index.php:315
+msgid "Saved"
+msgstr "Salvato"
+
+#: index.php:316
+msgid "Saving"
+msgstr "Salvataggio"
+
+#: index.php:317
+#: views/wpbe.php:219
+#: views/wpbe.php:252
+#: views/wpbe.php:280
+#: views/wpbe.php:329
+#: views/wpbe.php:384
+msgid "Apply"
+msgstr "Applica"
+
+#: index.php:318
+#: views/wpbe.php:218
+#: views/wpbe.php:251
+#: views/wpbe.php:279
+#: views/wpbe.php:328
+#: views/wpbe.php:383
+#: views/wpbe.php:1012
+msgid "Cancel"
+msgstr "Annulla"
+
+#: index.php:319
+msgid "Canceled"
+msgstr "Annullato"
+
+#: index.php:320
+msgid "Sure?"
+msgstr "Sicuro?"
+
+#: index.php:321
+msgid "Creating"
+msgstr "Creazione"
+
+#: index.php:322
+msgid "Created!"
+msgstr "Creato!"
+
+#: index.php:323
+msgid "Duplicating"
+msgstr "Duplicazione"
+
+#: index.php:324
+msgid "Duplicated!"
+msgstr "Duplicato!"
+
+#: index.php:325
+msgid "Deleting"
+msgstr "Eliminazione"
+
+#: index.php:326
+msgid "Deleted!"
+msgstr "Eliminato!"
+
+#: index.php:327
+msgid "Reseting"
+msgstr "Azzeramento"
+
+#: index.php:328
+msgid "Reseted!"
+msgstr "Azzerato!"
+
+#: index.php:329
+msgid "Upload image"
+msgstr "Carica immagine"
+
+#: index.php:331
+msgid "Upload file"
+msgstr "Carica file"
+
+#: index.php:332
+msgid "Fill up the data please!"
+msgstr "Compila i dati, per favore!"
+
+#. translators: %s: name
+#: index.php:336
+#, php-format
+msgid "Enter how many time duplicate selected [%s](s)!"
+msgstr "Inserisci quante volte duplicare i [%s] selezionati!"
+
+#. translators: %s: name
+#: index.php:341
+#, php-format
+msgid "Enter how many new [%s](s) to create!"
+msgstr "Inserisci quanti nuovi [%s] creare!"
+
+#: index.php:343
+msgid "Text search by title or SKU"
+msgstr "Cerca testo nel titolo o SKU"
+
+#: index.php:344
+#: views/parts/top_panel.php:25
+msgid "Show: Filters/Bulk Edit/Export"
+msgstr "Mostra: Filtri/Modifica in blocco/Esporta"
+
+#: index.php:345
+msgid "Hide: Filters/Bulk Edit/Export"
+msgstr "Nascondi: Filtri/Modifica in blocco/Esporta"
+
+#: index.php:346
+msgid "Per page"
+msgstr "Per pagina"
+
+#: index.php:347
+msgid "Select background color"
+msgstr "Seleziona il colore di sfondo"
+
+#: index.php:348
+msgid "Select text color"
+msgstr "Seleziona il colore del testo"
+
+#: index.php:349
+msgid "No data available in the table"
+msgstr "Nessun dato disponibile nella tabella"
+
+#: index.php:350
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "Elementi da _START_ a _END_ di _TOTAL_"
+
+#: index.php:351
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "Elementi da 0 a 0 di 0"
+
+#: index.php:352
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(filtrati da _MAX_ elementi totali)"
+
+#: index.php:353
+msgid "Loading..."
+msgstr "Caricamento..."
+
+#: index.php:354
+msgid "Processing..."
+msgstr "Elaborazione..."
+
+#: index.php:355
+msgid "No matching records found"
+msgstr "Nessun risultato trovato"
+
+#: index.php:356
+msgid "First"
+msgstr "Primo"
+
+#: index.php:357
+msgid "Last"
+msgstr "Ultimo"
+
+#: index.php:359
+msgid "Previous"
+msgstr "Precedente"
+
+#. translators: %s: name
+#: index.php:368
+#, php-format
+msgid "the filtered [%s]. To remove filtering press reset button on the tools panel below"
+msgstr "i [%s] filtrati. Per rimuovere il filtro premi il pulsante di azzeramento nel pannello degli strumenti qui sotto"
+
+#. translators: %s: name
+#: index.php:373
+#, php-format
+msgid "the selected [%s](s)"
+msgstr "i [%s] selezionati"
+
+#. translators: %s: name
+#: index.php:378
+#, php-format
+msgid "You can reset selection of the [%s](s) by its reset button on the panel of the editor OR uncheck them manually!"
+msgstr "Puoi azzerare la selezione dei [%s] con il pulsante di azzeramento nel pannello dell'editor OPPURE deselezionarli manualmente!"
+
+#: index.php:380
+msgid "Maybe term(s) with such name(s) already exists!"
+msgstr "Forse esistono già termini con questi nomi!"
+
+#: index.php:381
+msgid "In FREE version of the plugin you can create one profile only!"
+msgstr "Nella versione FREE del plugin puoi creare un solo profilo!"
+
+#: index.php:382
+msgid "append sub item"
+msgstr "aggiungi sottoelemento"
+
+#: index.php:383
+msgid "This field is deactivated in FREE version for bulk edit!"
+msgstr "Questo campo è disattivato per la modifica in blocco nella versione FREE!"
+
+#: index.php:384
+msgid "Posts checked"
+msgstr "Articoli selezionati"
+
+#: index.php:584
+msgid "View the post on the site front"
+msgstr "Vedi l'articolo sul sito"
+
+#: index.php:590
+msgid "Editing of the post on its page"
+msgstr "Modifica l'articolo nella sua pagina"
+
+#: index.php:887
+msgid "Posts not found!"
+msgstr "Nessun articolo trovato!"
+
+#. translators: %s: post name
+#: index.php:966
+#, php-format
+msgid "New %s"
+msgstr "Nuovo: %s"
+
+#: index.php:1005
+msgid "copy"
+msgstr "copia"
+
+#: index.php:1295
+msgid "see the post on the site"
+msgstr "vedi l'articolo sul sito"
+
+#: index.php:1397
+msgid "Scheduled"
+msgstr "Programmato"
+
+#: index.php:1536
+msgid "Later"
+msgstr "Più tardi"
+
+#: index.php:1538
+msgid "Hi! Are you enjoying using WOLF – WordPress Posts Bulk Editor Professional?"
+msgstr "Ciao! Ti piace usare WOLF – WordPress Posts Bulk Editor Professional?"
+
+#: index.php:1539
+msgid "Yes, I love it"
+msgstr "Sì, lo adoro"
+
+#: index.php:1539
+msgid "Not really..."
+msgstr "Non proprio..."
+
+#. translators: %s: name
+#: index.php:1545
+#, php-format
+msgid "That's awesome! Could you please do us a BIG favor and give it a 5-star rating on %s to help us spread the word and boost our motivation?"
+msgstr "Fantastico! Ci faresti un GRANDE favore lasciando una valutazione a 5 stelle su %s per aiutarci a farci conoscere e darci motivazione?"
+
+#: index.php:1549
+msgid "Okay, you deserve it"
+msgstr "Va bene, te lo meriti"
+
+#: index.php:1550
+msgid "Nope, maybe later"
+msgstr "No, forse più tardi"
+
+#: index.php:1551
+msgid "I already did"
+msgstr "L'ho già fatto"
+
+#: index.php:1556
+msgid "We are sorry to hear you aren't enjoying WOLF. We would love a chance to improve it. Could you take a minute and let us know what we can do better?"
+msgstr "Ci dispiace che WOLF non ti piaccia. Ci piacerebbe avere la possibilità di migliorarlo. Potresti dedicarci un minuto per dirci cosa possiamo fare meglio?"
+
+#: index.php:1558
+msgid "Give Feedback"
+msgstr "Lascia un feedback"
+
+#: index.php:1559
+msgid "No thanks"
+msgstr "No, grazie"
+
+#: views/elements/draw_calendar.php:20
+msgid "Will never reset published date, and for modified date field  will set current time!"
+msgstr "Non azzererà mai la data di pubblicazione, mentre per il campo della data di modifica imposterà l'ora corrente!"
+
+#. translators: %s: product name
+#: views/elements/draw_gallery_popup_editor_btn.php:57
+#, php-format
+msgid "Product: %s"
+msgstr "Prodotto: %s"
+
+#. translators: %s: product name
+#: views/elements/draw_gallery_popup_editor_btn.php:61
+#, php-format
+msgid "Images (%s)"
+msgstr "Immagini (%s)"
+
+#. translators: %s: name
+#: views/elements/draw_gallery_popup_editor_btn.php:77
+#: views/elements/draw_meta_popup_editor_btn.php:33
+#: views/elements/draw_popup_editor_btn.php:33
+#: views/elements/draw_upsells_popup_editor_btn.php:30
+#: views/elements/draw_upsells_popup_editor_btn.php:47
+#, php-format
+msgid "Post: %s"
+msgstr "Articolo: %s"
+
+#: views/elements/draw_meta_popup_editor_btn.php:20
+msgid "Array"
+msgstr "Array"
+
+#: views/elements/draw_popup_editor_btn.php:5
+msgid "Content[empty]"
+msgstr "Contenuto[vuoto]"
+
+#: views/elements/draw_restricked.php:7
+msgid "Not allowed!"
+msgstr "Non consentito!"
+
+#. translators: %s: name
+#: views/elements/draw_upsells_popup_editor_btn.php:33
+#, php-format
+msgid "Posts (%s)"
+msgstr "Articoli (%s)"
+
+#: views/elements/multi_select.php:27
+msgid "Select all"
+msgstr "Seleziona tutto"
+
+#: views/elements/multi_select.php:28
+msgid "Deselect all"
+msgstr "Deseleziona tutto"
+
+#: views/elements/multi_select.php:33
+msgid "cancel"
+msgstr "annulla"
+
+#: views/elements/multi_select.php:38
+msgid "save"
+msgstr "salva"
+
+#: views/parts/advanced-table.php:14
+msgid "Set full width"
+msgstr "Imposta a larghezza intera"
+
+#: views/parts/advanced-table.php:15
+#: views/wpbe.php:899
+msgid "Columns profiles"
+msgstr "Profili di colonne"
+
+#: views/parts/advanced-table.php:21
+msgid "New Post"
+msgstr "Nuovo articolo"
+
+#: views/parts/advanced-table.php:22
+msgid "Duplicate selected post(s)."
+msgstr "Duplica gli articoli selezionati."
+
+#: views/parts/advanced-table.php:25
+msgid "Delete selected post(s)"
+msgstr "Elimina gli articoli selezionati"
+
+#: views/parts/advanced-table.php:27
+msgid "Uncheck all selected posts"
+msgstr "Deseleziona tutti gli articoli selezionati"
+
+#: views/parts/advanced-table.php:28
+msgid "Reset filters"
+msgstr "Azzera filtri"
+
+#: views/parts/advanced-table.php:39
+msgid "select all variations"
+msgstr "seleziona tutte le varianti"
+
+#: views/parts/advanced-table.php:45
+msgid "Scroll right"
+msgstr "Scorri a destra"
+
+#: views/parts/advanced-table.php:46
+msgid "Scroll left"
+msgstr "Scorri a sinistra"
+
+#: views/parts/post-gallery.php:17
+msgid "Detach image of the post"
+msgstr "Scollega l'immagine dall'articolo"
+
+#: views/parts/post-upsells.php:19
+#: views/wpbe.php:396
+#: views/wpbe.php:406
+#: views/wpbe.php:494
+msgid "drag and drop"
+msgstr "trascina e rilascia"
+
+#: views/parts/top_panel.php:21
+msgid "Close the panel"
+msgstr "Chiudi il pannello"
+
+#: views/wpbe.php:13
+msgid "No any post type permitted to edit for site editors. Ask please site administrators for details!"
+msgstr "Nessun tipo di contenuto è abilitato alla modifica per gli editor del sito. Chiedi dettagli agli amministratori del sito!"
+
+#: views/wpbe.php:38
+msgid "Your settings have been saved."
+msgstr "Le tue impostazioni sono state salvate."
+
+#. translators: %s: WordPress version
+#: views/wpbe.php:53
+#, php-format
+msgid "Compatible with WordPress v.%s"
+msgstr "Compatibile con WordPress v.%s"
+
+#: views/wpbe.php:65
+msgid "MCP server is off. Connect your AI assistant to WOLF: switch it on in the Settings tab - click to read how"
+msgstr "Il server MCP è spento. Per collegare il tuo assistente IA a WOLF, attivalo nella scheda Impostazioni: clicca per sapere come"
+
+#: views/wpbe.php:68
+msgid "MCP server is on, two-factor connection is off - switching it on in the Settings tab is recommended. Click to read how to connect your AI assistant"
+msgstr "Il server MCP è acceso, la connessione a due fattori è spenta: è consigliato attivarla nella scheda Impostazioni. Clicca per sapere come collegare il tuo assistente IA"
+
+#: views/wpbe.php:71
+msgid "MCP server is on, with two-factor connection. Click to read how to connect your AI assistant"
+msgstr "Il server MCP è acceso, con connessione a due fattori. Clicca per sapere come collegare il tuo assistente IA"
+
+#: views/wpbe.php:88
+msgid "Upgrade"
+msgstr "Passa a Premium"
+
+#: views/wpbe.php:111
+msgid "ATTENTION! Your version of the WordPress is obsolete. There is no warranty of normal working with the plugin!!"
+msgstr "ATTENZIONE! La tua versione di WordPress è obsoleta. Non c'è garanzia di corretto funzionamento del plugin!!"
+
+#: views/wpbe.php:132
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: views/wpbe.php:166
+msgid "Select some columns in tab \"Settings\""
+msgstr "Seleziona alcune colonne nella scheda \"Impostazioni\""
+
+#: views/wpbe.php:169
+msgid "Actions"
+msgstr "Azioni"
+
+#: views/wpbe.php:201
+msgid "Quick search"
+msgstr "Ricerca rapida"
+
+#: views/wpbe.php:202
+msgid "Quick terms search by its name"
+msgstr "Ricerca rapida dei termini per nome"
+
+#: views/wpbe.php:206
+msgid "create new term"
+msgstr "crea nuovo termine"
+
+#: views/wpbe.php:207
+msgid "selected only"
+msgstr "solo selezionati"
+
+#: views/wpbe.php:208
+msgid "Select all terms"
+msgstr "Seleziona tutti i termini"
+
+#: views/wpbe.php:301
+msgid "Add Image"
+msgstr "Aggiungi immagine"
+
+#: views/wpbe.php:307
+msgid "Replace all posts images by the selected ones"
+msgstr "Sostituisci tutte le immagini degli articoli con quelle selezionate"
+
+#: views/wpbe.php:308
+msgid "Add selected images to the already existed ones"
+msgstr "Aggiungi le immagini selezionate a quelle già presenti"
+
+#: views/wpbe.php:309
+msgid "Delete selected images from the posts"
+msgstr "Elimina le immagini selezionate dagli articoli"
+
+#: views/wpbe.php:310
+msgid "Delete selected images from the posts, also delete them from the media library forever"
+msgstr "Elimina le immagini selezionate dagli articoli ed eliminale definitivamente anche dalla libreria dei media"
+
+#: views/wpbe.php:362
+msgid "REMEMBER: sequence of data maybe have sense (and maybe not), so be attentive! Do not mix in the same popup window data of array and object data!"
+msgstr "RICORDA: l'ordine dei dati può avere un senso (o no), quindi fai attenzione! Non mescolare nella stessa finestra dati di tipo array e oggetto!"
+
+#: views/wpbe.php:372
+msgid "Prepend array key/value"
+msgstr "Aggiungi in testa chiave/valore dell'array"
+
+#: views/wpbe.php:373
+msgid "Prepend object set"
+msgstr "Aggiungi in testa un insieme di oggetti"
+
+#: views/wpbe.php:377
+msgid "Append array key/value"
+msgstr "Aggiungi in coda chiave/valore dell'array"
+
+#: views/wpbe.php:378
+msgid "Append object set"
+msgstr "Aggiungi in coda un insieme di oggetti"
+
+#: views/wpbe.php:397
+#: views/wpbe.php:407
+#: views/wpbe.php:415
+msgid "key"
+msgstr "chiave"
+
+#: views/wpbe.php:398
+#: views/wpbe.php:416
+msgid "value"
+msgstr "valore"
+
+#: views/wpbe.php:429
+msgid "Note: if horizontal scroll disappeared when it must be visible, click on tab Posts Editor to make it visible"
+msgstr "Nota: se la barra di scorrimento orizzontale scompare quando dovrebbe essere visibile, clicca sulla scheda Editor degli articoli per farla riapparire"
+
+#. translators: 1: total columns count, 2: enabled columns count
+#: views/wpbe.php:460
+#, php-format
+msgid "Columns settings%1$s, columns enabled %2$s"
+msgstr "Impostazioni delle colonne%1$s, colonne attive %2$s"
+
+#: views/wpbe.php:477
+msgid "Show all columns"
+msgstr "Mostra tutte le colonne"
+
+#: views/wpbe.php:494
+#: views/wpbe.php:517
+#: views/wpbe.php:650
+#: views/wpbe.php:728
+#: views/wpbe.php:765
+msgid "premium version"
+msgstr "versione premium"
+
+#: views/wpbe.php:516
+#: views/wpbe.php:522
+msgid "visible for the site editor"
+msgstr "visibile per l'editor del sito"
+
+#: views/wpbe.php:561
+msgid "cell text or number size"
+msgstr "dimensione del testo o numero nella cella"
+
+#: views/wpbe.php:614
+#: views/wpbe.php:796
+msgid "Save all settings"
+msgstr "Salva tutte le impostazioni"
+
+#: views/wpbe.php:620
+msgid "General settings"
+msgstr "Impostazioni generali"
+
+#: views/wpbe.php:687
+msgid "Site editors post types"
+msgstr "Tipi di contenuto per gli editor del sito"
+
+#: views/wpbe.php:695
+msgid "What post types can edit site editors in the tab Posts Editor. Use comma, example: post,car,page"
+msgstr "Quali tipi di contenuto gli editor del sito possono modificare nella scheda Editor degli articoli. Usa la virgola, esempio: post,car,page"
+
+#: views/wpbe.php:700
+msgid "Separate columns and meta for post types"
+msgstr "Colonne e meta separati per tipo di contenuto"
+
+#: views/wpbe.php:733
+msgid "Each post type has its own set of columns and meta fields."
+msgstr "Ogni tipo di contenuto ha il proprio insieme di colonne e campi meta."
+
+#: views/wpbe.php:738
+msgid "Show content and excerpt text partly"
+msgstr "Mostra solo in parte il testo di contenuto e riassunto"
+
+#: views/wpbe.php:770
+msgid "Show part of the text in the content and excerpt edit button"
+msgstr "Mostra una parte del testo nel pulsante di modifica di contenuto e riassunto"
+
+#: views/wpbe.php:801
+msgid "More settings (implicit)"
+msgstr "Altre impostazioni (implicite)"
+
+#: views/wpbe.php:823
+msgid "Show description"
+msgstr "Mostra la descrizione"
+
+#: views/wpbe.php:832
+msgid "Edit"
+msgstr "Modifica"
+
+#: views/wpbe.php:892
+msgid "Columns profile"
+msgstr "Profilo di colonne"
+
+#: views/wpbe.php:900
+msgid "Here you can load previously saved columns profile. After pressing on the load button, page reloading will start immediately!"
+msgstr "Qui puoi caricare un profilo di colonne salvato in precedenza. Dopo aver premuto il pulsante di caricamento, la pagina si ricaricherà subito!"
+
+#. translators: 1: profile title, 2: delete profile link
+#: views/wpbe.php:906
+#, php-format
+msgid "Current profile is: %1$s %2$s"
+msgstr "Profilo attuale: %1$s %2$s"
+
+#: views/wpbe.php:910
+msgid "remove current columns profile"
+msgstr "rimuovi il profilo di colonne attuale"
+
+#: views/wpbe.php:922
+msgid "Select profile to load"
+msgstr "Seleziona il profilo da caricare"
+
+#: views/wpbe.php:942
+msgid "New Profile"
+msgstr "Nuovo profilo"
+
+#: views/wpbe.php:943
+msgid "Here you can type any title and save current columns set and their order. Type here any title and then press Save button OR press Enter button on your keyboard!"
+msgstr "Qui puoi digitare un titolo qualsiasi e salvare l'insieme di colonne attuale e il loro ordine. Scrivi un titolo e premi il pulsante Salva OPPURE il tasto Invio sulla tastiera!"
+
+#: views/wpbe.php:955
+#: views/wpbe.php:1011
+msgid "Create"
+msgstr "Crea"
+
+#. translators: %s: taxonomy/term placeholder
+#: views/wpbe.php:972
+#, php-format
+msgid "New term for [%s]"
+msgstr "Nuovo termine per [%s]"
+
+#: views/wpbe.php:979
+msgid "New Term(s)"
+msgstr "Nuovi termini"
+
+#: views/wpbe.php:980
+msgid "Here you can write title for the new term. Use comma to create some new tags on the same time! New terms with already existed names will not be created!"
+msgstr "Qui puoi scrivere il titolo del nuovo termine. Usa la virgola per creare più tag contemporaneamente! I nuovi termini con nomi già esistenti non verranno creati!"
+
+#: views/wpbe.php:990
+msgid "Slug(s) of the new term"
+msgstr "Slug del nuovo termine"
+
+#: views/wpbe.php:991
+msgid "Here you can write slug for the the new term (optionally). Use comma for slug(s) when you create some on the same time terms, or leave slug field empty to create slug(s) automatically"
+msgstr "Qui puoi scrivere lo slug del nuovo termine (facoltativo). Usa la virgola per gli slug quando crei più termini insieme, oppure lascia vuoto il campo per creare gli slug automaticamente"
+
+#: views/wpbe.php:1001
+msgid "Parent of the new term(s)"
+msgstr "Genitore dei nuovi termini"
+
+#: views/wpbe.php:1002
+msgid "Here you can select parent for the the new term (optionally)"
+msgstr "Qui puoi selezionare il genitore del nuovo termine (facoltativo)"
+
+#: views/wpbe.php:1045
+msgid "UPGRADE TO FULL VERSION"
+msgstr "PASSA ALLA VERSIONE COMPLETA"
+
+#: views/wpbe.php:1046
+msgid "WOLF - Posts Bulk Editor Professional"
+msgstr "WOLF - Posts Bulk Editor Professional"
+
+#: views/wpbe.php:1050
+msgid "BEAR - Bulk Editor Professional for WooCommerce"
+msgstr "BEAR - Bulk Editor Professional for WooCommerce"
+
+#: views/wpbe.php:1051
+msgid "BEAR - WooCommerce Bulk Editor Professional"
+msgstr "BEAR - WooCommerce Bulk Editor Professional"
+
+#: views/wpbe.php:1055
+#: views/wpbe.php:1056
+msgid "WPCS - WordPress Currency Switcher"
+
+msgstr "WPCS - WordPress Currency Switcher"

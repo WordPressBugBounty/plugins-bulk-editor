@@ -1,0 +1,2273 @@
+# Copyright (C) 2026 realmag777
+# This file is distributed under the GPLv2 or later и License URI: https://www.gnu.org/licenses/gpl-2.0.html.
+msgid ""
+msgstr ""
+"Project-Id-Version: WOLF - WordPress Posts Bulk Editor and Manager Professional 2.1.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bulk-editor\n"
+"Last-Translator: realmag777\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-20T14:15:27+00:00\n"
+"PO-Revision-Date: 2026-11-20 15:00+0000\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: bulk-editor\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Plugin Name of the plugin
+#: index.php
+msgid "WOLF - WordPress Posts Bulk Editor and Manager Professional"
+msgstr "WOLF - WordPress Posts Bulk Editor and Manager Professional"
+
+#. Plugin URI of the plugin
+#: index.php
+msgid "https://bulk-editor.pro/"
+msgstr "https://bulk-editor.pro/"
+
+#. Description of the plugin
+#: index.php
+msgid "Tools for managing and bulk edit posts, pages and all custom types data in the reliable and flexible way! Be professionals with managing data of your site!"
+msgstr "投稿、固定ページ、すべてのカスタム投稿タイプのデータを、確実かつ柔軟に一括管理・一括編集するツールです。サイトのデータ管理をプロの手で。"
+
+#. Author of the plugin
+#: index.php
+msgid "realmag777"
+msgstr "realmag777"
+
+#. Author URI of the plugin
+#: index.php
+msgid "https://pluginus.net/"
+msgstr "https://pluginus.net/"
+
+#: classes/helper.php:511
+msgid "no rounding"
+msgstr "丸めなし"
+
+#: classes/models/posts.php:159
+msgid "forbidden"
+msgstr "禁止"
+
+#: classes/models/profiles.php:45
+msgid "Default"
+msgstr "デフォルト"
+
+#: data/fields.php:29
+msgid "Checkboxes for the posts selection. Use SHIFT button on your keyboard to select multiple rows."
+msgstr "投稿を選択するチェックボックスです。キーボードの SHIFT キーで複数行を選択できます。"
+
+#: data/fields.php:53
+#: ext/filters/views/panel.php:412
+msgid "Thumbnail"
+msgstr "サムネイル"
+
+#: data/fields.php:66
+#: ext/filters/filters.php:648
+msgid "Title"
+msgstr "タイトル"
+
+#: data/fields.php:78
+#: views/elements/draw_popup_editor_btn.php:7
+msgid "Content"
+msgstr "本文"
+
+#: data/fields.php:89
+msgid "Excerpt"
+msgstr "抜粋"
+
+#: data/fields.php:101
+msgid "Slug"
+msgstr "スラッグ"
+
+#: data/fields.php:115
+msgid "Status"
+msgstr "ステータス"
+
+#: data/fields.php:128
+#: ext/filters/views/panel.php:323
+msgid "Comment status"
+msgstr "コメントの状態"
+
+#: data/fields.php:129
+msgid "Can users comment post or not."
+msgstr "ユーザーが投稿にコメントできるかどうか。"
+
+#: data/fields.php:135
+#: data/fields.php:154
+msgid "Open"
+msgstr "許可"
+
+#: data/fields.php:136
+#: data/fields.php:155
+msgid "Closed"
+msgstr "受け付けない"
+
+#: data/fields.php:147
+#: ext/filters/views/panel.php:339
+msgid "Ping status"
+msgstr "ピングの状態"
+
+#: data/fields.php:148
+msgid "A ping is a [this site has new content] notification that invites search engine bots to visit your blog."
+msgstr "ピングとは、検索エンジンのボットにブログへの訪問を促す「サイトに新しいコンテンツがあります」という通知です。"
+
+#: data/fields.php:166
+msgid "Send trackbacks to"
+msgstr "トラックバック送信先"
+
+#: data/fields.php:167
+msgid "Separate multiple URLs with spaces. Ping status should be open! Remove 2 links separated by space, save. After opening you will not see links as they had been pinged! No sense for roll back, its sending is instant. Trackbacks are a way to notify legacy blog systems that you’ve linked to them. If you link other WordPress sites, they’ll be notified automatically using pingbacks, no other action necessary. Do not use these fields for something else. They are parsed many times in core code (69 matches for to_ping); their format is fixed."
+msgstr "複数の URL はスペースで区切ります。ピングの状態は「許可」にしてください。スペース区切りの 2 つのリンクを削除して保存すると、ピング済みのためリンクは表示されなくなります。送信は即時のため、元に戻しても意味はありません。トラックバックは、リンク先の古いブログシステムに通知する仕組みです。他の WordPress サイトへリンクした場合は、ピンバックで自動的に通知されるため、他の操作は不要です。これらのフィールドを他の用途に使わないでください。コア内で何度も解析されており（to_ping は 69 か所）、形式は固定されています。"
+
+#: data/fields.php:194
+msgid "Post password"
+msgstr "投稿のパスワード"
+
+#: data/fields.php:195
+msgid "Password for private posts"
+msgstr "非公開投稿用のパスワード"
+
+#: data/fields.php:208
+msgid "Menu order"
+msgstr "表示順"
+
+#: data/fields.php:209
+msgid "Custom ordering position."
+msgstr "任意の並び順の位置。"
+
+#: data/fields.php:221
+msgid "Author"
+msgstr "作成者"
+
+#: data/fields.php:234
+msgid "Date Published"
+msgstr "公開日"
+
+#: data/fields.php:247
+msgid "Date Published GMT"
+msgstr "公開日（GMT）"
+
+#: data/fields.php:261
+msgid "Date modified"
+msgstr "更新日"
+
+#: data/fields.php:274
+msgid "Date modified GMT"
+msgstr "更新日（GMT）"
+
+#: data/fields.php:287
+msgid "Post parent"
+msgstr "親投稿"
+
+#: data/fields.php:301
+msgid "Post type"
+msgstr "投稿タイプ"
+
+#: data/fields.php:316
+#: ext/filters/views/panel.php:355
+msgid "Post mime type"
+msgstr "投稿の MIME タイプ"
+
+#: data/fields.php:317
+msgid "Not in bulk edit as there is no built-uploader here, so no sense change mime type. Filtering only! The function is designed specifically for attached records."
+msgstr "ここにはアップローダーがなく MIME タイプを変更する意味がないため、一括編集には含まれません。フィルターのみ利用できます。添付ファイルのレコード専用の機能です。"
+
+#: data/fields.php:331
+msgid "Sticky"
+msgstr "先頭固定"
+
+#: data/fields.php:332
+msgid "Stick this post to the front page"
+msgstr "この投稿をフロントページに固定する"
+
+#: data/fields.php:338
+#: data/settings.php:38
+#: data/settings.php:48
+#: data/settings.php:58
+#: data/settings.php:68
+#: ext/filters/views/panel.php:498
+#: ext/mcp/bootstrap.php:1086
+#: ext/meta/meta.php:181
+#: ext/meta/meta.php:357
+#: views/wpbe.php:709
+#: views/wpbe.php:747
+msgid "Yes"
+msgstr "はい"
+
+#: data/fields.php:339
+#: data/settings.php:39
+#: data/settings.php:49
+#: data/settings.php:59
+#: data/settings.php:69
+#: ext/filters/views/panel.php:499
+#: ext/mcp/bootstrap.php:1085
+#: ext/meta/meta.php:182
+#: ext/meta/meta.php:358
+#: views/wpbe.php:708
+#: views/wpbe.php:746
+msgid "No"
+msgstr "いいえ"
+
+#: data/settings.php:10
+msgid "Default posts count per page"
+msgstr "1 ページあたりの投稿数（初期値）"
+
+#: data/settings.php:11
+msgid "How many rows shows per page in tab Posts Editor. Max possible value is 100!"
+msgstr "「投稿エディター」タブで 1 ページに表示する行数です。最大値は 100 です。"
+
+#: data/settings.php:16
+msgid "Default sort by"
+msgstr "初期の並べ替え列"
+
+#: data/settings.php:17
+msgid "Select column by which posts sorting is going after plugin page loaded"
+msgstr "プラグインのページを読み込んだ後、投稿を並べ替える列を選択します。"
+
+#: data/settings.php:23
+msgid "Default sort"
+msgstr "初期の並び順"
+
+#: data/settings.php:24
+msgid "Select sort direction for Default sort"
+msgstr "「初期の並べ替え列」の並び順を選択します。"
+
+#: data/settings.php:33
+msgid "Show button in admin bar"
+msgstr "管理バーにボタンを表示"
+
+#: data/settings.php:34
+msgid "Show Bulk Editor button in admin bar for quick access to the Posts Editor"
+msgstr "投稿エディターにすばやくアクセスできるよう、管理バーに Bulk Editor ボタンを表示します。"
+
+#: data/settings.php:43
+msgid "Show thumbnail preview"
+msgstr "サムネイルのプレビューを表示"
+
+#: data/settings.php:44
+msgid "Show bigger thumbnail preview on mouse over"
+msgstr "マウスオーバー時に大きなサムネイルを表示します。"
+
+#: data/settings.php:53
+msgid "Load beauty switchers"
+msgstr "スイッチを読み込む"
+
+#: data/settings.php:54
+msgid "Load beauty switchers instead of checkboxes in the Posts Editor."
+msgstr "投稿エディターでチェックボックスの代わりにスイッチを使います。"
+
+#: data/settings.php:63
+msgid "Use gutenberg"
+msgstr "Gutenberg を使用"
+
+#: data/settings.php:64
+msgid "Allows to edit content with the gutenberg editor if its enabled for the selected post type"
+msgstr "選択した投稿タイプで有効な場合、Gutenberg エディターで本文を編集できます。"
+
+#: data/settings.php:73
+msgid "Add fields to the quick search"
+msgstr "クイック検索にフィールドを追加"
+
+#: data/settings.php:74
+msgid "Adds more fields to quick search fields drop-down on the tools panel. Works only for text fields. Syntax: post_name:Post slug,post_content:Content"
+msgstr "ツールパネルのクイック検索ドロップダウンにフィールドを追加します。テキストフィールドのみ対応。書式: post_name:投稿スラッグ,post_content:本文"
+
+#: data/settings.php:79
+msgid "Override meta checkbox"
+msgstr "メタのチェックボックスを上書き"
+
+#: data/settings.php:80
+msgid "By default, the checkbox works with 1 and 0. If you need to redefine these values for example to \"yes\" or \"true\". Syntax: meta_key1:yes,meta_key2:true"
+msgstr "チェックボックスは通常 1 と 0 で動作します。これらの値を「yes」や「true」などに変更する場合に指定します。書式: meta_key1:yes,meta_key2:true"
+
+#: ext/bulk/bulk.php:34
+msgid "Bulk Edit"
+msgstr "一括編集"
+
+#: ext/bulk/bulk.php:45
+msgid "Will be edited next:"
+msgstr "次の項目が編集されます:"
+
+#. translators: %s: name
+#: ext/bulk/bulk.php:49
+#, php-format
+msgid "Sure? Delete [%s]?"
+msgstr "[%s] を削除しますか？"
+
+#: ext/bulk/bulk.php:51
+#: ext/bulk/views/panel.php:116
+msgid "Bulk deleting"
+msgstr "一括削除"
+
+#. translators: %s: name
+#: ext/bulk/bulk.php:55
+#, php-format
+msgid "[%s](s) deleted!"
+msgstr "[%s] を削除しました。"
+
+#: ext/bulk/bulk.php:57
+msgid "Bulk editing"
+msgstr "一括編集"
+
+#. translators: %s: name
+#: ext/bulk/bulk.php:61
+#, php-format
+msgid "[%s](s) edited! Table redrawing ..."
+msgstr "[%s] を編集しました。テーブルを再描画しています..."
+
+#. translators: %s: name(s)
+#: ext/bulk/bulk.php:66
+#, php-format
+msgid "[%s](s) edited!"
+msgstr "[%s] を編集しました。"
+
+#: ext/bulk/bulk.php:68
+msgid "ATTENTION: Bulk operation is going!"
+msgstr "注意: 一括処理を実行中です。"
+
+#: ext/bulk/bulk.php:77
+#: ext/info/views/panel.php:74
+msgid "binded editing"
+msgstr "連動編集"
+
+#. translators: %s: name of fileds
+#: ext/bulk/bulk.php:96
+#, php-format
+msgid "In FREE version of the plugin you can change only next fields: %s"
+msgstr "無料版で変更できるフィールドは次のとおりです: %s"
+
+#. translators: 1: post type name, 2: post type name
+#: ext/bulk/bulk.php:104
+#, php-format
+msgid "In this mode to the all selected [%1$s](s) will be set the value of a [%2$s] field which been edited"
+msgstr "このモードでは、選択したすべての [%1$s] に、編集した [%2$s] フィールドの値が設定されます。"
+
+#: ext/bulk/bulk.php:120
+msgid "Select post type you want to manage"
+msgstr "管理する投稿タイプを選択"
+
+#: ext/bulk/bulk.php:639
+msgid "title"
+msgstr "タイトル"
+
+#: ext/bulk/bulk.php:643
+msgid "content"
+msgstr "本文"
+
+#: ext/bulk/bulk.php:647
+msgid "excerpt"
+msgstr "抜粋"
+
+#: ext/bulk/bulk.php:651
+msgid "slug"
+msgstr "スラッグ"
+
+#: ext/bulk/bulk.php:655
+msgid "password"
+msgstr "パスワード"
+
+#: ext/bulk/bulk.php:659
+msgid "send trackbacks to"
+msgstr "トラックバック送信先"
+
+#: ext/bulk/bulk.php:666
+msgid "post status"
+msgstr "投稿ステータス"
+
+#: ext/bulk/bulk.php:672
+msgid "post type"
+msgstr "投稿タイプ"
+
+#: ext/bulk/bulk.php:678
+msgid "comment status"
+msgstr "コメントの状態"
+
+#: ext/bulk/bulk.php:684
+msgid "ping status"
+msgstr "ピングの状態"
+
+#: ext/bulk/bulk.php:693
+msgid "sticky posts"
+msgstr "先頭固定の投稿"
+
+#: ext/bulk/bulk.php:702
+#: ext/bulk/bulk.php:710
+#: ext/bulk/bulk.php:723
+#: ext/bulk/bulk.php:735
+#: ext/bulk/views/panel.php:554
+#: ext/meta/meta.php:329
+msgid "increase by value"
+msgstr "値だけ増やす"
+
+#: ext/bulk/bulk.php:703
+#: ext/bulk/bulk.php:711
+#: ext/bulk/bulk.php:724
+#: ext/bulk/bulk.php:736
+#: ext/bulk/views/panel.php:555
+#: ext/meta/meta.php:330
+msgid "decrease by value"
+msgstr "値だけ減らす"
+
+#: ext/bulk/bulk.php:704
+#: ext/bulk/bulk.php:725
+#: ext/meta/meta.php:331
+msgid "increase by %"
+msgstr "% 増やす"
+
+#: ext/bulk/bulk.php:705
+#: ext/bulk/bulk.php:726
+#: ext/meta/meta.php:332
+msgid "decrease by %"
+msgstr "% 減らす"
+
+#: ext/bulk/bulk.php:706
+#: ext/bulk/bulk.php:713
+#: ext/bulk/bulk.php:727
+#: ext/bulk/bulk.php:737
+#: ext/bulk/views/panel.php:553
+#: ext/meta/meta.php:328
+msgid "set new"
+msgstr "新しく設定"
+
+#: ext/bulk/bulk.php:712
+#: ext/history/views/list.php:109
+#: ext/history/views/list.php:113
+#: ext/meta/views/panel.php:110
+#: index.php:307
+msgid "delete"
+msgstr "削除"
+
+#: ext/bulk/bulk.php:720
+msgid "post parent"
+msgstr "親投稿"
+
+#: ext/bulk/bulk.php:732
+msgid "menu order"
+msgstr "表示順"
+
+#. translators: %s: posts selection
+#: ext/bulk/views/panel.php:14
+#, php-format
+msgid "Bulk editing will be applied to: %s"
+msgstr "一括編集の適用対象: %s"
+
+#. translators: %s: posts selection
+#. translators: %s: selection
+#: ext/bulk/views/panel.php:14
+#: ext/export/views/panel.php:14
+#: index.php:363
+#, php-format
+msgid "all the [%s] on the site"
+msgstr "サイト上のすべての [%s]"
+
+#: ext/bulk/views/panel.php:27
+msgid "text"
+msgstr "テキスト"
+
+#: ext/bulk/views/panel.php:44
+msgid "numeric"
+msgstr "数値"
+
+#: ext/bulk/views/panel.php:59
+msgid "statuses and types"
+msgstr "ステータスとタイプ"
+
+#: ext/bulk/views/panel.php:107
+msgid "Do Bulk Edit"
+msgstr "一括編集を実行"
+
+#: ext/bulk/views/panel.php:108
+msgid "terminate bulk operation"
+msgstr "一括処理を中止"
+
+#. translators: %s: name
+#: ext/bulk/views/panel.php:122
+#, php-format
+msgid "Delete [%s]!"
+msgstr "[%s] を削除"
+
+#: ext/bulk/views/panel.php:130
+msgid "Notes"
+msgstr "メモ"
+
+#: ext/bulk/views/panel.php:133
+msgid "In red containers wrapped fields which are not possible modify in bulk in FREE version of the plugin!"
+msgstr "赤枠で囲まれたフィールドは、無料版では一括変更できません。"
+
+#: ext/bulk/views/panel.php:136
+msgid "In the case of an aborted bulk-operation you can roll back changes in the tab History"
+msgstr "一括処理が中断された場合は、「履歴」タブで変更を元に戻せます。"
+
+#. translators: %s: link to backup plugin
+#: ext/bulk/views/panel.php:140
+#, php-format
+msgid "Time by time (one time per week for example) - make the backup of your site database. For example by %s"
+msgstr "定期的に（たとえば週に 1 回）サイトのデータベースをバックアップしてください。例: %s"
+
+#: ext/bulk/views/panel.php:143
+msgid "this plugin"
+msgstr "このプラグイン"
+
+#: ext/bulk/views/panel.php:150
+#: ext/export/views/panel.php:78
+#: ext/filters/views/panel.php:47
+#: index.php:288
+#: views/wpbe.php:365
+#: views/wpbe.php:425
+msgid "Documentation"
+msgstr "ドキュメント"
+
+#: ext/bulk/views/panel.php:186
+#: ext/bulk/views/panel.php:300
+#: ext/bulk/views/panel.php:463
+#: ext/bulk/views/panel.php:517
+#: ext/bulk/views/panel.php:578
+#: ext/bulk/views/panel.php:620
+#: ext/bulk/views/panel.php:663
+msgid "select it to use"
+msgstr "選択して使用"
+
+#: ext/bulk/views/panel.php:217
+#: ext/bulk/views/panel.php:251
+msgid "variable"
+msgstr "変数"
+
+#: ext/bulk/views/panel.php:218
+#: ext/bulk/views/panel.php:252
+msgid "TITLE"
+msgstr "タイトル"
+
+#: ext/bulk/views/panel.php:220
+#: ext/bulk/views/panel.php:254
+msgid "MENU ORDER"
+msgstr "表示順"
+
+#: ext/bulk/views/panel.php:226
+#: ext/bulk/views/panel.php:481
+msgid "append"
+msgstr "末尾に追加"
+
+#: ext/bulk/views/panel.php:227
+msgid "prepend"
+msgstr "先頭に追加"
+
+#: ext/bulk/views/panel.php:228
+#: views/elements/multi_select.php:43
+msgid "new"
+msgstr "新規"
+
+#: ext/bulk/views/panel.php:229
+#: ext/bulk/views/panel.php:482
+msgid "replace"
+msgstr "置換"
+
+#: ext/bulk/views/panel.php:239
+msgid "same case"
+msgstr "大文字小文字を区別"
+
+#: ext/bulk/views/panel.php:240
+msgid "ignore case"
+msgstr "大文字小文字を区別しない"
+
+#: ext/bulk/views/panel.php:245
+msgid "replace to text"
+msgstr "テキストに置換"
+
+#. translators: %s: link
+#: ext/bulk/views/panel.php:327
+#, php-format
+msgid "Select how to round float values fractions in the numeric fields. Works for numeric meta fields. Read more %s."
+msgstr "数値フィールドの小数部を丸める方法を選択します。数値のメタフィールドで有効です。詳しくは%sをご覧ください。"
+
+#: ext/bulk/views/panel.php:328
+#: ext/info/views/panel.php:45
+msgid "here"
+msgstr "こちら"
+
+#: ext/bulk/views/panel.php:336
+msgid "Selected num fields"
+msgstr "選択した数値フィールド"
+
+#: ext/bulk/views/panel.php:370
+msgid "You can select numeric field then make math operation with another numeric field using [+ - * /] value"
+msgstr "数値フィールドを選択し、別の数値フィールドと [+ - * /] で演算できます。"
+
+#: ext/bulk/views/panel.php:376
+msgid "Random number"
+msgstr "ランダムな数値"
+
+#: ext/bulk/views/panel.php:387
+msgid "Decimal"
+msgstr "小数"
+
+#: ext/bulk/views/panel.php:399
+msgid "From:"
+msgstr "開始:"
+
+#: ext/bulk/views/panel.php:405
+msgid "To:"
+msgstr "終了:"
+
+#: ext/bulk/views/panel.php:412
+msgid "You can create random numbers for test filling fields or for SEO tasks"
+msgstr "テスト入力や SEO 作業用にランダムな数値を作成できます。"
+
+#: ext/bulk/views/panel.php:429
+msgid "taxonomies"
+msgstr "タクソノミー"
+
+#: ext/bulk/views/panel.php:483
+#: ext/fprofiles/views/panel.php:41
+#: views/wpbe.php:933
+msgid "remove"
+msgstr "削除"
+
+#. translators: %s: name
+#: ext/bulk/views/panel.php:525
+#, php-format
+msgid "Set: %s"
+msgstr "設定: %s"
+
+#: ext/bulk/views/panel.php:571
+msgid "other"
+msgstr "その他"
+
+#: ext/bulk/views/panel.php:587
+msgid "select thumbnail"
+msgstr "サムネイルを選択"
+
+#: ext/calculator/views/panel.php:19
+msgid "enter operation value"
+msgstr "演算の値を入力"
+
+#: ext/export/export.php:27
+msgid "Export"
+msgstr "エクスポート"
+
+#: ext/export/export.php:39
+msgid "Should the export be started?"
+msgstr "エクスポートを開始しますか？"
+
+#: ext/export/export.php:40
+msgid "Exporting"
+msgstr "エクスポート中"
+
+#: ext/export/export.php:41
+msgid "Exported"
+msgstr "エクスポートしました"
+
+#: ext/export/export.php:42
+msgid "ATTENTION: Export operation is going!"
+msgstr "注意: エクスポートを実行中です。"
+
+#. translators: %s: selection
+#: ext/export/views/panel.php:14
+#, php-format
+msgid "Export will be applied to: %s"
+msgstr "エクスポートの対象: %s"
+
+#. translators: %s: name
+#: ext/export/views/panel.php:24
+#, php-format
+msgid "Note: you can change columns set and then set their order in the tab Settings, then save it as columns profile which in future will help you with exporting the [%s] data format quickly without necessary each time set columns order and their set!"
+msgstr "メモ: 「設定」タブで列の組み合わせと順序を設定し、列プロフィールとして保存しておくと、毎回列を設定し直さなくても、[%s] のデータ形式ですばやくエクスポートできます。"
+
+#: ext/export/views/panel.php:31
+msgid "Export to CSV"
+msgstr "CSV にエクスポート"
+
+#: ext/export/views/panel.php:32
+msgid "Export to XML"
+msgstr "XML にエクスポート"
+
+#: ext/export/views/panel.php:33
+msgid "Export to Excel"
+msgstr "Excel にエクスポート"
+
+#: ext/export/views/panel.php:34
+msgid "download"
+msgstr "ダウンロード"
+
+#: ext/export/views/panel.php:35
+msgid "download XML"
+msgstr "XML をダウンロード"
+
+#: ext/export/views/panel.php:36
+msgid "cancel export"
+msgstr "エクスポートをキャンセル"
+
+#: ext/export/views/panel.php:41
+msgid "Current export functionality is just for simple operations and data share, if you need something complex find and use especial plugin for Export WordPress data!"
+msgstr "現在のエクスポート機能は、簡単な処理とデータ共有向けです。高度な処理が必要な場合は、WordPress データのエクスポート専用プラグインをご利用ください。"
+
+#: ext/export/views/panel.php:55
+msgid "Select CSV data delimiter."
+msgstr "CSV の区切り文字を選択してください。"
+
+#: ext/filters/filters.php:24
+msgid "Filters"
+msgstr "フィルター"
+
+#: ext/filters/filters.php:35
+msgid "Filtering"
+msgstr "フィルター処理中"
+
+#: ext/filters/filters.php:36
+msgid "Filtered! Table redrawing ..."
+msgstr "フィルターしました。テーブルを再描画しています..."
+
+#: ext/filters/filters.php:640
+#: ext/filters/views/panel.php:144
+#: ext/meta/meta.php:213
+msgid "LIKE"
+msgstr "部分一致"
+
+#: ext/filters/filters.php:641
+#: ext/filters/views/panel.php:145
+#: ext/filters/views/panel.php:155
+msgid "EXACT"
+msgstr "完全一致"
+
+#: ext/filters/filters.php:642
+#: ext/filters/views/panel.php:146
+msgid "NOT"
+msgstr "除外"
+
+#: ext/filters/filters.php:643
+#: ext/filters/views/panel.php:147
+msgid "BEGIN"
+msgstr "前方一致"
+
+#: ext/filters/filters.php:644
+#: ext/filters/views/panel.php:148
+msgid "END"
+msgstr "後方一致"
+
+#: ext/filters/filters.php:649
+msgid "ID"
+msgstr "ID"
+
+#: ext/filters/filters.php:663
+msgid "quick search by ..."
+msgstr "クイック検索..."
+
+#: ext/filters/views/panel.php:42
+#: ext/history/views/panel.php:88
+msgid "Filter"
+msgstr "絞り込み"
+
+#: ext/filters/views/panel.php:43
+#: ext/history/views/panel.php:88
+msgid "Reset"
+msgstr "リセット"
+
+#: ext/filters/views/panel.php:149
+#: ext/filters/views/panel.php:412
+#: ext/meta/meta.php:217
+msgid "Empty"
+msgstr "空"
+
+#: ext/filters/views/panel.php:154
+msgid "ID(s). Use comma or/and minus for range"
+msgstr "ID。範囲はカンマまたはハイフンで指定"
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:160
+#, php-format
+msgid "[%s] title ..."
+msgstr "[%s] のタイトル..."
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:166
+#, php-format
+msgid "[%s] content ..."
+msgstr "[%s] の本文..."
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:172
+#, php-format
+msgid "[%s] excerpt ..."
+msgstr "[%s] の抜粋..."
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:178
+#, php-format
+msgid "[%s] slug ..."
+msgstr "[%s] のスラッグ..."
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:184
+#, php-format
+msgid "[%s] password ..."
+msgstr "[%s] のパスワード..."
+
+#: ext/filters/views/panel.php:278
+msgid "Menu order from"
+msgstr "表示順（開始）"
+
+#: ext/filters/views/panel.php:283
+msgid "Menu order to"
+msgstr "表示順（終了）"
+
+#: ext/filters/views/panel.php:292
+msgid "Post parent from"
+msgstr "親投稿（開始）"
+
+#: ext/filters/views/panel.php:297
+msgid "Post parent to"
+msgstr "親投稿（終了）"
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:308
+#, php-format
+msgid "[%s] status"
+msgstr "[%s] のステータス"
+
+#: ext/filters/views/panel.php:372
+msgid "Sticky posts"
+msgstr "先頭固定の投稿"
+
+#: ext/filters/views/panel.php:398
+msgid "By author"
+msgstr "作成者で絞り込み"
+
+#: ext/filters/views/panel.php:412
+msgid "Not empty"
+msgstr "空でない"
+
+#. translators: %s: field title
+#. translators: %s: time
+#: ext/filters/views/panel.php:442
+#: ext/filters/views/panel.php:464
+#: ext/meta/meta.php:240
+#, php-format
+msgid "%s from"
+msgstr "%s（開始）"
+
+#. translators: %s: field title
+#. translators: %s: time
+#: ext/filters/views/panel.php:451
+#: ext/filters/views/panel.php:473
+#: ext/meta/meta.php:243
+#, php-format
+msgid "%s to"
+msgstr "%s（終了）"
+
+#: ext/fprofiles/fprofiles.php:27
+#: ext/info/info.php:20
+msgid "test"
+msgstr "テスト"
+
+#: ext/fprofiles/fprofiles.php:34
+#: ext/fprofiles/views/panel.php:14
+msgid "Filters profiles"
+msgstr "フィルタープロフィール"
+
+#: ext/fprofiles/views/panel.php:21
+msgid "Profiles"
+msgstr "プロフィール"
+
+#: ext/fprofiles/views/panel.php:22
+msgid "Here you can load previously saved filters profile. After pressing on the load button, Posts Editor data reloading will start immediately!"
+msgstr "保存済みのフィルタープロフィールを読み込めます。読み込みボタンを押すと、すぐに投稿エディターのデータが再読み込みされます。"
+
+#: ext/fprofiles/views/panel.php:30
+msgid "Select filter profile to load"
+msgstr "読み込むフィルタープロフィールを選択"
+
+#: ext/fprofiles/views/panel.php:40
+#: views/wpbe.php:932
+msgid "load"
+msgstr "読み込む"
+
+#: ext/fprofiles/views/panel.php:51
+msgid "New Filter Profile"
+msgstr "新しいフィルタープロフィール"
+
+#: ext/fprofiles/views/panel.php:52
+msgid "Here you can type any title and save current filters set. Type here any title and then press Save button OR press Enter button on your keyboard!"
+msgstr "現在のフィルターの組み合わせに好きな名前を付けて保存できます。名前を入力して「保存」ボタンを押すか、キーボードの Enter キーを押してください。"
+
+#: ext/fprofiles/views/panel.php:66
+msgid "You can save filter profile only when you applying filters to the posts."
+msgstr "フィルタープロフィールは、投稿にフィルターを適用しているときのみ保存できます。"
+
+#: ext/fprofiles/views/panel.php:74
+msgid "Save"
+msgstr "保存"
+
+#: ext/fprofiles/views/panel.php:75
+#: views/wpbe.php:956
+msgid "Close"
+msgstr "閉じる"
+
+#: ext/history/history.php:43
+#: ext/history/views/panel.php:9
+msgid "History"
+msgstr "履歴"
+
+#: ext/history/history.php:59
+msgid "Reverting"
+msgstr "元に戻しています"
+
+#: ext/history/history.php:60
+msgid "Reverted!"
+msgstr "元に戻しました。"
+
+#: ext/history/history.php:61
+msgid "Wait please while data reverting is going!"
+msgstr "元に戻しています。しばらくお待ちください。"
+
+#: ext/history/history.php:62
+msgid "History clearing ..."
+msgstr "履歴を消去しています..."
+
+#: ext/history/history.php:63
+msgid "History is cleared!"
+msgstr "履歴を消去しました。"
+
+#: ext/history/history.php:64
+msgid "ATTENTION: History operation is going!"
+msgstr "注意: 履歴の操作を実行中です。"
+
+#: ext/history/history.php:66
+msgid "This clears the history of all users for this post type, including the AI agent rows. It cannot be undone. Continue?"
+msgstr "この投稿タイプについて、AI エージェントの行を含むすべてのユーザーの履歴が消去されます。この操作は元に戻せません。続行しますか？"
+
+#: ext/history/history.php:66
+msgid "This clears your own history for this post type. It cannot be undone. Continue?"
+msgstr "この投稿タイプについて、あなた自身の履歴が消去されます。この操作は元に戻せません。続行しますか？"
+
+#: ext/history/history.php:168
+msgid "WOLF cannot create the database table! Make sure that your mysql user has the CREATE privilege! Do it manually using your host panel phpmyadmin!"
+msgstr "WOLF はデータベーステーブルを作成できません。MySQL ユーザーに CREATE 権限があることを確認し、ホスティングパネルの phpMyAdmin で手動で作成してください。"
+
+#: ext/history/history.php:502
+#: ext/history/views/panel.php:57
+msgid "AI agent"
+msgstr "AI エージェント"
+
+#. translators: %d: id of a user who no longer exists
+#: ext/history/history.php:506
+#, php-format
+msgid "user #%d"
+msgstr "ユーザー #%d"
+
+#. translators: %s: name of the user whose AI agent made the change
+#: ext/history/history.php:509
+#, php-format
+msgid "%s (AI agent)"
+msgstr "%s（AI エージェント）"
+
+#: ext/history/history.php:661
+msgid "This history entry is not yours. Only an administrator can roll back or delete the changes of other users."
+msgstr "この履歴はあなたのものではありません。他のユーザーの変更を元に戻したり削除したりできるのは管理者のみです。"
+
+#: ext/history/views/list.php:33
+msgid "Bulk operation"
+msgstr "一括処理"
+
+#. translators: %s: operation state
+#: ext/history/views/list.php:36
+#, php-format
+msgid "state: %s"
+msgstr "状態: %s"
+
+#. translators: %s: previous field value
+#: ext/history/views/list.php:76
+#, php-format
+msgid "value been: %s"
+msgstr "変更前の値: %s"
+
+#. translators: %s: number of bulked posts
+#: ext/history/views/list.php:84
+#, php-format
+msgid "posts bulked: %s"
+msgstr "一括処理した投稿: %s"
+
+#. translators: %s: columns list
+#: ext/history/views/list.php:98
+#, php-format
+msgid "columns: %s"
+msgstr "列: %s"
+
+#: ext/history/views/list.php:108
+#: ext/history/views/list.php:112
+msgid "revert"
+msgstr "元に戻す"
+
+#: ext/history/views/list.php:129
+msgid "History is empty!"
+msgstr "履歴はありません。"
+
+#: ext/history/views/panel.php:10
+msgid "Works for edit-operations and not work with delete-operations!"
+msgstr "編集操作のみ対象で、削除操作は元に戻せません。"
+
+#: ext/history/views/panel.php:14
+msgid "In FREE version of the plugin it is possible to roll back 2 last operations."
+msgstr "無料版では直近 2 件の操作まで元に戻せます。"
+
+#: ext/history/views/panel.php:20
+msgid "Per page:"
+msgstr "表示件数:"
+
+#: ext/history/views/panel.php:25
+msgid "ALL"
+msgstr "すべて"
+
+#: ext/history/views/panel.php:29
+msgid "Clear the History"
+msgstr "履歴を消去"
+
+#: ext/history/views/panel.php:37
+msgid "all"
+msgstr "すべて"
+
+#: ext/history/views/panel.php:38
+msgid "solo operations"
+msgstr "個別の操作"
+
+#: ext/history/views/panel.php:39
+msgid "bulk operations"
+msgstr "一括処理"
+
+#: ext/history/views/panel.php:46
+msgid "by Author"
+msgstr "作成者別"
+
+#: ext/history/views/panel.php:75
+msgid "by date from"
+msgstr "開始日"
+
+#: ext/history/views/panel.php:77
+#: ext/history/views/panel.php:82
+#: views/elements/draw_calendar.php:20
+msgid "clear"
+msgstr "消去"
+
+#: ext/history/views/panel.php:80
+msgid "by date to"
+msgstr "終了日"
+
+#: ext/history/views/panel.php:85
+msgid "by fields"
+msgstr "フィールド別"
+
+#: ext/history/views/panel.php:100
+msgid "Prev"
+msgstr "前へ"
+
+#: ext/history/views/panel.php:101
+msgid "of"
+msgstr "/"
+
+#: ext/history/views/panel.php:102
+#: index.php:358
+msgid "Next"
+msgstr "次へ"
+
+#: ext/info/info.php:12
+#: ext/info/views/panel.php:13
+msgid "Help"
+msgstr "ヘルプ"
+
+#. translators: 1: documentation link, 2: translations link, 3: FAQ link, 4: support link
+#: ext/info/views/panel.php:20
+#, php-format
+msgid "The plugin has next info: %1$s, %2$s, %3$s. Also if you have troubles you can %4$s!"
+msgstr "プラグインには次の情報があります: %1$s、%2$s、%3$s。問題がある場合は%4$sこともできます。"
+
+#: ext/info/views/panel.php:22
+msgid "documentation"
+msgstr "ドキュメント"
+
+#: ext/info/views/panel.php:26
+msgid "translations"
+msgstr "翻訳"
+
+#: ext/info/views/panel.php:30
+msgid "FAQ"
+msgstr "FAQ"
+
+#: ext/info/views/panel.php:34
+msgid "ask for support here"
+msgstr "サポートに問い合わせる"
+
+#. translators: %s: link to versions comparison
+#: ext/info/views/panel.php:43
+#, php-format
+msgid "Current version of the plugin is FREE. See the difference between FREE and PREMIUM versions %s"
+msgstr "現在のバージョンは無料版です。無料版とプレミアム版の違いは%sをご覧ください。"
+
+#: ext/info/views/panel.php:52
+msgid "Some little hints"
+msgstr "ちょっとしたヒント"
+
+#. translators: %s: link to the MCP server documentation
+#: ext/info/views/panel.php:58
+#, php-format
+msgid "Can I connect an AI assistant (Claude, ChatGPT, Cursor and others) to WOLF and edit posts by chatting with it? Yes - %s"
+msgstr "AI アシスタント（Claude、ChatGPT、Cursor など）を WOLF に接続して、チャットで投稿を編集できますか？ はい - %s"
+
+#: ext/info/views/panel.php:60
+msgid "here is how to connect it"
+msgstr "接続方法はこちら"
+
+#: ext/info/views/panel.php:66
+msgid "If to click on an empty space of the black wp-admin bar, it will get you back to the top of the page"
+msgstr "黒い wp-admin バーの空いている部分をクリックすると、ページの先頭に戻ります。"
+
+#. translators: %s: link to binded editing howto
+#: ext/info/views/panel.php:72
+#, php-format
+msgid "How to set the same value for some posts on the same time - %s"
+msgstr "複数の投稿に同時に同じ値を設定する方法 - %s"
+
+#. translators: %s: link to gallery field howto
+#: ext/info/views/panel.php:84
+#, php-format
+msgid "How to use - %s"
+msgstr "使い方 - %s"
+
+#: ext/info/views/panel.php:86
+msgid "meta field Gallery"
+msgstr "メタフィールド「ギャラリー」"
+
+#: ext/info/views/panel.php:93
+msgid "Search by posts slugs, which are in non-latin symbols does not work because in the data base they are keeps in the encoded format!"
+msgstr "投稿スラッグが英数字以外の文字の場合、データベースにエンコードされた形式で保存されているため、検索できません。"
+
+#: ext/info/views/panel.php:98
+msgid "Click ID of the post in the Posts Editor to see it on the site front."
+msgstr "投稿エディターで投稿の ID をクリックすると、サイト上でその投稿を表示します。"
+
+#: ext/info/views/panel.php:103
+msgid "Use Enter keyboard button in the Posts Editor for moving to the next posts row cell with saving of changes while edit textinputs. Use arrow Up or arrow Down keyboard buttons in the Posts Editor for moving to the next/previous posts row without saving of changes."
+msgstr "投稿エディターでテキスト入力を編集中に Enter キーを押すと、変更を保存して次の行のセルへ移動します。上下の矢印キーを押すと、変更を保存せずに次または前の行へ移動します。"
+
+#: ext/info/views/panel.php:107
+msgid "To select range of posts using checkboxes - select first post, press SHIFT key on your PC keyboard and click last post."
+msgstr "チェックボックスで投稿の範囲を選択するには、最初の投稿を選択し、キーボードの SHIFT キーを押しながら最後の投稿をクリックします。"
+
+#. translators: %s: link to reviews page
+#: ext/info/views/panel.php:117
+#, php-format
+msgid "If you like WOLF %s about what you liked and what you want to see in future versions of the plugin"
+msgstr "WOLF を気に入っていただけたら、%s。気に入った点や今後のバージョンへのご要望をお聞かせください。"
+
+#: ext/info/views/panel.php:120
+msgid "write us feedback please"
+msgstr "フィードバックをお寄せください"
+
+#. translators: %s: link to support forum
+#: ext/info/views/panel.php:125
+#, php-format
+msgid "If you have an idea you can %s"
+msgstr "アイデアがあれば%s"
+
+#: ext/info/views/panel.php:128
+msgid "share it with us here"
+msgstr "こちらからお知らせください"
+
+#: ext/info/views/panel.php:140
+msgid "Requirements"
+msgstr "動作要件"
+
+#: ext/info/views/panel.php:142
+msgid "Recommended min RAM"
+msgstr "推奨最小 RAM"
+
+#: ext/info/views/panel.php:143
+msgid "Minimal PHP version is"
+msgstr "最小 PHP バージョン"
+
+#: ext/info/views/panel.php:144
+msgid "Recommended PHP version"
+msgstr "推奨 PHP バージョン"
+
+#: ext/mcp/access.php:143
+#: ext/mcp/access.php:216
+msgid "Type part of a name, login or e-mail"
+msgstr "名前、ログイン名、メールアドレスの一部を入力"
+
+#: ext/mcp/access.php:144
+msgid "No matching user who can work with WOLF"
+msgstr "WOLF を利用できる該当ユーザーがいません"
+
+#: ext/mcp/access.php:145
+#: ext/mcp/bootstrap.php:567
+msgid "Working..."
+msgstr "処理中..."
+
+#: ext/mcp/access.php:146
+#: ext/mcp/access.php:230
+#: ext/mcp/access.php:277
+#: ext/mcp/bootstrap.php:568
+#: ext/mcp/bootstrap.php:629
+msgid "Disconnect"
+msgstr "切断"
+
+#: ext/mcp/access.php:147
+msgid "Issue a new key? The old key stops working at once and the assistant using it is disconnected."
+msgstr "新しいキーを発行しますか？ 古いキーは直ちに無効になり、それを使っているアシスタントは切断されます。"
+
+#: ext/mcp/access.php:148
+#: ext/mcp/bootstrap.php:569
+msgid "Something went wrong. Reload the page and try again."
+msgstr "問題が発生しました。ページを再読み込みして、もう一度お試しください。"
+
+#: ext/mcp/access.php:189
+msgid "cannot connect: this user can no longer work with WOLF"
+msgstr "接続できません: このユーザーは WOLF を利用できなくなりました"
+
+#: ext/mcp/access.php:193
+msgid "no key yet - it is issued when the user opens his settings"
+msgstr "キーはまだありません。ユーザーが設定を開くと発行されます。"
+
+#: ext/mcp/access.php:212
+msgid "MCP access for users"
+msgstr "ユーザーの MCP アクセス"
+
+#: ext/mcp/access.php:238
+msgid "Save the settings after changing the list. A user taken off the list loses his key and his connection at once."
+msgstr "リストを変更したら設定を保存してください。リストから外したユーザーは、キーと接続を直ちに失います。"
+
+#: ext/mcp/access.php:243
+msgid "Users picked here get a personal MCP key in their own settings and connect an AI assistant under their own WordPress account: the assistant can do exactly what they can do by hand, with their role and field visibility, never more. Two-factor connection is always on for personal keys. Only users who can work with WOLF are offered. The site-wide key above is not affected and stays yours."
+msgstr "ここで選択したユーザーは、自分の設定で個人用 MCP キーを受け取り、自分の WordPress アカウントで AI アシスタントを接続できます。アシスタントは、そのユーザーが手動でできること（ロールとフィールドの表示範囲を含む）だけを行え、それ以上はできません。個人用キーでは二要素接続が常に有効です。WOLF を利用できるユーザーのみ選択できます。上のサイト全体用キーには影響せず、引き続きあなたのものです。"
+
+#: ext/mcp/access.php:257
+msgid "Your MCP access"
+msgstr "あなたの MCP アクセス"
+
+#: ext/mcp/access.php:262
+#: ext/mcp/bootstrap.php:1146
+msgid "Address for the assistant:"
+msgstr "アシスタント用のアドレス:"
+
+#: ext/mcp/access.php:266
+msgid "Your personal key:"
+msgstr "あなたの個人用キー:"
+
+#: ext/mcp/access.php:268
+msgid "Regenerate key"
+msgstr "キーを再生成"
+
+#: ext/mcp/access.php:271
+msgid "Give the assistant the address and this key as a request header: Authorization, with the value \"Bearer\" followed by a space and the key. Two-factor connection is always on for a personal key: every session starts with a token the assistant shows you, which you confirm below."
+msgstr "アシスタントには、アドレスとこのキーをリクエストヘッダーとして渡してください。ヘッダー名は Authorization、値は「Bearer」、スペース、キーの順です。個人用キーでは二要素接続が常に有効です。セッションを開始するたびにアシスタントがトークンを表示するので、下で確認してください。"
+
+#: ext/mcp/access.php:281
+#: ext/mcp/bootstrap.php:633
+msgid "Confirm assistant connection - paste the token the assistant gave you:"
+msgstr "アシスタントの接続を確認 - アシスタントから渡されたトークンを貼り付けてください:"
+
+#: ext/mcp/access.php:283
+#: ext/mcp/bootstrap.php:635
+msgid "Confirm connection"
+msgstr "接続を確認"
+
+#: ext/mcp/access.php:288
+msgid "The administrator gave you MCP access. An assistant connected with your key works as you: it can do what you can do by hand in this plugin, with your role and field visibility. Keep the key private; if it may have leaked, press Regenerate key - the old key and its connection stop working at once."
+msgstr "管理者があなたに MCP アクセスを許可しました。あなたのキーで接続したアシスタントは、あなたとして動作し、このプラグインで手動でできること（ロールとフィールドの表示範囲を含む）を行えます。キーは他人に見せないでください。漏えいの恐れがある場合は「キーを再生成」を押してください。古いキーと接続は直ちに無効になります。"
+
+#: ext/mcp/access.php:308
+msgid "You cannot work with WOLF on this site."
+msgstr "このサイトでは WOLF を利用できません。"
+
+#: ext/mcp/access.php:312
+msgid "Only an administrator can do this."
+msgstr "この操作は管理者のみ実行できます。"
+
+#: ext/mcp/access.php:327
+msgid "You have no MCP access on this site. Ask the administrator to grant it."
+msgstr "このサイトでは MCP アクセスが許可されていません。管理者に許可を依頼してください。"
+
+#: ext/mcp/access.php:390
+msgid "No user given."
+msgstr "ユーザーが指定されていません。"
+
+#: ext/mcp/access.php:397
+#: ext/mcp/access.php:464
+#: ext/mcp/bootstrap.php:532
+msgid "Disconnected."
+msgstr "切断しました。"
+
+#: ext/mcp/access.php:416
+msgid "A new key is issued. The old one no longer works - update it in your assistant."
+msgstr "新しいキーを発行しました。古いキーは使えなくなるので、アシスタント側で更新してください。"
+
+#: ext/mcp/access.php:435
+#: ext/mcp/bootstrap.php:491
+msgid "That is not a connection token. Copy the whole token the assistant gave you - four groups of eight characters separated by dashes."
+msgstr "接続トークンではありません。アシスタントから渡されたトークン全体（ハイフンで区切られた 8 文字ずつの 4 グループ）をコピーしてください。"
+
+#: ext/mcp/access.php:444
+#: ext/mcp/bootstrap.php:510
+msgid "Connected. Go back to the assistant and tell it you have confirmed."
+msgstr "接続しました。アシスタントに戻り、確認が完了したことを伝えてください。"
+
+#: ext/mcp/bootstrap.php:459
+msgid "Not connected"
+msgstr "未接続"
+
+#. translators: %d: minutes since the assistant last used the connection
+#: ext/mcp/bootstrap.php:469
+#, php-format
+msgid "Connected, last activity %d min ago"
+msgstr "接続中、最終操作は %d 分前"
+
+#: ext/mcp/bootstrap.php:485
+msgid "Only an administrator can confirm a connection."
+msgstr "接続を確認できるのは管理者のみです。"
+
+#: ext/mcp/bootstrap.php:525
+msgid "Only an administrator can end a connection."
+msgstr "接続を終了できるのは管理者のみです。"
+
+#: ext/mcp/bootstrap.php:584
+msgid "No assistant is connected."
+msgstr "接続中のアシスタントはありません。"
+
+#. translators: 1: time the connection was confirmed, 2: time it expires if left idle
+#: ext/mcp/bootstrap.php:589
+#, php-format
+msgid "An assistant is connected since %1$s. If it stays idle, the connection ends at %2$s."
+msgstr "アシスタントは %1$s から接続中です。操作がない場合、%2$s に接続が終了します。"
+
+#. translators: %s: how long a connection may stay idle, e.g. "3600 seconds (60 minutes)"
+#: ext/mcp/bootstrap.php:612
+#, php-format
+msgid "Recommended: turn on two-factor connection. Without it, anyone who gets hold of the MCP key - from a screenshot, a shared config or a stolen laptop - can work with your site. With it, every assistant session also needs a token that you confirm here yourself, and that expires after %s without use."
+msgstr "推奨: 二要素接続を有効にしてください。無効の場合、スクリーンショット、共有された設定ファイル、盗まれたノート PC などから MCP キーを入手した人なら誰でも、サイトを操作できてしまいます。有効にすると、アシスタントのセッションごとにあなた自身がここで確認するトークンも必要になり、使われない状態が %s 続くとトークンは失効します。"
+
+#: ext/mcp/bootstrap.php:1092
+msgid "Enable the MCP server"
+msgstr "MCP サーバーを有効にする"
+
+#: ext/mcp/bootstrap.php:1108
+msgid "The MCP server is on: assistants can connect at the address below."
+msgstr "MCP サーバーは有効です。アシスタントは下のアドレスに接続できます。"
+
+#: ext/mcp/bootstrap.php:1110
+msgid "The MCP server is off and no assistant can connect. Choose Yes here: the key and the other MCP settings appear below, and Save switches the server on."
+msgstr "MCP サーバーは無効で、どのアシスタントも接続できません。ここで「はい」を選ぶとキーなどの MCP 設定が下に表示され、保存するとサーバーが有効になります。"
+
+#: ext/mcp/bootstrap.php:1135
+msgid "Off by default. The MCP server lets an AI assistant read and edit the posts of this site over a REST endpoint. While it is off, the endpoint is not registered at all and nothing can reach it. Turn it on only when you are about to connect an assistant, and turn it back off if you stop using one."
+msgstr "初期状態では無効です。MCP サーバーを使うと、AI アシスタントが REST エンドポイント経由でこのサイトの投稿を読み取り・編集できます。無効の間はエンドポイント自体が登録されず、外部からは一切アクセスできません。アシスタントを接続する直前にだけ有効にし、使わなくなったら無効に戻してください。"
+
+#: ext/mcp/bootstrap.php:1141
+msgid "MCP secret key"
+msgstr "MCP シークレットキー"
+
+#: ext/mcp/bootstrap.php:1149
+msgid "Not active: the MCP server is switched off above."
+msgstr "無効: 上で MCP サーバーがオフになっています。"
+
+#: ext/mcp/bootstrap.php:1156
+msgid "Adding it in claude.ai: its server check will say \"Couldn't check the server\" with 403. That is expected for a server that signs in with a key - press \"Continue anyway\" and add the header Authorization with the value \"Bearer\" followed by a space and the key."
+msgstr "claude.ai に追加する場合: サーバーチェックで 403 とともに「Couldn't check the server」と表示されますが、キーでサインインするサーバーでは想定どおりです。「Continue anyway」を押し、Authorization ヘッダーに「Bearer」、スペース、キーの順の値を指定して追加してください。"
+
+#: ext/mcp/bootstrap.php:1157
+msgid "How to connect an AI assistant"
+msgstr "AI アシスタントの接続方法"
+
+#: ext/mcp/bootstrap.php:1161
+msgid "Lets an AI assistant work with the posts of this site through a chat: find them, change them in bulk, roll changes back. Give the assistant the address below and this key as a request header named Authorization, with the value \"Bearer\" followed by a space and the key. Some clients call it an API key header instead - X-WPBE-KEY works the same way. The key is never accepted in the address itself, because anything written into a URL ends up in server logs, browser history and every proxy along the way. Clear this field and press Save to issue a new key: the old one stops working at once and every connected assistant has to be reconnected."
+msgstr "AI アシスタントがチャットを通じてこのサイトの投稿を検索、一括変更、元に戻せるようにします。アシスタントには、下のアドレスとこのキーを、Authorization という名前のリクエストヘッダーで渡してください。値は「Bearer」、スペース、キーの順です。クライアントによっては API キーヘッダーとして扱う場合があり、その場合は X-WPBE-KEY も同様に使えます。URL に書いたものはサーバーログ、ブラウザー履歴、経路上のすべてのプロキシに残るため、キーを URL 内で渡すことはできません。このフィールドを空にして「保存」を押すと新しいキーが発行され、古いキーは直ちに無効になり、接続中のアシスタントはすべて再接続が必要になります。"
+
+#: ext/mcp/bootstrap.php:1167
+msgid "MCP two-factor connection"
+msgstr "MCP 二要素接続"
+
+#: ext/mcp/bootstrap.php:1167
+msgid "recommended"
+msgstr "推奨"
+
+#: ext/mcp/bootstrap.php:1178
+msgid "This does not switch the MCP server on - that is \"Enable the MCP server\" above. Two-factor connection takes effect once the server is on."
+msgstr "これで MCP サーバーが有効になるわけではありません。有効にするのは上の「MCP サーバーを有効にする」です。二要素接続は、サーバーが有効になってから機能します。"
+
+#. translators: %s: how long a connection may stay idle
+#: ext/mcp/bootstrap.php:1187
+#, php-format
+msgid "Off by default, recommended. With it on, the MCP key alone is not enough: every assistant session starts by showing you a token, you paste it below and confirm, and only then can the assistant work. The connection ends by itself after %s without activity, so a leaked key is useless without you. One assistant is connected at a time."
+msgstr "初期状態では無効ですが、有効を推奨します。有効にすると、MCP キーだけでは足りなくなります。アシスタントのセッションごとにトークンが表示され、それを下に貼り付けて確認すると初めてアシスタントが動作できます。操作がない状態が %s 続くと接続は自動的に終了するため、キーが漏れてもあなたの確認なしには使えません。同時に接続できるアシスタントは 1 つです。"
+
+#: ext/mcp/bootstrap.php:1276
+#: index.php:330
+msgid "Upload images"
+msgstr "画像をアップロード"
+
+#: ext/mcp/bootstrap.php:1289
+msgid "Add images to your site"
+msgstr "サイトに画像を追加"
+
+#. translators: %s: post title
+#: ext/mcp/bootstrap.php:1294
+#, php-format
+msgid "The first one becomes the featured image of %s."
+msgstr "最初の 1 枚が %s のアイキャッチ画像になります。"
+
+#: ext/mcp/bootstrap.php:1296
+msgid "They go into the media library, ready to put on a post."
+msgstr "画像はメディアライブラリに追加され、投稿ですぐに使えます。"
+
+#: ext/mcp/bootstrap.php:1302
+msgid "Drop images here"
+msgstr "ここに画像をドロップ"
+
+#: ext/mcp/bootstrap.php:1303
+msgid "or click to choose them"
+msgstr "またはクリックして選択"
+
+#: ext/meta/meta.php:29
+#: ext/meta/views/panel.php:9
+msgid "Meta Fields"
+msgstr "メタフィールド"
+
+#: ext/meta/meta.php:51
+msgid "Meta key cannot be empty!"
+msgstr "メタキーは空にできません。"
+
+#: ext/meta/meta.php:52
+msgid "Enter a post ID!"
+msgstr "投稿 ID を入力してください。"
+
+#: ext/meta/meta.php:53
+msgid "No meta keys found!"
+msgstr "メタキーが見つかりません。"
+
+#: ext/meta/meta.php:54
+msgid "New meta key"
+msgstr "新しいメタキー"
+
+#: ext/meta/meta.php:214
+msgid "EXACT (=)"
+msgstr "完全一致 (=)"
+
+#: ext/meta/meta.php:215
+msgid "NOT EXACT (!=)"
+msgstr "不一致 (!=)"
+
+#: ext/meta/meta.php:216
+msgid "NOT LIKE"
+msgstr "部分一致を除外"
+
+#: ext/meta/meta.php:218
+msgid "NOT Empty"
+msgstr "空でない"
+
+#: ext/meta/views/panel.php:14
+msgid "In FREE version of the plugin it is possible manipulate with 2 meta fields."
+msgstr "無料版で操作できるメタフィールドは 2 つまでです。"
+
+#: ext/meta/views/panel.php:19
+msgid "Add Custom key by hands"
+msgstr "カスタムキーを手動で追加"
+
+#: ext/meta/views/panel.php:21
+msgid "Add"
+msgstr "追加"
+
+#: ext/meta/views/panel.php:26
+msgid "Get meta keys from any post by its ID"
+msgstr "投稿 ID を指定してメタキーを取得"
+
+#: ext/meta/views/panel.php:27
+msgid "enter post ID"
+msgstr "投稿 ID を入力"
+
+#: ext/meta/views/panel.php:28
+msgid "Get"
+msgstr "取得"
+
+#: ext/meta/views/panel.php:34
+msgid "Meta quick search ..."
+msgstr "メタをクイック検索..."
+
+#: ext/meta/views/panel.php:59
+msgid "Save meta fields"
+msgstr "メタフィールドを保存"
+
+#: ext/meta/views/panel.php:79
+#: index.php:303
+#: views/parts/post-upsells.php:19
+#: views/wpbe.php:396
+#: views/wpbe.php:406
+#: views/wpbe.php:494
+msgid "move"
+msgstr "移動"
+
+#: ext/meta/views/panel.php:86
+msgid "enter title"
+msgstr "タイトルを入力"
+
+#: ext/meta/views/panel.php:92
+msgid "textinput"
+msgstr "テキスト入力"
+
+#: ext/meta/views/panel.php:93
+msgid "textarea"
+msgstr "テキストエリア"
+
+#: ext/meta/views/panel.php:94
+msgid "checkbox"
+msgstr "チェックボックス"
+
+#: ext/meta/views/panel.php:95
+msgid "calendar"
+msgstr "カレンダー"
+
+#: ext/meta/views/panel.php:96
+msgid "array"
+msgstr "配列"
+
+#: ext/meta/views/panel.php:97
+msgid "gallery"
+msgstr "ギャラリー"
+
+#: ext/meta/views/panel.php:104
+msgid "string"
+msgstr "文字列"
+
+#: ext/meta/views/panel.php:105
+msgid "number"
+msgstr "数値"
+
+#: index.php:28
+msgid "Hello, looks like you bought and installed premium version of WOLF - WordPress Posts Bulk Editor and Manager Professional, please deactivate free version before, then uninstall it. 2 versions of the same plugin cannot be activated on the same time!"
+msgstr "WOLF - WordPress 投稿一括編集・管理プロフェッショナルのプレミアム版をご購入・インストールされたようです。先に無料版を無効化し、アンインストールしてください。同じプラグインの 2 つのバージョンを同時に有効にすることはできません。"
+
+#: index.php:145
+msgid "If you not familiar with the plugin, firstly"
+msgstr "このプラグインに慣れていない場合は、"
+
+#: index.php:148
+msgid "visit this page"
+msgstr "このページをご覧ください"
+
+#: index.php:153
+msgid "please"
+msgstr "まず"
+
+#: index.php:171
+#: index.php:183
+msgid "WOLF Bulk Editor"
+msgstr "WOLF Bulk Editor"
+
+#: index.php:287
+#: views/wpbe.php:124
+msgid "Posts Editor"
+msgstr "投稿エディター"
+
+#: index.php:304
+msgid "Search"
+msgstr "検索"
+
+#: index.php:305
+msgid "Failed"
+msgstr "失敗しました"
+
+#: index.php:306
+msgid "Error"
+msgstr "エラー"
+
+#: index.php:308
+msgid "ignore"
+msgstr "無視"
+
+#: index.php:309
+msgid "This is not deletable!"
+msgstr "これは削除できません。"
+
+#: index.php:310
+#: views/elements/draw_attribute_list_btn.php:13
+#: views/elements/draw_taxonomy_popup_btn.php:19
+msgid "no items"
+msgstr "項目なし"
+
+#: index.php:311
+msgid "none"
+msgstr "なし"
+
+#: index.php:312
+msgid "no data"
+msgstr "データなし"
+
+#: index.php:313
+msgid "Loading"
+msgstr "読み込み中"
+
+#: index.php:314
+msgid "Loaded"
+msgstr "読み込みました"
+
+#: index.php:315
+msgid "Saved"
+msgstr "保存しました"
+
+#: index.php:316
+msgid "Saving"
+msgstr "保存中"
+
+#: index.php:317
+#: views/wpbe.php:219
+#: views/wpbe.php:252
+#: views/wpbe.php:280
+#: views/wpbe.php:329
+#: views/wpbe.php:384
+msgid "Apply"
+msgstr "適用"
+
+#: index.php:318
+#: views/wpbe.php:218
+#: views/wpbe.php:251
+#: views/wpbe.php:279
+#: views/wpbe.php:328
+#: views/wpbe.php:383
+#: views/wpbe.php:1012
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: index.php:319
+msgid "Canceled"
+msgstr "キャンセルしました"
+
+#: index.php:320
+msgid "Sure?"
+msgstr "よろしいですか？"
+
+#: index.php:321
+msgid "Creating"
+msgstr "作成中"
+
+#: index.php:322
+msgid "Created!"
+msgstr "作成しました。"
+
+#: index.php:323
+msgid "Duplicating"
+msgstr "複製中"
+
+#: index.php:324
+msgid "Duplicated!"
+msgstr "複製しました。"
+
+#: index.php:325
+msgid "Deleting"
+msgstr "削除中"
+
+#: index.php:326
+msgid "Deleted!"
+msgstr "削除しました。"
+
+#: index.php:327
+msgid "Reseting"
+msgstr "リセット中"
+
+#: index.php:328
+msgid "Reseted!"
+msgstr "リセットしました。"
+
+#: index.php:329
+msgid "Upload image"
+msgstr "画像をアップロード"
+
+#: index.php:331
+msgid "Upload file"
+msgstr "ファイルをアップロード"
+
+#: index.php:332
+msgid "Fill up the data please!"
+msgstr "データを入力してください。"
+
+#. translators: %s: name
+#: index.php:336
+#, php-format
+msgid "Enter how many time duplicate selected [%s](s)!"
+msgstr "選択した [%s] を何個複製するか入力してください。"
+
+#. translators: %s: name
+#: index.php:341
+#, php-format
+msgid "Enter how many new [%s](s) to create!"
+msgstr "作成する新しい [%s] の数を入力してください。"
+
+#: index.php:343
+msgid "Text search by title or SKU"
+msgstr "タイトルまたは SKU でテキスト検索"
+
+#: index.php:344
+#: views/parts/top_panel.php:25
+msgid "Show: Filters/Bulk Edit/Export"
+msgstr "表示: フィルター / 一括編集 / エクスポート"
+
+#: index.php:345
+msgid "Hide: Filters/Bulk Edit/Export"
+msgstr "非表示: フィルター / 一括編集 / エクスポート"
+
+#: index.php:346
+msgid "Per page"
+msgstr "表示件数"
+
+#: index.php:347
+msgid "Select background color"
+msgstr "背景色を選択"
+
+#: index.php:348
+msgid "Select text color"
+msgstr "文字色を選択"
+
+#: index.php:349
+msgid "No data available in the table"
+msgstr "テーブルにデータがありません"
+
+#: index.php:350
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "_TOTAL_ 件中 _START_ 〜 _END_ 件を表示"
+
+#: index.php:351
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "0 件中 0 〜 0 件を表示"
+
+#: index.php:352
+msgid "(filtered from _MAX_ total entries)"
+msgstr "（全 _MAX_ 件から絞り込み）"
+
+#: index.php:353
+msgid "Loading..."
+msgstr "読み込み中..."
+
+#: index.php:354
+msgid "Processing..."
+msgstr "処理中..."
+
+#: index.php:355
+msgid "No matching records found"
+msgstr "一致するレコードが見つかりません"
+
+#: index.php:356
+msgid "First"
+msgstr "最初"
+
+#: index.php:357
+msgid "Last"
+msgstr "最後"
+
+#: index.php:359
+msgid "Previous"
+msgstr "前へ"
+
+#. translators: %s: name
+#: index.php:368
+#, php-format
+msgid "the filtered [%s]. To remove filtering press reset button on the tools panel below"
+msgstr "絞り込んだ [%s]。絞り込みを解除するには、下のツールパネルのリセットボタンを押してください"
+
+#. translators: %s: name
+#: index.php:373
+#, php-format
+msgid "the selected [%s](s)"
+msgstr "選択した [%s]"
+
+#. translators: %s: name
+#: index.php:378
+#, php-format
+msgid "You can reset selection of the [%s](s) by its reset button on the panel of the editor OR uncheck them manually!"
+msgstr "[%s] の選択は、エディターのパネルにあるリセットボタンで解除するか、手動でチェックを外してください。"
+
+#: index.php:380
+msgid "Maybe term(s) with such name(s) already exists!"
+msgstr "同じ名前のタームがすでに存在する可能性があります。"
+
+#: index.php:381
+msgid "In FREE version of the plugin you can create one profile only!"
+msgstr "無料版では作成できるプロフィールは 1 つだけです。"
+
+#: index.php:382
+msgid "append sub item"
+msgstr "サブ項目を追加"
+
+#: index.php:383
+msgid "This field is deactivated in FREE version for bulk edit!"
+msgstr "このフィールドは無料版では一括編集できません。"
+
+#: index.php:384
+msgid "Posts checked"
+msgstr "チェックした投稿"
+
+#: index.php:584
+msgid "View the post on the site front"
+msgstr "サイト上で投稿を表示"
+
+#: index.php:590
+msgid "Editing of the post on its page"
+msgstr "投稿のページで編集"
+
+#: index.php:887
+msgid "Posts not found!"
+msgstr "投稿が見つかりません。"
+
+#. translators: %s: post name
+#: index.php:966
+#, php-format
+msgid "New %s"
+msgstr "新規 %s"
+
+#: index.php:1005
+msgid "copy"
+msgstr "コピー"
+
+#: index.php:1295
+msgid "see the post on the site"
+msgstr "サイト上で投稿を見る"
+
+#: index.php:1397
+msgid "Scheduled"
+msgstr "予約済み"
+
+#: index.php:1536
+msgid "Later"
+msgstr "後で"
+
+#: index.php:1538
+msgid "Hi! Are you enjoying using WOLF – WordPress Posts Bulk Editor Professional?"
+msgstr "こんにちは。WOLF – WordPress 投稿一括編集プロフェッショナルを楽しんでお使いいただけていますか？"
+
+#: index.php:1539
+msgid "Yes, I love it"
+msgstr "はい、気に入っています"
+
+#: index.php:1539
+msgid "Not really..."
+msgstr "あまり..."
+
+#. translators: %s: name
+#: index.php:1545
+#, php-format
+msgid "That's awesome! Could you please do us a BIG favor and give it a 5-star rating on %s to help us spread the word and boost our motivation?"
+msgstr "ありがとうございます。よろしければ、%s で 5 つ星の評価をいただけませんか？ 多くの方に知っていただくことと、私たちの励みになります。"
+
+#: index.php:1549
+msgid "Okay, you deserve it"
+msgstr "はい、評価します"
+
+#: index.php:1550
+msgid "Nope, maybe later"
+msgstr "いいえ、また今度"
+
+#: index.php:1551
+msgid "I already did"
+msgstr "すでに評価しました"
+
+#: index.php:1556
+msgid "We are sorry to hear you aren't enjoying WOLF. We would love a chance to improve it. Could you take a minute and let us know what we can do better?"
+msgstr "WOLF をお楽しみいただけず申し訳ありません。改善の機会をいただけませんか。改善すべき点を少しお聞かせください。"
+
+#: index.php:1558
+msgid "Give Feedback"
+msgstr "フィードバックを送る"
+
+#: index.php:1559
+msgid "No thanks"
+msgstr "結構です"
+
+#: views/elements/draw_calendar.php:20
+msgid "Will never reset published date, and for modified date field  will set current time!"
+msgstr "公開日はリセットされず、更新日のフィールドには現在時刻が設定されます。"
+
+#. translators: %s: product name
+#: views/elements/draw_gallery_popup_editor_btn.php:57
+#, php-format
+msgid "Product: %s"
+msgstr "商品: %s"
+
+#. translators: %s: product name
+#: views/elements/draw_gallery_popup_editor_btn.php:61
+#, php-format
+msgid "Images (%s)"
+msgstr "画像 (%s)"
+
+#. translators: %s: name
+#: views/elements/draw_gallery_popup_editor_btn.php:77
+#: views/elements/draw_meta_popup_editor_btn.php:33
+#: views/elements/draw_popup_editor_btn.php:33
+#: views/elements/draw_upsells_popup_editor_btn.php:30
+#: views/elements/draw_upsells_popup_editor_btn.php:47
+#, php-format
+msgid "Post: %s"
+msgstr "投稿: %s"
+
+#: views/elements/draw_meta_popup_editor_btn.php:20
+msgid "Array"
+msgstr "配列"
+
+#: views/elements/draw_popup_editor_btn.php:5
+msgid "Content[empty]"
+msgstr "本文[空]"
+
+#: views/elements/draw_restricked.php:7
+msgid "Not allowed!"
+msgstr "許可されていません。"
+
+#. translators: %s: name
+#: views/elements/draw_upsells_popup_editor_btn.php:33
+#, php-format
+msgid "Posts (%s)"
+msgstr "投稿 (%s)"
+
+#: views/elements/multi_select.php:27
+msgid "Select all"
+msgstr "すべて選択"
+
+#: views/elements/multi_select.php:28
+msgid "Deselect all"
+msgstr "すべて選択解除"
+
+#: views/elements/multi_select.php:33
+msgid "cancel"
+msgstr "キャンセル"
+
+#: views/elements/multi_select.php:38
+msgid "save"
+msgstr "保存"
+
+#: views/parts/advanced-table.php:14
+msgid "Set full width"
+msgstr "全幅にする"
+
+#: views/parts/advanced-table.php:15
+#: views/wpbe.php:899
+msgid "Columns profiles"
+msgstr "列プロフィール"
+
+#: views/parts/advanced-table.php:21
+msgid "New Post"
+msgstr "新規投稿"
+
+#: views/parts/advanced-table.php:22
+msgid "Duplicate selected post(s)."
+msgstr "選択した投稿を複製します。"
+
+#: views/parts/advanced-table.php:25
+msgid "Delete selected post(s)"
+msgstr "選択した投稿を削除"
+
+#: views/parts/advanced-table.php:27
+msgid "Uncheck all selected posts"
+msgstr "選択した投稿のチェックをすべて外す"
+
+#: views/parts/advanced-table.php:28
+msgid "Reset filters"
+msgstr "フィルターをリセット"
+
+#: views/parts/advanced-table.php:39
+msgid "select all variations"
+msgstr "すべてのバリエーションを選択"
+
+#: views/parts/advanced-table.php:45
+msgid "Scroll right"
+msgstr "右へスクロール"
+
+#: views/parts/advanced-table.php:46
+msgid "Scroll left"
+msgstr "左へスクロール"
+
+#: views/parts/post-gallery.php:17
+msgid "Detach image of the post"
+msgstr "投稿の画像を外す"
+
+#: views/parts/post-upsells.php:19
+#: views/wpbe.php:396
+#: views/wpbe.php:406
+#: views/wpbe.php:494
+msgid "drag and drop"
+msgstr "ドラッグ＆ドロップ"
+
+#: views/parts/top_panel.php:21
+msgid "Close the panel"
+msgstr "パネルを閉じる"
+
+#: views/wpbe.php:13
+msgid "No any post type permitted to edit for site editors. Ask please site administrators for details!"
+msgstr "サイトの編集者が編集できる投稿タイプがありません。詳しくはサイトの管理者に問い合わせてください。"
+
+#: views/wpbe.php:38
+msgid "Your settings have been saved."
+msgstr "設定を保存しました。"
+
+#. translators: %s: WordPress version
+#: views/wpbe.php:53
+#, php-format
+msgid "Compatible with WordPress v.%s"
+msgstr "WordPress v.%s と互換性あり"
+
+#: views/wpbe.php:65
+msgid "MCP server is off. Connect your AI assistant to WOLF: switch it on in the Settings tab - click to read how"
+msgstr "MCP サーバーはオフです。AI アシスタントを WOLF に接続するには、「設定」タブでオンにしてください。クリックすると手順を読めます"
+
+#: views/wpbe.php:68
+msgid "MCP server is on, two-factor connection is off - switching it on in the Settings tab is recommended. Click to read how to connect your AI assistant"
+msgstr "MCP サーバーはオン、二要素接続はオフです。「設定」タブでオンにすることを推奨します。クリックすると AI アシスタントの接続方法を読めます"
+
+#: views/wpbe.php:71
+msgid "MCP server is on, with two-factor connection. Click to read how to connect your AI assistant"
+msgstr "MCP サーバーはオン、二要素接続も有効です。クリックすると AI アシスタントの接続方法を読めます"
+
+#: views/wpbe.php:88
+msgid "Upgrade"
+msgstr "アップグレード"
+
+#: views/wpbe.php:111
+msgid "ATTENTION! Your version of the WordPress is obsolete. There is no warranty of normal working with the plugin!!"
+msgstr "注意: お使いの WordPress は古いバージョンです。プラグインの正常な動作は保証できません。"
+
+#: views/wpbe.php:132
+msgid "Settings"
+msgstr "設定"
+
+#: views/wpbe.php:166
+msgid "Select some columns in tab \"Settings\""
+msgstr "「設定」タブで列を選択してください"
+
+#: views/wpbe.php:169
+msgid "Actions"
+msgstr "操作"
+
+#: views/wpbe.php:201
+msgid "Quick search"
+msgstr "クイック検索"
+
+#: views/wpbe.php:202
+msgid "Quick terms search by its name"
+msgstr "名前でタームをクイック検索"
+
+#: views/wpbe.php:206
+msgid "create new term"
+msgstr "新しいタームを作成"
+
+#: views/wpbe.php:207
+msgid "selected only"
+msgstr "選択したもののみ"
+
+#: views/wpbe.php:208
+msgid "Select all terms"
+msgstr "すべてのタームを選択"
+
+#: views/wpbe.php:301
+msgid "Add Image"
+msgstr "画像を追加"
+
+#: views/wpbe.php:307
+msgid "Replace all posts images by the selected ones"
+msgstr "すべての投稿の画像を選択した画像に置き換える"
+
+#: views/wpbe.php:308
+msgid "Add selected images to the already existed ones"
+msgstr "選択した画像を既存の画像に追加する"
+
+#: views/wpbe.php:309
+msgid "Delete selected images from the posts"
+msgstr "選択した画像を投稿から削除する"
+
+#: views/wpbe.php:310
+msgid "Delete selected images from the posts, also delete them from the media library forever"
+msgstr "選択した画像を投稿から削除し、メディアライブラリからも完全に削除する"
+
+#: views/wpbe.php:362
+msgid "REMEMBER: sequence of data maybe have sense (and maybe not), so be attentive! Do not mix in the same popup window data of array and object data!"
+msgstr "注意: データの順序が意味を持つ場合と持たない場合があるので、慎重に行ってください。同じポップアップ内で配列データとオブジェクトデータを混在させないでください。"
+
+#: views/wpbe.php:372
+msgid "Prepend array key/value"
+msgstr "配列のキー/値を先頭に追加"
+
+#: views/wpbe.php:373
+msgid "Prepend object set"
+msgstr "オブジェクトセットを先頭に追加"
+
+#: views/wpbe.php:377
+msgid "Append array key/value"
+msgstr "配列のキー/値を末尾に追加"
+
+#: views/wpbe.php:378
+msgid "Append object set"
+msgstr "オブジェクトセットを末尾に追加"
+
+#: views/wpbe.php:397
+#: views/wpbe.php:407
+#: views/wpbe.php:415
+msgid "key"
+msgstr "キー"
+
+#: views/wpbe.php:398
+#: views/wpbe.php:416
+msgid "value"
+msgstr "値"
+
+#: views/wpbe.php:429
+msgid "Note: if horizontal scroll disappeared when it must be visible, click on tab Posts Editor to make it visible"
+msgstr "メモ: 表示されるはずの横スクロールバーが消えた場合は、「投稿エディター」タブをクリックすると表示されます。"
+
+#. translators: 1: total columns count, 2: enabled columns count
+#: views/wpbe.php:460
+#, php-format
+msgid "Columns settings%1$s, columns enabled %2$s"
+msgstr "列の設定%1$s、有効な列 %2$s"
+
+#: views/wpbe.php:477
+msgid "Show all columns"
+msgstr "すべての列を表示"
+
+#: views/wpbe.php:494
+#: views/wpbe.php:517
+#: views/wpbe.php:650
+#: views/wpbe.php:728
+#: views/wpbe.php:765
+msgid "premium version"
+msgstr "プレミアム版"
+
+#: views/wpbe.php:516
+#: views/wpbe.php:522
+msgid "visible for the site editor"
+msgstr "サイトの編集者に表示"
+
+#: views/wpbe.php:561
+msgid "cell text or number size"
+msgstr "セルのテキストまたは数値のサイズ"
+
+#: views/wpbe.php:614
+#: views/wpbe.php:796
+msgid "Save all settings"
+msgstr "すべての設定を保存"
+
+#: views/wpbe.php:620
+msgid "General settings"
+msgstr "一般設定"
+
+#: views/wpbe.php:687
+msgid "Site editors post types"
+msgstr "サイト編集者の投稿タイプ"
+
+#: views/wpbe.php:695
+msgid "What post types can edit site editors in the tab Posts Editor. Use comma, example: post,car,page"
+msgstr "サイトの編集者が「投稿エディター」タブで編集できる投稿タイプです。カンマ区切りで指定します。例: post,car,page"
+
+#: views/wpbe.php:700
+msgid "Separate columns and meta for post types"
+msgstr "投稿タイプごとに列とメタを分ける"
+
+#: views/wpbe.php:733
+msgid "Each post type has its own set of columns and meta fields."
+msgstr "投稿タイプごとに独自の列とメタフィールドのセットを持ちます。"
+
+#: views/wpbe.php:738
+msgid "Show content and excerpt text partly"
+msgstr "本文と抜粋のテキストを一部表示"
+
+#: views/wpbe.php:770
+msgid "Show part of the text in the content and excerpt edit button"
+msgstr "本文と抜粋の編集ボタンにテキストの一部を表示します。"
+
+#: views/wpbe.php:801
+msgid "More settings (implicit)"
+msgstr "その他の設定（詳細）"
+
+#: views/wpbe.php:823
+msgid "Show description"
+msgstr "説明を表示"
+
+#: views/wpbe.php:832
+msgid "Edit"
+msgstr "編集"
+
+#: views/wpbe.php:892
+msgid "Columns profile"
+msgstr "列プロフィール"
+
+#: views/wpbe.php:900
+msgid "Here you can load previously saved columns profile. After pressing on the load button, page reloading will start immediately!"
+msgstr "保存済みの列プロフィールを読み込めます。読み込みボタンを押すと、すぐにページが再読み込みされます。"
+
+#. translators: 1: profile title, 2: delete profile link
+#: views/wpbe.php:906
+#, php-format
+msgid "Current profile is: %1$s %2$s"
+msgstr "現在のプロフィール: %1$s %2$s"
+
+#: views/wpbe.php:910
+msgid "remove current columns profile"
+msgstr "現在の列プロフィールを削除"
+
+#: views/wpbe.php:922
+msgid "Select profile to load"
+msgstr "読み込むプロフィールを選択"
+
+#: views/wpbe.php:942
+msgid "New Profile"
+msgstr "新しいプロフィール"
+
+#: views/wpbe.php:943
+msgid "Here you can type any title and save current columns set and their order. Type here any title and then press Save button OR press Enter button on your keyboard!"
+msgstr "現在の列の組み合わせと順序に好きな名前を付けて保存できます。名前を入力して「保存」ボタンを押すか、キーボードの Enter キーを押してください。"
+
+#: views/wpbe.php:955
+#: views/wpbe.php:1011
+msgid "Create"
+msgstr "作成"
+
+#. translators: %s: taxonomy/term placeholder
+#: views/wpbe.php:972
+#, php-format
+msgid "New term for [%s]"
+msgstr "[%s] の新しいターム"
+
+#: views/wpbe.php:979
+msgid "New Term(s)"
+msgstr "新しいターム"
+
+#: views/wpbe.php:980
+msgid "Here you can write title for the new term. Use comma to create some new tags on the same time! New terms with already existed names will not be created!"
+msgstr "新しいタームのタイトルを入力します。複数のタグを同時に作成するにはカンマで区切ります。すでに存在する名前のタームは作成されません。"
+
+#: views/wpbe.php:990
+msgid "Slug(s) of the new term"
+msgstr "新しいタームのスラッグ"
+
+#: views/wpbe.php:991
+msgid "Here you can write slug for the the new term (optionally). Use comma for slug(s) when you create some on the same time terms, or leave slug field empty to create slug(s) automatically"
+msgstr "新しいタームのスラッグを入力します（任意）。複数のタームを同時に作成する場合はカンマで区切ります。空のままにすると自動で作成されます。"
+
+#: views/wpbe.php:1001
+msgid "Parent of the new term(s)"
+msgstr "新しいタームの親"
+
+#: views/wpbe.php:1002
+msgid "Here you can select parent for the the new term (optionally)"
+msgstr "新しいタームの親を選択します（任意）。"
+
+#: views/wpbe.php:1045
+msgid "UPGRADE TO FULL VERSION"
+msgstr "フル版にアップグレード"
+
+#: views/wpbe.php:1046
+msgid "WOLF - Posts Bulk Editor Professional"
+msgstr "WOLF - Posts Bulk Editor Professional"
+
+#: views/wpbe.php:1050
+msgid "BEAR - Bulk Editor Professional for WooCommerce"
+msgstr "BEAR - Bulk Editor Professional for WooCommerce"
+
+#: views/wpbe.php:1051
+msgid "BEAR - WooCommerce Bulk Editor Professional"
+msgstr "BEAR - WooCommerce Bulk Editor Professional"
+
+#: views/wpbe.php:1055
+#: views/wpbe.php:1056
+msgid "WPCS - WordPress Currency Switcher"
+
+msgstr "WPCS - WordPress Currency Switcher"

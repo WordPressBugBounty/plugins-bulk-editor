@@ -49,6 +49,13 @@ global $WPBE;
 					$opt_auth[$user->ID] = $user->display_name;
 				}
 			}
+
+			// the AI agent of the shop-wide MCP key has no WordPress account, so it
+			// is not in the user list - but its operations are in this history and
+			// the owner has to be able to tell them from his own
+			if (class_exists('WPBE_MCP')) {
+				$opt_auth[WPBE_MCP::shop_user_id()] = esc_html__('AI agent', 'bulk-editor');
+			}
 			?>
 			<?php
 			echo wp_kses(WPBE_HELPER::draw_select(array(

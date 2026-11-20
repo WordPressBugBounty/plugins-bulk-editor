@@ -2977,3 +2977,47 @@ input[type="checkbox"].wpbe_toggle_btn {
     }
 }
 
+
+/* MCP mark in the header: an svg "MCP" to the right of the title, its colour is the state of the MCP server */
+.wpbe-header .wpbe-mcp-link {
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin: 0px 5px 0 60px;
+    white-space: nowrap;
+    line-height: 0;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.wpbe-header .wpbe-mcp-link svg {
+    display: inline-block;
+}
+
+.wpbe-header .wpbe-mcp-link:hover {
+    opacity: 1;
+}
+
+/* next to the Upgrade button of the free build, raised to its top edge as in BEAR */
+.wpbe-header > div .wpbe-mcp-link {
+    margin: 0 0 0 4px;
+    vertical-align: top;
+}
+
+/* MCP access for users: the search field of the user list takes the rest of its line - the general
+   .wpbe-control input width overrode Chosen's own width and cut the placeholder */
+.wpbe-mcp-access-admin .chosen-container-multi .chosen-choices li.search-field {
+    float: none;
+    overflow: hidden;
+}
+
+/* On the WOLF page itself the notices of WordPress and of other plugins (an update offer,
+   a review request, an activation reminder) stood above the editor and pushed it a third
+   of a screen down. They stay everywhere else in wp-admin; errors stay here too. */
+body.toplevel_page_wpbe #wpbody-content > .notice:not(.notice-error),
+body.toplevel_page_wpbe #wpbody-content > .update-nag,
+body.toplevel_page_wpbe #wpbody-content > .fs-notice,
+body.toplevel_page_wpbe .wrap > .notice:not(.notice-error),
+body.toplevel_page_wpbe .wrap > .update-nag,
+body.toplevel_page_wpbe .wrap > .fs-notice {
+    display: none !important;
+}

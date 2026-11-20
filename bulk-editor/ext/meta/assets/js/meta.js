@@ -149,7 +149,7 @@ function wpbe_act_meta_popup_editor(_this) {
     wpbe_popup_clicked = jQuery(_this);
     var post_id = parseInt(jQuery(_this).data('post_id'), 10);
     var key = jQuery(_this).data('key');
-    jQuery('#meta_popup_editor .wpbe-modal-title').html(jQuery(_this).data('name') + ' [' + key + ']');
+    jQuery('#meta_popup_editor .wpbe-modal-title').text(jQuery(_this).data('name') + ' [' + key + ']');//the post title is text
 
     //***
     //console.log(jQuery(_this).find('.meta_popup_btn_data').html());

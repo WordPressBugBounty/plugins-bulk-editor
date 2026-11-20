@@ -214,7 +214,7 @@ function wpbe_history_revert_bulk_portion(bulk_id, bulk_key, total_count, remove
 
 function wpbe_history_clear() {
 
-    if (confirm(lang.sure)) {
+    if (confirm(lang.history.clear_confirm || lang.sure)) {
         wpbe_message(lang.history.clearing, 'warning', 999999);
 	var nonce = jQuery('#wpbe_history_panel_nonce').val();
         jQuery.ajax({

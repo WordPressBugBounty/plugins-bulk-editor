@@ -1,0 +1,2273 @@
+# Copyright (C) 2026 realmag777
+# This file is distributed under the GPLv2 or later и License URI: https://www.gnu.org/licenses/gpl-2.0.html.
+msgid ""
+msgstr ""
+"Project-Id-Version: WOLF - WordPress Posts Bulk Editor and Manager Professional 2.1.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bulk-editor\n"
+"Last-Translator: realmag777\n"
+"Language-Team: Russian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-20T14:15:27+00:00\n"
+"PO-Revision-Date: 2026-11-20 15:00+0000\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: bulk-editor\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. Plugin Name of the plugin
+#: index.php
+msgid "WOLF - WordPress Posts Bulk Editor and Manager Professional"
+msgstr "WOLF - WordPress Posts Bulk Editor and Manager Professional"
+
+#. Plugin URI of the plugin
+#: index.php
+msgid "https://bulk-editor.pro/"
+msgstr "https://bulk-editor.pro/"
+
+#. Description of the plugin
+#: index.php
+msgid "Tools for managing and bulk edit posts, pages and all custom types data in the reliable and flexible way! Be professionals with managing data of your site!"
+msgstr "Инструменты для управления и массового редактирования записей, страниц и данных всех произвольных типов записей - надёжно и гибко! Управляйте данными своего сайта как профессионал!"
+
+#. Author of the plugin
+#: index.php
+msgid "realmag777"
+msgstr "realmag777"
+
+#. Author URI of the plugin
+#: index.php
+msgid "https://pluginus.net/"
+msgstr "https://pluginus.net/"
+
+#: classes/helper.php:511
+msgid "no rounding"
+msgstr "без округления"
+
+#: classes/models/posts.php:159
+msgid "forbidden"
+msgstr "запрещено"
+
+#: classes/models/profiles.php:45
+msgid "Default"
+msgstr "По умолчанию"
+
+#: data/fields.php:29
+msgid "Checkboxes for the posts selection. Use SHIFT button on your keyboard to select multiple rows."
+msgstr "Флажки для выбора записей. Удерживайте SHIFT на клавиатуре, чтобы выбрать несколько строк."
+
+#: data/fields.php:53
+#: ext/filters/views/panel.php:412
+msgid "Thumbnail"
+msgstr "Миниатюра"
+
+#: data/fields.php:66
+#: ext/filters/filters.php:648
+msgid "Title"
+msgstr "Заголовок"
+
+#: data/fields.php:78
+#: views/elements/draw_popup_editor_btn.php:7
+msgid "Content"
+msgstr "Содержимое"
+
+#: data/fields.php:89
+msgid "Excerpt"
+msgstr "Отрывок"
+
+#: data/fields.php:101
+msgid "Slug"
+msgstr "Ярлык"
+
+#: data/fields.php:115
+msgid "Status"
+msgstr "Статус"
+
+#: data/fields.php:128
+#: ext/filters/views/panel.php:323
+msgid "Comment status"
+msgstr "Статус комментариев"
+
+#: data/fields.php:129
+msgid "Can users comment post or not."
+msgstr "Могут ли пользователи комментировать запись."
+
+#: data/fields.php:135
+#: data/fields.php:154
+msgid "Open"
+msgstr "Открыто"
+
+#: data/fields.php:136
+#: data/fields.php:155
+msgid "Closed"
+msgstr "Закрыто"
+
+#: data/fields.php:147
+#: ext/filters/views/panel.php:339
+msgid "Ping status"
+msgstr "Статус пингов"
+
+#: data/fields.php:148
+msgid "A ping is a [this site has new content] notification that invites search engine bots to visit your blog."
+msgstr "Пинг - это уведомление «на сайте новое содержимое», которое приглашает поисковых роботов посетить ваш блог."
+
+#: data/fields.php:166
+msgid "Send trackbacks to"
+msgstr "Отправлять уведомления на"
+
+#: data/fields.php:167
+msgid "Separate multiple URLs with spaces. Ping status should be open! Remove 2 links separated by space, save. After opening you will not see links as they had been pinged! No sense for roll back, its sending is instant. Trackbacks are a way to notify legacy blog systems that you’ve linked to them. If you link other WordPress sites, they’ll be notified automatically using pingbacks, no other action necessary. Do not use these fields for something else. They are parsed many times in core code (69 matches for to_ping); their format is fixed."
+msgstr "Разделяйте несколько URL пробелами. Статус пингов должен быть «Открыто»! Удалите 2 ссылки, разделённые пробелом, и сохраните. После открытия вы не увидите ссылок, так как они уже были отправлены! Откат бессмыслен, отправка происходит мгновенно. Уведомления (trackbacks) позволяют сообщить устаревшим блог-системам, что вы на них сослались. Если вы ссылаетесь на другие сайты WordPress, они будут уведомлены автоматически через пингбеки, никаких дополнительных действий не требуется. Не используйте эти поля для другого. Они многократно разбираются в ядре (69 совпадений для to_ping), их формат фиксирован."
+
+#: data/fields.php:194
+msgid "Post password"
+msgstr "Пароль записи"
+
+#: data/fields.php:195
+msgid "Password for private posts"
+msgstr "Пароль для приватных записей"
+
+#: data/fields.php:208
+msgid "Menu order"
+msgstr "Порядок в меню"
+
+#: data/fields.php:209
+msgid "Custom ordering position."
+msgstr "Произвольная позиция в порядке сортировки."
+
+#: data/fields.php:221
+msgid "Author"
+msgstr "Автор"
+
+#: data/fields.php:234
+msgid "Date Published"
+msgstr "Дата публикации"
+
+#: data/fields.php:247
+msgid "Date Published GMT"
+msgstr "Дата публикации GMT"
+
+#: data/fields.php:261
+msgid "Date modified"
+msgstr "Дата изменения"
+
+#: data/fields.php:274
+msgid "Date modified GMT"
+msgstr "Дата изменения GMT"
+
+#: data/fields.php:287
+msgid "Post parent"
+msgstr "Родитель записи"
+
+#: data/fields.php:301
+msgid "Post type"
+msgstr "Тип записи"
+
+#: data/fields.php:316
+#: ext/filters/views/panel.php:355
+msgid "Post mime type"
+msgstr "MIME-тип записи"
+
+#: data/fields.php:317
+msgid "Not in bulk edit as there is no built-uploader here, so no sense change mime type. Filtering only! The function is designed specifically for attached records."
+msgstr "Нет в массовом редактировании, так как здесь нет встроенной загрузки файлов и менять MIME-тип нет смысла. Только фильтрация! Функция предназначена для прикреплённых записей."
+
+#: data/fields.php:331
+msgid "Sticky"
+msgstr "Прикреплённая"
+
+#: data/fields.php:332
+msgid "Stick this post to the front page"
+msgstr "Прикрепить запись на главной странице"
+
+#: data/fields.php:338
+#: data/settings.php:38
+#: data/settings.php:48
+#: data/settings.php:58
+#: data/settings.php:68
+#: ext/filters/views/panel.php:498
+#: ext/mcp/bootstrap.php:1086
+#: ext/meta/meta.php:181
+#: ext/meta/meta.php:357
+#: views/wpbe.php:709
+#: views/wpbe.php:747
+msgid "Yes"
+msgstr "Да"
+
+#: data/fields.php:339
+#: data/settings.php:39
+#: data/settings.php:49
+#: data/settings.php:59
+#: data/settings.php:69
+#: ext/filters/views/panel.php:499
+#: ext/mcp/bootstrap.php:1085
+#: ext/meta/meta.php:182
+#: ext/meta/meta.php:358
+#: views/wpbe.php:708
+#: views/wpbe.php:746
+msgid "No"
+msgstr "Нет"
+
+#: data/settings.php:10
+msgid "Default posts count per page"
+msgstr "Записей на странице по умолчанию"
+
+#: data/settings.php:11
+msgid "How many rows shows per page in tab Posts Editor. Max possible value is 100!"
+msgstr "Сколько строк показывать на странице во вкладке «Редактор записей». Максимум - 100!"
+
+#: data/settings.php:16
+msgid "Default sort by"
+msgstr "Сортировка по умолчанию"
+
+#: data/settings.php:17
+msgid "Select column by which posts sorting is going after plugin page loaded"
+msgstr "Выберите столбец, по которому записи сортируются после загрузки страницы плагина"
+
+#: data/settings.php:23
+msgid "Default sort"
+msgstr "Направление сортировки"
+
+#: data/settings.php:24
+msgid "Select sort direction for Default sort"
+msgstr "Выберите направление для сортировки по умолчанию"
+
+#: data/settings.php:33
+msgid "Show button in admin bar"
+msgstr "Показывать кнопку в админ-панели"
+
+#: data/settings.php:34
+msgid "Show Bulk Editor button in admin bar for quick access to the Posts Editor"
+msgstr "Показывать кнопку массового редактора в админ-панели для быстрого доступа к редактору записей"
+
+#: data/settings.php:43
+msgid "Show thumbnail preview"
+msgstr "Показывать превью миниатюры"
+
+#: data/settings.php:44
+msgid "Show bigger thumbnail preview on mouse over"
+msgstr "Показывать увеличенное превью миниатюры при наведении мыши"
+
+#: data/settings.php:53
+msgid "Load beauty switchers"
+msgstr "Загружать красивые переключатели"
+
+#: data/settings.php:54
+msgid "Load beauty switchers instead of checkboxes in the Posts Editor."
+msgstr "Загружать красивые переключатели вместо флажков в редакторе записей."
+
+#: data/settings.php:63
+msgid "Use gutenberg"
+msgstr "Использовать Gutenberg"
+
+#: data/settings.php:64
+msgid "Allows to edit content with the gutenberg editor if its enabled for the selected post type"
+msgstr "Позволяет редактировать содержимое в редакторе Gutenberg, если он включён для выбранного типа записи"
+
+#: data/settings.php:73
+msgid "Add fields to the quick search"
+msgstr "Добавить поля в быстрый поиск"
+
+#: data/settings.php:74
+msgid "Adds more fields to quick search fields drop-down on the tools panel. Works only for text fields. Syntax: post_name:Post slug,post_content:Content"
+msgstr "Добавляет поля в выпадающий список быстрого поиска на панели инструментов. Работает только для текстовых полей. Синтаксис: post_name:Ярлык записи,post_content:Содержимое"
+
+#: data/settings.php:79
+msgid "Override meta checkbox"
+msgstr "Переопределить флажок метаполя"
+
+#: data/settings.php:80
+msgid "By default, the checkbox works with 1 and 0. If you need to redefine these values for example to \"yes\" or \"true\". Syntax: meta_key1:yes,meta_key2:true"
+msgstr "По умолчанию флажок работает со значениями 1 и 0. Если нужно заменить их, например, на «yes» или «true». Синтаксис: meta_key1:yes,meta_key2:true"
+
+#: ext/bulk/bulk.php:34
+msgid "Bulk Edit"
+msgstr "Массовое редактирование"
+
+#: ext/bulk/bulk.php:45
+msgid "Will be edited next:"
+msgstr "Будет изменено:"
+
+#. translators: %s: name
+#: ext/bulk/bulk.php:49
+#, php-format
+msgid "Sure? Delete [%s]?"
+msgstr "Уверены? Удалить [%s]?"
+
+#: ext/bulk/bulk.php:51
+#: ext/bulk/views/panel.php:116
+msgid "Bulk deleting"
+msgstr "Массовое удаление"
+
+#. translators: %s: name
+#: ext/bulk/bulk.php:55
+#, php-format
+msgid "[%s](s) deleted!"
+msgstr "[%s](s) удалено!"
+
+#: ext/bulk/bulk.php:57
+msgid "Bulk editing"
+msgstr "Массовое редактирование"
+
+#. translators: %s: name
+#: ext/bulk/bulk.php:61
+#, php-format
+msgid "[%s](s) edited! Table redrawing ..."
+msgstr "[%s](s) изменено! Перерисовка таблицы ..."
+
+#. translators: %s: name(s)
+#: ext/bulk/bulk.php:66
+#, php-format
+msgid "[%s](s) edited!"
+msgstr "[%s](s) изменено!"
+
+#: ext/bulk/bulk.php:68
+msgid "ATTENTION: Bulk operation is going!"
+msgstr "ВНИМАНИЕ: идёт массовая операция!"
+
+#: ext/bulk/bulk.php:77
+#: ext/info/views/panel.php:74
+msgid "binded editing"
+msgstr "связанное редактирование"
+
+#. translators: %s: name of fileds
+#: ext/bulk/bulk.php:96
+#, php-format
+msgid "In FREE version of the plugin you can change only next fields: %s"
+msgstr "В БЕСПЛАТНОЙ версии плагина можно изменять только следующие поля: %s"
+
+#. translators: 1: post type name, 2: post type name
+#: ext/bulk/bulk.php:104
+#, php-format
+msgid "In this mode to the all selected [%1$s](s) will be set the value of a [%2$s] field which been edited"
+msgstr "В этом режиме для всех выбранных [%1$s](s) будет задано значение поля [%2$s], которое вы редактируете"
+
+#: ext/bulk/bulk.php:120
+msgid "Select post type you want to manage"
+msgstr "Выберите тип записи для управления"
+
+#: ext/bulk/bulk.php:639
+msgid "title"
+msgstr "заголовок"
+
+#: ext/bulk/bulk.php:643
+msgid "content"
+msgstr "содержимое"
+
+#: ext/bulk/bulk.php:647
+msgid "excerpt"
+msgstr "отрывок"
+
+#: ext/bulk/bulk.php:651
+msgid "slug"
+msgstr "ярлык"
+
+#: ext/bulk/bulk.php:655
+msgid "password"
+msgstr "пароль"
+
+#: ext/bulk/bulk.php:659
+msgid "send trackbacks to"
+msgstr "отправлять уведомления на"
+
+#: ext/bulk/bulk.php:666
+msgid "post status"
+msgstr "статус записи"
+
+#: ext/bulk/bulk.php:672
+msgid "post type"
+msgstr "тип записи"
+
+#: ext/bulk/bulk.php:678
+msgid "comment status"
+msgstr "статус комментариев"
+
+#: ext/bulk/bulk.php:684
+msgid "ping status"
+msgstr "статус пингов"
+
+#: ext/bulk/bulk.php:693
+msgid "sticky posts"
+msgstr "прикреплённые записи"
+
+#: ext/bulk/bulk.php:702
+#: ext/bulk/bulk.php:710
+#: ext/bulk/bulk.php:723
+#: ext/bulk/bulk.php:735
+#: ext/bulk/views/panel.php:554
+#: ext/meta/meta.php:329
+msgid "increase by value"
+msgstr "увеличить на значение"
+
+#: ext/bulk/bulk.php:703
+#: ext/bulk/bulk.php:711
+#: ext/bulk/bulk.php:724
+#: ext/bulk/bulk.php:736
+#: ext/bulk/views/panel.php:555
+#: ext/meta/meta.php:330
+msgid "decrease by value"
+msgstr "уменьшить на значение"
+
+#: ext/bulk/bulk.php:704
+#: ext/bulk/bulk.php:725
+#: ext/meta/meta.php:331
+msgid "increase by %"
+msgstr "увеличить на %"
+
+#: ext/bulk/bulk.php:705
+#: ext/bulk/bulk.php:726
+#: ext/meta/meta.php:332
+msgid "decrease by %"
+msgstr "уменьшить на %"
+
+#: ext/bulk/bulk.php:706
+#: ext/bulk/bulk.php:713
+#: ext/bulk/bulk.php:727
+#: ext/bulk/bulk.php:737
+#: ext/bulk/views/panel.php:553
+#: ext/meta/meta.php:328
+msgid "set new"
+msgstr "задать новое"
+
+#: ext/bulk/bulk.php:712
+#: ext/history/views/list.php:109
+#: ext/history/views/list.php:113
+#: ext/meta/views/panel.php:110
+#: index.php:307
+msgid "delete"
+msgstr "удалить"
+
+#: ext/bulk/bulk.php:720
+msgid "post parent"
+msgstr "родитель записи"
+
+#: ext/bulk/bulk.php:732
+msgid "menu order"
+msgstr "порядок в меню"
+
+#. translators: %s: posts selection
+#: ext/bulk/views/panel.php:14
+#, php-format
+msgid "Bulk editing will be applied to: %s"
+msgstr "Массовое редактирование будет применено к: %s"
+
+#. translators: %s: posts selection
+#. translators: %s: selection
+#: ext/bulk/views/panel.php:14
+#: ext/export/views/panel.php:14
+#: index.php:363
+#, php-format
+msgid "all the [%s] on the site"
+msgstr "всем [%s] на сайте"
+
+#: ext/bulk/views/panel.php:27
+msgid "text"
+msgstr "текст"
+
+#: ext/bulk/views/panel.php:44
+msgid "numeric"
+msgstr "число"
+
+#: ext/bulk/views/panel.php:59
+msgid "statuses and types"
+msgstr "статусы и типы"
+
+#: ext/bulk/views/panel.php:107
+msgid "Do Bulk Edit"
+msgstr "Применить массовое редактирование"
+
+#: ext/bulk/views/panel.php:108
+msgid "terminate bulk operation"
+msgstr "прервать массовую операцию"
+
+#. translators: %s: name
+#: ext/bulk/views/panel.php:122
+#, php-format
+msgid "Delete [%s]!"
+msgstr "Удалить [%s]!"
+
+#: ext/bulk/views/panel.php:130
+msgid "Notes"
+msgstr "Примечания"
+
+#: ext/bulk/views/panel.php:133
+msgid "In red containers wrapped fields which are not possible modify in bulk in FREE version of the plugin!"
+msgstr "Поля в красных блоках нельзя массово изменять в БЕСПЛАТНОЙ версии плагина!"
+
+#: ext/bulk/views/panel.php:136
+msgid "In the case of an aborted bulk-operation you can roll back changes in the tab History"
+msgstr "Если массовая операция была прервана, вы можете откатить изменения на вкладке «История»"
+
+#. translators: %s: link to backup plugin
+#: ext/bulk/views/panel.php:140
+#, php-format
+msgid "Time by time (one time per week for example) - make the backup of your site database. For example by %s"
+msgstr "Время от времени (например, раз в неделю) делайте резервную копию базы данных сайта. Например, с помощью %s"
+
+#: ext/bulk/views/panel.php:143
+msgid "this plugin"
+msgstr "этого плагина"
+
+#: ext/bulk/views/panel.php:150
+#: ext/export/views/panel.php:78
+#: ext/filters/views/panel.php:47
+#: index.php:288
+#: views/wpbe.php:365
+#: views/wpbe.php:425
+msgid "Documentation"
+msgstr "Документация"
+
+#: ext/bulk/views/panel.php:186
+#: ext/bulk/views/panel.php:300
+#: ext/bulk/views/panel.php:463
+#: ext/bulk/views/panel.php:517
+#: ext/bulk/views/panel.php:578
+#: ext/bulk/views/panel.php:620
+#: ext/bulk/views/panel.php:663
+msgid "select it to use"
+msgstr "выберите для использования"
+
+#: ext/bulk/views/panel.php:217
+#: ext/bulk/views/panel.php:251
+msgid "variable"
+msgstr "переменная"
+
+#: ext/bulk/views/panel.php:218
+#: ext/bulk/views/panel.php:252
+msgid "TITLE"
+msgstr "ЗАГОЛОВОК"
+
+#: ext/bulk/views/panel.php:220
+#: ext/bulk/views/panel.php:254
+msgid "MENU ORDER"
+msgstr "ПОРЯДОК В МЕНЮ"
+
+#: ext/bulk/views/panel.php:226
+#: ext/bulk/views/panel.php:481
+msgid "append"
+msgstr "добавить в конец"
+
+#: ext/bulk/views/panel.php:227
+msgid "prepend"
+msgstr "добавить в начало"
+
+#: ext/bulk/views/panel.php:228
+#: views/elements/multi_select.php:43
+msgid "new"
+msgstr "новое"
+
+#: ext/bulk/views/panel.php:229
+#: ext/bulk/views/panel.php:482
+msgid "replace"
+msgstr "заменить"
+
+#: ext/bulk/views/panel.php:239
+msgid "same case"
+msgstr "с учётом регистра"
+
+#: ext/bulk/views/panel.php:240
+msgid "ignore case"
+msgstr "без учёта регистра"
+
+#: ext/bulk/views/panel.php:245
+msgid "replace to text"
+msgstr "заменить на текст"
+
+#. translators: %s: link
+#: ext/bulk/views/panel.php:327
+#, php-format
+msgid "Select how to round float values fractions in the numeric fields. Works for numeric meta fields. Read more %s."
+msgstr "Выберите способ округления дробной части в числовых полях. Работает для числовых метаполей. Подробнее %s."
+
+#: ext/bulk/views/panel.php:328
+#: ext/info/views/panel.php:45
+msgid "here"
+msgstr "здесь"
+
+#: ext/bulk/views/panel.php:336
+msgid "Selected num fields"
+msgstr "Выбранные числовые поля"
+
+#: ext/bulk/views/panel.php:370
+msgid "You can select numeric field then make math operation with another numeric field using [+ - * /] value"
+msgstr "Вы можете выбрать числовое поле и выполнить математическую операцию с другим числовым полем, используя [+ - * /] и значение"
+
+#: ext/bulk/views/panel.php:376
+msgid "Random number"
+msgstr "Случайное число"
+
+#: ext/bulk/views/panel.php:387
+msgid "Decimal"
+msgstr "Десятичное"
+
+#: ext/bulk/views/panel.php:399
+msgid "From:"
+msgstr "От:"
+
+#: ext/bulk/views/panel.php:405
+msgid "To:"
+msgstr "До:"
+
+#: ext/bulk/views/panel.php:412
+msgid "You can create random numbers for test filling fields or for SEO tasks"
+msgstr "Можно создавать случайные числа для тестового заполнения полей или для задач SEO"
+
+#: ext/bulk/views/panel.php:429
+msgid "taxonomies"
+msgstr "таксономии"
+
+#: ext/bulk/views/panel.php:483
+#: ext/fprofiles/views/panel.php:41
+#: views/wpbe.php:933
+msgid "remove"
+msgstr "удалить"
+
+#. translators: %s: name
+#: ext/bulk/views/panel.php:525
+#, php-format
+msgid "Set: %s"
+msgstr "Задать: %s"
+
+#: ext/bulk/views/panel.php:571
+msgid "other"
+msgstr "другое"
+
+#: ext/bulk/views/panel.php:587
+msgid "select thumbnail"
+msgstr "выбрать миниатюру"
+
+#: ext/calculator/views/panel.php:19
+msgid "enter operation value"
+msgstr "введите значение операции"
+
+#: ext/export/export.php:27
+msgid "Export"
+msgstr "Экспорт"
+
+#: ext/export/export.php:39
+msgid "Should the export be started?"
+msgstr "Начать экспорт?"
+
+#: ext/export/export.php:40
+msgid "Exporting"
+msgstr "Экспорт"
+
+#: ext/export/export.php:41
+msgid "Exported"
+msgstr "Экспортировано"
+
+#: ext/export/export.php:42
+msgid "ATTENTION: Export operation is going!"
+msgstr "ВНИМАНИЕ: идёт экспорт!"
+
+#. translators: %s: selection
+#: ext/export/views/panel.php:14
+#, php-format
+msgid "Export will be applied to: %s"
+msgstr "Экспорт будет применён к: %s"
+
+#. translators: %s: name
+#: ext/export/views/panel.php:24
+#, php-format
+msgid "Note: you can change columns set and then set their order in the tab Settings, then save it as columns profile which in future will help you with exporting the [%s] data format quickly without necessary each time set columns order and their set!"
+msgstr "Примечание: вы можете изменить набор столбцов и их порядок на вкладке «Настройки», а затем сохранить его как профиль столбцов - это позволит быстро экспортировать данные [%s] в нужном формате без необходимости каждый раз заново задавать порядок и набор столбцов!"
+
+#: ext/export/views/panel.php:31
+msgid "Export to CSV"
+msgstr "Экспорт в CSV"
+
+#: ext/export/views/panel.php:32
+msgid "Export to XML"
+msgstr "Экспорт в XML"
+
+#: ext/export/views/panel.php:33
+msgid "Export to Excel"
+msgstr "Экспорт в Excel"
+
+#: ext/export/views/panel.php:34
+msgid "download"
+msgstr "скачать"
+
+#: ext/export/views/panel.php:35
+msgid "download XML"
+msgstr "скачать XML"
+
+#: ext/export/views/panel.php:36
+msgid "cancel export"
+msgstr "отменить экспорт"
+
+#: ext/export/views/panel.php:41
+msgid "Current export functionality is just for simple operations and data share, if you need something complex find and use especial plugin for Export WordPress data!"
+msgstr "Текущий экспорт предназначен только для простых операций и обмена данными. Для сложных задач используйте специальный плагин экспорта данных WordPress!"
+
+#: ext/export/views/panel.php:55
+msgid "Select CSV data delimiter."
+msgstr "Выберите разделитель данных CSV."
+
+#: ext/filters/filters.php:24
+msgid "Filters"
+msgstr "Фильтры"
+
+#: ext/filters/filters.php:35
+msgid "Filtering"
+msgstr "Фильтрация"
+
+#: ext/filters/filters.php:36
+msgid "Filtered! Table redrawing ..."
+msgstr "Отфильтровано! Перерисовка таблицы ..."
+
+#: ext/filters/filters.php:640
+#: ext/filters/views/panel.php:144
+#: ext/meta/meta.php:213
+msgid "LIKE"
+msgstr "СОДЕРЖИТ"
+
+#: ext/filters/filters.php:641
+#: ext/filters/views/panel.php:145
+#: ext/filters/views/panel.php:155
+msgid "EXACT"
+msgstr "ТОЧНО"
+
+#: ext/filters/filters.php:642
+#: ext/filters/views/panel.php:146
+msgid "NOT"
+msgstr "НЕ"
+
+#: ext/filters/filters.php:643
+#: ext/filters/views/panel.php:147
+msgid "BEGIN"
+msgstr "НАЧИНАЕТСЯ"
+
+#: ext/filters/filters.php:644
+#: ext/filters/views/panel.php:148
+msgid "END"
+msgstr "ЗАКАНЧИВАЕТСЯ"
+
+#: ext/filters/filters.php:649
+msgid "ID"
+msgstr "ID"
+
+#: ext/filters/filters.php:663
+msgid "quick search by ..."
+msgstr "быстрый поиск по ..."
+
+#: ext/filters/views/panel.php:42
+#: ext/history/views/panel.php:88
+msgid "Filter"
+msgstr "Фильтр"
+
+#: ext/filters/views/panel.php:43
+#: ext/history/views/panel.php:88
+msgid "Reset"
+msgstr "Сбросить"
+
+#: ext/filters/views/panel.php:149
+#: ext/filters/views/panel.php:412
+#: ext/meta/meta.php:217
+msgid "Empty"
+msgstr "Пусто"
+
+#: ext/filters/views/panel.php:154
+msgid "ID(s). Use comma or/and minus for range"
+msgstr "ID. Используйте запятую или/и дефис для диапазона"
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:160
+#, php-format
+msgid "[%s] title ..."
+msgstr "[%s] заголовок ..."
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:166
+#, php-format
+msgid "[%s] content ..."
+msgstr "[%s] содержимое ..."
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:172
+#, php-format
+msgid "[%s] excerpt ..."
+msgstr "[%s] отрывок ..."
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:178
+#, php-format
+msgid "[%s] slug ..."
+msgstr "[%s] ярлык ..."
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:184
+#, php-format
+msgid "[%s] password ..."
+msgstr "[%s] пароль ..."
+
+#: ext/filters/views/panel.php:278
+msgid "Menu order from"
+msgstr "Порядок в меню от"
+
+#: ext/filters/views/panel.php:283
+msgid "Menu order to"
+msgstr "Порядок в меню до"
+
+#: ext/filters/views/panel.php:292
+msgid "Post parent from"
+msgstr "Родитель записи от"
+
+#: ext/filters/views/panel.php:297
+msgid "Post parent to"
+msgstr "Родитель записи до"
+
+#. translators: %s: post type name
+#: ext/filters/views/panel.php:308
+#, php-format
+msgid "[%s] status"
+msgstr "[%s] статус"
+
+#: ext/filters/views/panel.php:372
+msgid "Sticky posts"
+msgstr "Прикреплённые записи"
+
+#: ext/filters/views/panel.php:398
+msgid "By author"
+msgstr "По автору"
+
+#: ext/filters/views/panel.php:412
+msgid "Not empty"
+msgstr "Не пусто"
+
+#. translators: %s: field title
+#. translators: %s: time
+#: ext/filters/views/panel.php:442
+#: ext/filters/views/panel.php:464
+#: ext/meta/meta.php:240
+#, php-format
+msgid "%s from"
+msgstr "%s от"
+
+#. translators: %s: field title
+#. translators: %s: time
+#: ext/filters/views/panel.php:451
+#: ext/filters/views/panel.php:473
+#: ext/meta/meta.php:243
+#, php-format
+msgid "%s to"
+msgstr "%s до"
+
+#: ext/fprofiles/fprofiles.php:27
+#: ext/info/info.php:20
+msgid "test"
+msgstr "тест"
+
+#: ext/fprofiles/fprofiles.php:34
+#: ext/fprofiles/views/panel.php:14
+msgid "Filters profiles"
+msgstr "Профили фильтров"
+
+#: ext/fprofiles/views/panel.php:21
+msgid "Profiles"
+msgstr "Профили"
+
+#: ext/fprofiles/views/panel.php:22
+msgid "Here you can load previously saved filters profile. After pressing on the load button, Posts Editor data reloading will start immediately!"
+msgstr "Здесь можно загрузить ранее сохранённый профиль фильтров. После нажатия кнопки загрузки сразу начнётся перезагрузка данных редактора записей!"
+
+#: ext/fprofiles/views/panel.php:30
+msgid "Select filter profile to load"
+msgstr "Выберите профиль фильтров для загрузки"
+
+#: ext/fprofiles/views/panel.php:40
+#: views/wpbe.php:932
+msgid "load"
+msgstr "загрузить"
+
+#: ext/fprofiles/views/panel.php:51
+msgid "New Filter Profile"
+msgstr "Новый профиль фильтров"
+
+#: ext/fprofiles/views/panel.php:52
+msgid "Here you can type any title and save current filters set. Type here any title and then press Save button OR press Enter button on your keyboard!"
+msgstr "Введите любое название и сохраните текущий набор фильтров. Введите название и нажмите кнопку «Сохранить» ИЛИ клавишу Enter на клавиатуре!"
+
+#: ext/fprofiles/views/panel.php:66
+msgid "You can save filter profile only when you applying filters to the posts."
+msgstr "Профиль фильтров можно сохранить только при применённых к записям фильтрах."
+
+#: ext/fprofiles/views/panel.php:74
+msgid "Save"
+msgstr "Сохранить"
+
+#: ext/fprofiles/views/panel.php:75
+#: views/wpbe.php:956
+msgid "Close"
+msgstr "Закрыть"
+
+#: ext/history/history.php:43
+#: ext/history/views/panel.php:9
+msgid "History"
+msgstr "История"
+
+#: ext/history/history.php:59
+msgid "Reverting"
+msgstr "Откат"
+
+#: ext/history/history.php:60
+msgid "Reverted!"
+msgstr "Откат выполнен!"
+
+#: ext/history/history.php:61
+msgid "Wait please while data reverting is going!"
+msgstr "Подождите, пока выполняется откат данных!"
+
+#: ext/history/history.php:62
+msgid "History clearing ..."
+msgstr "Очистка истории ..."
+
+#: ext/history/history.php:63
+msgid "History is cleared!"
+msgstr "История очищена!"
+
+#: ext/history/history.php:64
+msgid "ATTENTION: History operation is going!"
+msgstr "ВНИМАНИЕ: выполняется операция с историей!"
+
+#: ext/history/history.php:66
+msgid "This clears the history of all users for this post type, including the AI agent rows. It cannot be undone. Continue?"
+msgstr "Будет очищена история всех пользователей для этого типа записей, включая строки ИИ-агента. Это нельзя отменить. Продолжить?"
+
+#: ext/history/history.php:66
+msgid "This clears your own history for this post type. It cannot be undone. Continue?"
+msgstr "Будет очищена ваша собственная история для этого типа записей. Это нельзя отменить. Продолжить?"
+
+#: ext/history/history.php:168
+msgid "WOLF cannot create the database table! Make sure that your mysql user has the CREATE privilege! Do it manually using your host panel phpmyadmin!"
+msgstr "WOLF не может создать таблицу в базе данных! Убедитесь, что у пользователя MySQL есть право CREATE! Создайте её вручную через панель хостинга или phpMyAdmin!"
+
+#: ext/history/history.php:502
+#: ext/history/views/panel.php:57
+msgid "AI agent"
+msgstr "ИИ-агент"
+
+#. translators: %d: id of a user who no longer exists
+#: ext/history/history.php:506
+#, php-format
+msgid "user #%d"
+msgstr "пользователь #%d"
+
+#. translators: %s: name of the user whose AI agent made the change
+#: ext/history/history.php:509
+#, php-format
+msgid "%s (AI agent)"
+msgstr "%s (ИИ-агент)"
+
+#: ext/history/history.php:661
+msgid "This history entry is not yours. Only an administrator can roll back or delete the changes of other users."
+msgstr "Эта запись истории не ваша. Только администратор может откатывать или удалять изменения других пользователей."
+
+#: ext/history/views/list.php:33
+msgid "Bulk operation"
+msgstr "Массовая операция"
+
+#. translators: %s: operation state
+#: ext/history/views/list.php:36
+#, php-format
+msgid "state: %s"
+msgstr "состояние: %s"
+
+#. translators: %s: previous field value
+#: ext/history/views/list.php:76
+#, php-format
+msgid "value been: %s"
+msgstr "было значение: %s"
+
+#. translators: %s: number of bulked posts
+#: ext/history/views/list.php:84
+#, php-format
+msgid "posts bulked: %s"
+msgstr "записей изменено: %s"
+
+#. translators: %s: columns list
+#: ext/history/views/list.php:98
+#, php-format
+msgid "columns: %s"
+msgstr "столбцы: %s"
+
+#: ext/history/views/list.php:108
+#: ext/history/views/list.php:112
+msgid "revert"
+msgstr "откатить"
+
+#: ext/history/views/list.php:129
+msgid "History is empty!"
+msgstr "История пуста!"
+
+#: ext/history/views/panel.php:10
+msgid "Works for edit-operations and not work with delete-operations!"
+msgstr "Работает для операций редактирования и не работает для операций удаления!"
+
+#: ext/history/views/panel.php:14
+msgid "In FREE version of the plugin it is possible to roll back 2 last operations."
+msgstr "В БЕСПЛАТНОЙ версии плагина можно откатить 2 последние операции."
+
+#: ext/history/views/panel.php:20
+msgid "Per page:"
+msgstr "На странице:"
+
+#: ext/history/views/panel.php:25
+msgid "ALL"
+msgstr "ВСЕ"
+
+#: ext/history/views/panel.php:29
+msgid "Clear the History"
+msgstr "Очистить историю"
+
+#: ext/history/views/panel.php:37
+msgid "all"
+msgstr "все"
+
+#: ext/history/views/panel.php:38
+msgid "solo operations"
+msgstr "одиночные операции"
+
+#: ext/history/views/panel.php:39
+msgid "bulk operations"
+msgstr "массовые операции"
+
+#: ext/history/views/panel.php:46
+msgid "by Author"
+msgstr "по автору"
+
+#: ext/history/views/panel.php:75
+msgid "by date from"
+msgstr "с даты"
+
+#: ext/history/views/panel.php:77
+#: ext/history/views/panel.php:82
+#: views/elements/draw_calendar.php:20
+msgid "clear"
+msgstr "очистить"
+
+#: ext/history/views/panel.php:80
+msgid "by date to"
+msgstr "по дату"
+
+#: ext/history/views/panel.php:85
+msgid "by fields"
+msgstr "по полям"
+
+#: ext/history/views/panel.php:100
+msgid "Prev"
+msgstr "Назад"
+
+#: ext/history/views/panel.php:101
+msgid "of"
+msgstr "из"
+
+#: ext/history/views/panel.php:102
+#: index.php:358
+msgid "Next"
+msgstr "Далее"
+
+#: ext/info/info.php:12
+#: ext/info/views/panel.php:13
+msgid "Help"
+msgstr "Справка"
+
+#. translators: 1: documentation link, 2: translations link, 3: FAQ link, 4: support link
+#: ext/info/views/panel.php:20
+#, php-format
+msgid "The plugin has next info: %1$s, %2$s, %3$s. Also if you have troubles you can %4$s!"
+msgstr "У плагина есть: %1$s, %2$s, %3$s. Если возникли проблемы, вы можете %4$s!"
+
+#: ext/info/views/panel.php:22
+msgid "documentation"
+msgstr "документация"
+
+#: ext/info/views/panel.php:26
+msgid "translations"
+msgstr "переводы"
+
+#: ext/info/views/panel.php:30
+msgid "FAQ"
+msgstr "FAQ"
+
+#: ext/info/views/panel.php:34
+msgid "ask for support here"
+msgstr "обратиться в поддержку здесь"
+
+#. translators: %s: link to versions comparison
+#: ext/info/views/panel.php:43
+#, php-format
+msgid "Current version of the plugin is FREE. See the difference between FREE and PREMIUM versions %s"
+msgstr "Текущая версия плагина - БЕСПЛАТНАЯ. Различия между БЕСПЛАТНОЙ и ПРЕМИУМ версиями смотрите %s"
+
+#: ext/info/views/panel.php:52
+msgid "Some little hints"
+msgstr "Небольшие подсказки"
+
+#. translators: %s: link to the MCP server documentation
+#: ext/info/views/panel.php:58
+#, php-format
+msgid "Can I connect an AI assistant (Claude, ChatGPT, Cursor and others) to WOLF and edit posts by chatting with it? Yes - %s"
+msgstr "Можно ли подключить ИИ-ассистента (Claude, ChatGPT, Cursor и другие) к WOLF и редактировать записи в чате? Да - %s"
+
+#: ext/info/views/panel.php:60
+msgid "here is how to connect it"
+msgstr "как его подключить"
+
+#: ext/info/views/panel.php:66
+msgid "If to click on an empty space of the black wp-admin bar, it will get you back to the top of the page"
+msgstr "Если щёлкнуть по пустому месту чёрной админ-панели wp-admin, страница прокрутится наверх"
+
+#. translators: %s: link to binded editing howto
+#: ext/info/views/panel.php:72
+#, php-format
+msgid "How to set the same value for some posts on the same time - %s"
+msgstr "Как задать одно значение сразу нескольким записям - %s"
+
+#. translators: %s: link to gallery field howto
+#: ext/info/views/panel.php:84
+#, php-format
+msgid "How to use - %s"
+msgstr "Как использовать - %s"
+
+#: ext/info/views/panel.php:86
+msgid "meta field Gallery"
+msgstr "метаполе «Галерея»"
+
+#: ext/info/views/panel.php:93
+msgid "Search by posts slugs, which are in non-latin symbols does not work because in the data base they are keeps in the encoded format!"
+msgstr "Поиск по ярлыкам записей с нелатинскими символами не работает, так как в базе данных они хранятся в закодированном виде!"
+
+#: ext/info/views/panel.php:98
+msgid "Click ID of the post in the Posts Editor to see it on the site front."
+msgstr "Нажмите на ID записи в редакторе записей, чтобы посмотреть её на сайте."
+
+#: ext/info/views/panel.php:103
+msgid "Use Enter keyboard button in the Posts Editor for moving to the next posts row cell with saving of changes while edit textinputs. Use arrow Up or arrow Down keyboard buttons in the Posts Editor for moving to the next/previous posts row without saving of changes."
+msgstr "Используйте клавишу Enter в редакторе записей, чтобы перейти к следующей ячейке строки с сохранением изменений при редактировании текстовых полей. Используйте стрелки вверх и вниз, чтобы перейти к следующей/предыдущей строке без сохранения изменений."
+
+#: ext/info/views/panel.php:107
+msgid "To select range of posts using checkboxes - select first post, press SHIFT key on your PC keyboard and click last post."
+msgstr "Чтобы выбрать диапазон записей флажками, отметьте первую запись, нажмите SHIFT на клавиатуре и щёлкните по последней записи."
+
+#. translators: %s: link to reviews page
+#: ext/info/views/panel.php:117
+#, php-format
+msgid "If you like WOLF %s about what you liked and what you want to see in future versions of the plugin"
+msgstr "Если вам нравится WOLF, %s о том, что вам понравилось и что вы хотели бы видеть в будущих версиях плагина"
+
+#: ext/info/views/panel.php:120
+msgid "write us feedback please"
+msgstr "напишите нам отзыв"
+
+#. translators: %s: link to support forum
+#: ext/info/views/panel.php:125
+#, php-format
+msgid "If you have an idea you can %s"
+msgstr "Если у вас есть идея, вы можете %s"
+
+#: ext/info/views/panel.php:128
+msgid "share it with us here"
+msgstr "поделиться ею с нами здесь"
+
+#: ext/info/views/panel.php:140
+msgid "Requirements"
+msgstr "Требования"
+
+#: ext/info/views/panel.php:142
+msgid "Recommended min RAM"
+msgstr "Рекомендуемый минимум RAM"
+
+#: ext/info/views/panel.php:143
+msgid "Minimal PHP version is"
+msgstr "Минимальная версия PHP"
+
+#: ext/info/views/panel.php:144
+msgid "Recommended PHP version"
+msgstr "Рекомендуемая версия PHP"
+
+#: ext/mcp/access.php:143
+#: ext/mcp/access.php:216
+msgid "Type part of a name, login or e-mail"
+msgstr "Введите часть имени, логина или e-mail"
+
+#: ext/mcp/access.php:144
+msgid "No matching user who can work with WOLF"
+msgstr "Нет подходящих пользователей, которые могут работать с WOLF"
+
+#: ext/mcp/access.php:145
+#: ext/mcp/bootstrap.php:567
+msgid "Working..."
+msgstr "Выполняется..."
+
+#: ext/mcp/access.php:146
+#: ext/mcp/access.php:230
+#: ext/mcp/access.php:277
+#: ext/mcp/bootstrap.php:568
+#: ext/mcp/bootstrap.php:629
+msgid "Disconnect"
+msgstr "Отключить"
+
+#: ext/mcp/access.php:147
+msgid "Issue a new key? The old key stops working at once and the assistant using it is disconnected."
+msgstr "Выпустить новый ключ? Старый ключ сразу перестанет работать, а использующий его ассистент будет отключён."
+
+#: ext/mcp/access.php:148
+#: ext/mcp/bootstrap.php:569
+msgid "Something went wrong. Reload the page and try again."
+msgstr "Что-то пошло не так. Перезагрузите страницу и повторите попытку."
+
+#: ext/mcp/access.php:189
+msgid "cannot connect: this user can no longer work with WOLF"
+msgstr "невозможно подключить: этот пользователь больше не может работать с WOLF"
+
+#: ext/mcp/access.php:193
+msgid "no key yet - it is issued when the user opens his settings"
+msgstr "ключа пока нет - он выдаётся, когда пользователь открывает свои настройки"
+
+#: ext/mcp/access.php:212
+msgid "MCP access for users"
+msgstr "Доступ к MCP для пользователей"
+
+#: ext/mcp/access.php:238
+msgid "Save the settings after changing the list. A user taken off the list loses his key and his connection at once."
+msgstr "Сохраните настройки после изменения списка. Пользователь, убранный из списка, сразу теряет ключ и подключение."
+
+#: ext/mcp/access.php:243
+msgid "Users picked here get a personal MCP key in their own settings and connect an AI assistant under their own WordPress account: the assistant can do exactly what they can do by hand, with their role and field visibility, never more. Two-factor connection is always on for personal keys. Only users who can work with WOLF are offered. The site-wide key above is not affected and stays yours."
+msgstr "Выбранные здесь пользователи получают личный ключ MCP в своих настройках и подключают ИИ-ассистента под своей учётной записью WordPress: ассистент может делать ровно то, что они могут делать вручную, с их ролью и видимостью полей, и не больше. Двухфакторное подключение для личных ключей всегда включено. Предлагаются только пользователи, которые могут работать с WOLF. Общий ключ сайта выше не затрагивается и остаётся у вас."
+
+#: ext/mcp/access.php:257
+msgid "Your MCP access"
+msgstr "Ваш доступ к MCP"
+
+#: ext/mcp/access.php:262
+#: ext/mcp/bootstrap.php:1146
+msgid "Address for the assistant:"
+msgstr "Адрес для ассистента:"
+
+#: ext/mcp/access.php:266
+msgid "Your personal key:"
+msgstr "Ваш личный ключ:"
+
+#: ext/mcp/access.php:268
+msgid "Regenerate key"
+msgstr "Выпустить новый ключ"
+
+#: ext/mcp/access.php:271
+msgid "Give the assistant the address and this key as a request header: Authorization, with the value \"Bearer\" followed by a space and the key. Two-factor connection is always on for a personal key: every session starts with a token the assistant shows you, which you confirm below."
+msgstr "Передайте ассистенту адрес и этот ключ в заголовке запроса: Authorization со значением «Bearer», пробелом и ключом. Для личного ключа двухфакторное подключение всегда включено: каждый сеанс начинается с токена, который показывает ассистент и который вы подтверждаете ниже."
+
+#: ext/mcp/access.php:281
+#: ext/mcp/bootstrap.php:633
+msgid "Confirm assistant connection - paste the token the assistant gave you:"
+msgstr "Подтвердите подключение ассистента - вставьте токен, который он вам дал:"
+
+#: ext/mcp/access.php:283
+#: ext/mcp/bootstrap.php:635
+msgid "Confirm connection"
+msgstr "Подтвердить подключение"
+
+#: ext/mcp/access.php:288
+msgid "The administrator gave you MCP access. An assistant connected with your key works as you: it can do what you can do by hand in this plugin, with your role and field visibility. Keep the key private; if it may have leaked, press Regenerate key - the old key and its connection stop working at once."
+msgstr "Администратор предоставил вам доступ к MCP. Ассистент, подключённый с вашим ключом, работает от вашего имени: он может делать то, что вы можете делать вручную в этом плагине, с вашей ролью и видимостью полей. Храните ключ в тайне; если он мог утечь, нажмите «Выпустить новый ключ» - старый ключ и его подключение сразу перестанут работать."
+
+#: ext/mcp/access.php:308
+msgid "You cannot work with WOLF on this site."
+msgstr "Вы не можете работать с WOLF на этом сайте."
+
+#: ext/mcp/access.php:312
+msgid "Only an administrator can do this."
+msgstr "Это может сделать только администратор."
+
+#: ext/mcp/access.php:327
+msgid "You have no MCP access on this site. Ask the administrator to grant it."
+msgstr "У вас нет доступа к MCP на этом сайте. Попросите администратора его предоставить."
+
+#: ext/mcp/access.php:390
+msgid "No user given."
+msgstr "Пользователь не указан."
+
+#: ext/mcp/access.php:397
+#: ext/mcp/access.php:464
+#: ext/mcp/bootstrap.php:532
+msgid "Disconnected."
+msgstr "Отключено."
+
+#: ext/mcp/access.php:416
+msgid "A new key is issued. The old one no longer works - update it in your assistant."
+msgstr "Выпущен новый ключ. Старый больше не работает - обновите его в своём ассистенте."
+
+#: ext/mcp/access.php:435
+#: ext/mcp/bootstrap.php:491
+msgid "That is not a connection token. Copy the whole token the assistant gave you - four groups of eight characters separated by dashes."
+msgstr "Это не токен подключения. Скопируйте токен целиком, как его дал ассистент - четыре группы по восемь символов, разделённые дефисами."
+
+#: ext/mcp/access.php:444
+#: ext/mcp/bootstrap.php:510
+msgid "Connected. Go back to the assistant and tell it you have confirmed."
+msgstr "Подключено. Вернитесь к ассистенту и сообщите ему, что подтвердили подключение."
+
+#: ext/mcp/bootstrap.php:459
+msgid "Not connected"
+msgstr "Не подключено"
+
+#. translators: %d: minutes since the assistant last used the connection
+#: ext/mcp/bootstrap.php:469
+#, php-format
+msgid "Connected, last activity %d min ago"
+msgstr "Подключено, последняя активность %d мин. назад"
+
+#: ext/mcp/bootstrap.php:485
+msgid "Only an administrator can confirm a connection."
+msgstr "Подтвердить подключение может только администратор."
+
+#: ext/mcp/bootstrap.php:525
+msgid "Only an administrator can end a connection."
+msgstr "Завершить подключение может только администратор."
+
+#: ext/mcp/bootstrap.php:584
+msgid "No assistant is connected."
+msgstr "Ассистент не подключён."
+
+#. translators: 1: time the connection was confirmed, 2: time it expires if left idle
+#: ext/mcp/bootstrap.php:589
+#, php-format
+msgid "An assistant is connected since %1$s. If it stays idle, the connection ends at %2$s."
+msgstr "Ассистент подключён с %1$s. Если он будет простаивать, подключение завершится в %2$s."
+
+#. translators: %s: how long a connection may stay idle, e.g. "3600 seconds (60 minutes)"
+#: ext/mcp/bootstrap.php:612
+#, php-format
+msgid "Recommended: turn on two-factor connection. Without it, anyone who gets hold of the MCP key - from a screenshot, a shared config or a stolen laptop - can work with your site. With it, every assistant session also needs a token that you confirm here yourself, and that expires after %s without use."
+msgstr "Рекомендуется: включите двухфакторное подключение. Без него любой, кто завладеет ключом MCP - из скриншота, общего конфига или украденного ноутбука, - сможет работать с вашим сайтом. С ним каждому сеансу ассистента также нужен токен, который вы подтверждаете здесь сами и который истекает после %s без использования."
+
+#: ext/mcp/bootstrap.php:1092
+msgid "Enable the MCP server"
+msgstr "Включить сервер MCP"
+
+#: ext/mcp/bootstrap.php:1108
+msgid "The MCP server is on: assistants can connect at the address below."
+msgstr "Сервер MCP включён: ассистенты могут подключаться по адресу ниже."
+
+#: ext/mcp/bootstrap.php:1110
+msgid "The MCP server is off and no assistant can connect. Choose Yes here: the key and the other MCP settings appear below, and Save switches the server on."
+msgstr "MCP-сервер выключен, и ни один ассистент не может подключиться. Выберите здесь «Да»: ниже появятся ключ и остальные настройки MCP, а «Сохранить» включит сервер."
+
+#: ext/mcp/bootstrap.php:1135
+msgid "Off by default. The MCP server lets an AI assistant read and edit the posts of this site over a REST endpoint. While it is off, the endpoint is not registered at all and nothing can reach it. Turn it on only when you are about to connect an assistant, and turn it back off if you stop using one."
+msgstr "По умолчанию выключено. Сервер MCP позволяет ИИ-ассистенту читать и редактировать записи этого сайта через конечную точку REST. Пока он выключен, конечная точка вообще не регистрируется и до неё нельзя достучаться. Включайте его только перед подключением ассистента и выключайте, если перестали им пользоваться."
+
+#: ext/mcp/bootstrap.php:1141
+msgid "MCP secret key"
+msgstr "Секретный ключ MCP"
+
+#: ext/mcp/bootstrap.php:1149
+msgid "Not active: the MCP server is switched off above."
+msgstr "Не активно: сервер MCP выключен выше."
+
+#: ext/mcp/bootstrap.php:1156
+msgid "Adding it in claude.ai: its server check will say \"Couldn't check the server\" with 403. That is expected for a server that signs in with a key - press \"Continue anyway\" and add the header Authorization with the value \"Bearer\" followed by a space and the key."
+msgstr "При добавлении в claude.ai проверка сервера покажет «Couldn't check the server» с ошибкой 403. Это нормально для сервера, который входит по ключу - нажмите «Continue anyway» и добавьте заголовок Authorization со значением «Bearer», пробелом и ключом."
+
+#: ext/mcp/bootstrap.php:1157
+msgid "How to connect an AI assistant"
+msgstr "Как подключить ИИ-ассистента"
+
+#: ext/mcp/bootstrap.php:1161
+msgid "Lets an AI assistant work with the posts of this site through a chat: find them, change them in bulk, roll changes back. Give the assistant the address below and this key as a request header named Authorization, with the value \"Bearer\" followed by a space and the key. Some clients call it an API key header instead - X-WPBE-KEY works the same way. The key is never accepted in the address itself, because anything written into a URL ends up in server logs, browser history and every proxy along the way. Clear this field and press Save to issue a new key: the old one stops working at once and every connected assistant has to be reconnected."
+msgstr "Позволяет ИИ-ассистенту работать с записями этого сайта через чат: находить их, массово изменять, откатывать изменения. Передайте ассистенту адрес ниже и этот ключ в заголовке запроса Authorization со значением «Bearer», пробелом и ключом. Некоторые клиенты называют его заголовком ключа API - X-WPBE-KEY работает так же. Ключ никогда не принимается в самом адресе, потому что всё, что записано в URL, попадает в журналы сервера, историю браузера и на каждый прокси по пути. Очистите это поле и нажмите «Сохранить», чтобы выпустить новый ключ: старый сразу перестанет работать, и каждого подключённого ассистента придётся подключить заново."
+
+#: ext/mcp/bootstrap.php:1167
+msgid "MCP two-factor connection"
+msgstr "Двухфакторное подключение MCP"
+
+#: ext/mcp/bootstrap.php:1167
+msgid "recommended"
+msgstr "рекомендуется"
+
+#: ext/mcp/bootstrap.php:1178
+msgid "This does not switch the MCP server on - that is \"Enable the MCP server\" above. Two-factor connection takes effect once the server is on."
+msgstr "Это не включает сервер MCP - за это отвечает «Включить сервер MCP» выше. Двухфакторное подключение действует после включения сервера."
+
+#. translators: %s: how long a connection may stay idle
+#: ext/mcp/bootstrap.php:1187
+#, php-format
+msgid "Off by default, recommended. With it on, the MCP key alone is not enough: every assistant session starts by showing you a token, you paste it below and confirm, and only then can the assistant work. The connection ends by itself after %s without activity, so a leaked key is useless without you. One assistant is connected at a time."
+msgstr "По умолчанию выключено, рекомендуется. При включении одного ключа MCP недостаточно: каждый сеанс ассистента начинается с показа вам токена, вы вставляете его ниже и подтверждаете, и только после этого ассистент может работать. Подключение само завершается после %s без активности, поэтому утёкший ключ без вас бесполезен. Одновременно подключён один ассистент."
+
+#: ext/mcp/bootstrap.php:1276
+#: index.php:330
+msgid "Upload images"
+msgstr "Загрузить изображения"
+
+#: ext/mcp/bootstrap.php:1289
+msgid "Add images to your site"
+msgstr "Добавьте изображения на сайт"
+
+#. translators: %s: post title
+#: ext/mcp/bootstrap.php:1294
+#, php-format
+msgid "The first one becomes the featured image of %s."
+msgstr "Первое станет изображением записи «%s»."
+
+#: ext/mcp/bootstrap.php:1296
+msgid "They go into the media library, ready to put on a post."
+msgstr "Они попадут в медиафайлы и будут готовы к добавлению в запись."
+
+#: ext/mcp/bootstrap.php:1302
+msgid "Drop images here"
+msgstr "Перетащите изображения сюда"
+
+#: ext/mcp/bootstrap.php:1303
+msgid "or click to choose them"
+msgstr "или нажмите, чтобы выбрать"
+
+#: ext/meta/meta.php:29
+#: ext/meta/views/panel.php:9
+msgid "Meta Fields"
+msgstr "Метаполя"
+
+#: ext/meta/meta.php:51
+msgid "Meta key cannot be empty!"
+msgstr "Ключ метаполя не может быть пустым!"
+
+#: ext/meta/meta.php:52
+msgid "Enter a post ID!"
+msgstr "Введите ID записи!"
+
+#: ext/meta/meta.php:53
+msgid "No meta keys found!"
+msgstr "Ключи метаполей не найдены!"
+
+#: ext/meta/meta.php:54
+msgid "New meta key"
+msgstr "Новый ключ метаполя"
+
+#: ext/meta/meta.php:214
+msgid "EXACT (=)"
+msgstr "ТОЧНО (=)"
+
+#: ext/meta/meta.php:215
+msgid "NOT EXACT (!=)"
+msgstr "НЕ ТОЧНО (!=)"
+
+#: ext/meta/meta.php:216
+msgid "NOT LIKE"
+msgstr "НЕ СОДЕРЖИТ"
+
+#: ext/meta/meta.php:218
+msgid "NOT Empty"
+msgstr "НЕ пусто"
+
+#: ext/meta/views/panel.php:14
+msgid "In FREE version of the plugin it is possible manipulate with 2 meta fields."
+msgstr "В БЕСПЛАТНОЙ версии плагина можно работать с 2 метаполями."
+
+#: ext/meta/views/panel.php:19
+msgid "Add Custom key by hands"
+msgstr "Добавить свой ключ вручную"
+
+#: ext/meta/views/panel.php:21
+msgid "Add"
+msgstr "Добавить"
+
+#: ext/meta/views/panel.php:26
+msgid "Get meta keys from any post by its ID"
+msgstr "Получить ключи метаполей из любой записи по её ID"
+
+#: ext/meta/views/panel.php:27
+msgid "enter post ID"
+msgstr "введите ID записи"
+
+#: ext/meta/views/panel.php:28
+msgid "Get"
+msgstr "Получить"
+
+#: ext/meta/views/panel.php:34
+msgid "Meta quick search ..."
+msgstr "Быстрый поиск метаполей ..."
+
+#: ext/meta/views/panel.php:59
+msgid "Save meta fields"
+msgstr "Сохранить метаполя"
+
+#: ext/meta/views/panel.php:79
+#: index.php:303
+#: views/parts/post-upsells.php:19
+#: views/wpbe.php:396
+#: views/wpbe.php:406
+#: views/wpbe.php:494
+msgid "move"
+msgstr "переместить"
+
+#: ext/meta/views/panel.php:86
+msgid "enter title"
+msgstr "введите название"
+
+#: ext/meta/views/panel.php:92
+msgid "textinput"
+msgstr "текстовое поле"
+
+#: ext/meta/views/panel.php:93
+msgid "textarea"
+msgstr "область текста"
+
+#: ext/meta/views/panel.php:94
+msgid "checkbox"
+msgstr "флажок"
+
+#: ext/meta/views/panel.php:95
+msgid "calendar"
+msgstr "календарь"
+
+#: ext/meta/views/panel.php:96
+msgid "array"
+msgstr "массив"
+
+#: ext/meta/views/panel.php:97
+msgid "gallery"
+msgstr "галерея"
+
+#: ext/meta/views/panel.php:104
+msgid "string"
+msgstr "строка"
+
+#: ext/meta/views/panel.php:105
+msgid "number"
+msgstr "число"
+
+#: index.php:28
+msgid "Hello, looks like you bought and installed premium version of WOLF - WordPress Posts Bulk Editor and Manager Professional, please deactivate free version before, then uninstall it. 2 versions of the same plugin cannot be activated on the same time!"
+msgstr "Здравствуйте! Похоже, вы купили и установили премиум-версию WOLF - профессионального массового редактора и менеджера записей WordPress. Пожалуйста, сначала деактивируйте бесплатную версию, затем удалите её. Две версии одного плагина нельзя активировать одновременно!"
+
+#: index.php:145
+msgid "If you not familiar with the plugin, firstly"
+msgstr "Если вы не знакомы с плагином, сначала"
+
+#: index.php:148
+msgid "visit this page"
+msgstr "посетите эту страницу"
+
+#: index.php:153
+msgid "please"
+msgstr "пожалуйста"
+
+#: index.php:171
+#: index.php:183
+msgid "WOLF Bulk Editor"
+msgstr "WOLF Bulk Editor"
+
+#: index.php:287
+#: views/wpbe.php:124
+msgid "Posts Editor"
+msgstr "Редактор записей"
+
+#: index.php:304
+msgid "Search"
+msgstr "Поиск"
+
+#: index.php:305
+msgid "Failed"
+msgstr "Не удалось"
+
+#: index.php:306
+msgid "Error"
+msgstr "Ошибка"
+
+#: index.php:308
+msgid "ignore"
+msgstr "игнорировать"
+
+#: index.php:309
+msgid "This is not deletable!"
+msgstr "Это нельзя удалить!"
+
+#: index.php:310
+#: views/elements/draw_attribute_list_btn.php:13
+#: views/elements/draw_taxonomy_popup_btn.php:19
+msgid "no items"
+msgstr "нет элементов"
+
+#: index.php:311
+msgid "none"
+msgstr "нет"
+
+#: index.php:312
+msgid "no data"
+msgstr "нет данных"
+
+#: index.php:313
+msgid "Loading"
+msgstr "Загрузка"
+
+#: index.php:314
+msgid "Loaded"
+msgstr "Загружено"
+
+#: index.php:315
+msgid "Saved"
+msgstr "Сохранено"
+
+#: index.php:316
+msgid "Saving"
+msgstr "Сохранение"
+
+#: index.php:317
+#: views/wpbe.php:219
+#: views/wpbe.php:252
+#: views/wpbe.php:280
+#: views/wpbe.php:329
+#: views/wpbe.php:384
+msgid "Apply"
+msgstr "Применить"
+
+#: index.php:318
+#: views/wpbe.php:218
+#: views/wpbe.php:251
+#: views/wpbe.php:279
+#: views/wpbe.php:328
+#: views/wpbe.php:383
+#: views/wpbe.php:1012
+msgid "Cancel"
+msgstr "Отмена"
+
+#: index.php:319
+msgid "Canceled"
+msgstr "Отменено"
+
+#: index.php:320
+msgid "Sure?"
+msgstr "Уверены?"
+
+#: index.php:321
+msgid "Creating"
+msgstr "Создание"
+
+#: index.php:322
+msgid "Created!"
+msgstr "Создано!"
+
+#: index.php:323
+msgid "Duplicating"
+msgstr "Дублирование"
+
+#: index.php:324
+msgid "Duplicated!"
+msgstr "Дублировано!"
+
+#: index.php:325
+msgid "Deleting"
+msgstr "Удаление"
+
+#: index.php:326
+msgid "Deleted!"
+msgstr "Удалено!"
+
+#: index.php:327
+msgid "Reseting"
+msgstr "Сброс"
+
+#: index.php:328
+msgid "Reseted!"
+msgstr "Сброшено!"
+
+#: index.php:329
+msgid "Upload image"
+msgstr "Загрузить изображение"
+
+#: index.php:331
+msgid "Upload file"
+msgstr "Загрузить файл"
+
+#: index.php:332
+msgid "Fill up the data please!"
+msgstr "Заполните данные, пожалуйста!"
+
+#. translators: %s: name
+#: index.php:336
+#, php-format
+msgid "Enter how many time duplicate selected [%s](s)!"
+msgstr "Введите, сколько копий создать для выбранных [%s](s)!"
+
+#. translators: %s: name
+#: index.php:341
+#, php-format
+msgid "Enter how many new [%s](s) to create!"
+msgstr "Введите, сколько новых [%s](s) создать!"
+
+#: index.php:343
+msgid "Text search by title or SKU"
+msgstr "Текстовый поиск по заголовку или артикулу"
+
+#: index.php:344
+#: views/parts/top_panel.php:25
+msgid "Show: Filters/Bulk Edit/Export"
+msgstr "Показать: фильтры / массовое редактирование / экспорт"
+
+#: index.php:345
+msgid "Hide: Filters/Bulk Edit/Export"
+msgstr "Скрыть: фильтры / массовое редактирование / экспорт"
+
+#: index.php:346
+msgid "Per page"
+msgstr "На странице"
+
+#: index.php:347
+msgid "Select background color"
+msgstr "Выберите цвет фона"
+
+#: index.php:348
+msgid "Select text color"
+msgstr "Выберите цвет текста"
+
+#: index.php:349
+msgid "No data available in the table"
+msgstr "В таблице нет данных"
+
+#: index.php:350
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "Показано с _START_ по _END_ из _TOTAL_ записей"
+
+#: index.php:351
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "Показано с 0 по 0 из 0 записей"
+
+#: index.php:352
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(отфильтровано из _MAX_ записей)"
+
+#: index.php:353
+msgid "Loading..."
+msgstr "Загрузка..."
+
+#: index.php:354
+msgid "Processing..."
+msgstr "Обработка..."
+
+#: index.php:355
+msgid "No matching records found"
+msgstr "Подходящих записей не найдено"
+
+#: index.php:356
+msgid "First"
+msgstr "Первая"
+
+#: index.php:357
+msgid "Last"
+msgstr "Последняя"
+
+#: index.php:359
+msgid "Previous"
+msgstr "Предыдущая"
+
+#. translators: %s: name
+#: index.php:368
+#, php-format
+msgid "the filtered [%s]. To remove filtering press reset button on the tools panel below"
+msgstr "отфильтрованные [%s]. Чтобы убрать фильтрацию, нажмите кнопку сброса на панели инструментов ниже"
+
+#. translators: %s: name
+#: index.php:373
+#, php-format
+msgid "the selected [%s](s)"
+msgstr "выбранные [%s](s)"
+
+#. translators: %s: name
+#: index.php:378
+#, php-format
+msgid "You can reset selection of the [%s](s) by its reset button on the panel of the editor OR uncheck them manually!"
+msgstr "Вы можете сбросить выбор [%s](s) кнопкой сброса на панели редактора ИЛИ снять отметки вручную!"
+
+#: index.php:380
+msgid "Maybe term(s) with such name(s) already exists!"
+msgstr "Возможно, термины с такими названиями уже существуют!"
+
+#: index.php:381
+msgid "In FREE version of the plugin you can create one profile only!"
+msgstr "В БЕСПЛАТНОЙ версии плагина можно создать только один профиль!"
+
+#: index.php:382
+msgid "append sub item"
+msgstr "добавить вложенный элемент"
+
+#: index.php:383
+msgid "This field is deactivated in FREE version for bulk edit!"
+msgstr "Это поле отключено для массового редактирования в БЕСПЛАТНОЙ версии!"
+
+#: index.php:384
+msgid "Posts checked"
+msgstr "Отмечено записей"
+
+#: index.php:584
+msgid "View the post on the site front"
+msgstr "Посмотреть запись на сайте"
+
+#: index.php:590
+msgid "Editing of the post on its page"
+msgstr "Редактирование записи на её странице"
+
+#: index.php:887
+msgid "Posts not found!"
+msgstr "Записи не найдены!"
+
+#. translators: %s: post name
+#: index.php:966
+#, php-format
+msgid "New %s"
+msgstr "Новая запись: %s"
+
+#: index.php:1005
+msgid "copy"
+msgstr "копия"
+
+#: index.php:1295
+msgid "see the post on the site"
+msgstr "посмотреть запись на сайте"
+
+#: index.php:1397
+msgid "Scheduled"
+msgstr "Запланировано"
+
+#: index.php:1536
+msgid "Later"
+msgstr "Позже"
+
+#: index.php:1538
+msgid "Hi! Are you enjoying using WOLF – WordPress Posts Bulk Editor Professional?"
+msgstr "Здравствуйте! Вам нравится использовать WOLF - профессиональный массовый редактор записей WordPress?"
+
+#: index.php:1539
+msgid "Yes, I love it"
+msgstr "Да, очень нравится"
+
+#: index.php:1539
+msgid "Not really..."
+msgstr "Не совсем..."
+
+#. translators: %s: name
+#: index.php:1545
+#, php-format
+msgid "That's awesome! Could you please do us a BIG favor and give it a 5-star rating on %s to help us spread the word and boost our motivation?"
+msgstr "Здорово! Не могли бы вы оказать нам БОЛЬШУЮ услугу и поставить 5 звёзд на %s, чтобы помочь нам рассказать о плагине и подстегнуть нашу мотивацию?"
+
+#: index.php:1549
+msgid "Okay, you deserve it"
+msgstr "Хорошо, вы заслужили"
+
+#: index.php:1550
+msgid "Nope, maybe later"
+msgstr "Нет, может быть позже"
+
+#: index.php:1551
+msgid "I already did"
+msgstr "Я уже поставил(а)"
+
+#: index.php:1556
+msgid "We are sorry to hear you aren't enjoying WOLF. We would love a chance to improve it. Could you take a minute and let us know what we can do better?"
+msgstr "Нам жаль, что WOLF вам не нравится. Мы хотели бы получить шанс его улучшить. Не могли бы вы уделить минуту и рассказать, что нам стоит сделать лучше?"
+
+#: index.php:1558
+msgid "Give Feedback"
+msgstr "Оставить отзыв"
+
+#: index.php:1559
+msgid "No thanks"
+msgstr "Нет, спасибо"
+
+#: views/elements/draw_calendar.php:20
+msgid "Will never reset published date, and for modified date field  will set current time!"
+msgstr "Дата публикации никогда не сбрасывается, а для поля даты изменения будет установлено текущее время!"
+
+#. translators: %s: product name
+#: views/elements/draw_gallery_popup_editor_btn.php:57
+#, php-format
+msgid "Product: %s"
+msgstr "Товар: %s"
+
+#. translators: %s: product name
+#: views/elements/draw_gallery_popup_editor_btn.php:61
+#, php-format
+msgid "Images (%s)"
+msgstr "Изображения (%s)"
+
+#. translators: %s: name
+#: views/elements/draw_gallery_popup_editor_btn.php:77
+#: views/elements/draw_meta_popup_editor_btn.php:33
+#: views/elements/draw_popup_editor_btn.php:33
+#: views/elements/draw_upsells_popup_editor_btn.php:30
+#: views/elements/draw_upsells_popup_editor_btn.php:47
+#, php-format
+msgid "Post: %s"
+msgstr "Запись: %s"
+
+#: views/elements/draw_meta_popup_editor_btn.php:20
+msgid "Array"
+msgstr "Массив"
+
+#: views/elements/draw_popup_editor_btn.php:5
+msgid "Content[empty]"
+msgstr "Содержимое[пусто]"
+
+#: views/elements/draw_restricked.php:7
+msgid "Not allowed!"
+msgstr "Не разрешено!"
+
+#. translators: %s: name
+#: views/elements/draw_upsells_popup_editor_btn.php:33
+#, php-format
+msgid "Posts (%s)"
+msgstr "Записи (%s)"
+
+#: views/elements/multi_select.php:27
+msgid "Select all"
+msgstr "Выбрать все"
+
+#: views/elements/multi_select.php:28
+msgid "Deselect all"
+msgstr "Снять выбор"
+
+#: views/elements/multi_select.php:33
+msgid "cancel"
+msgstr "отмена"
+
+#: views/elements/multi_select.php:38
+msgid "save"
+msgstr "сохранить"
+
+#: views/parts/advanced-table.php:14
+msgid "Set full width"
+msgstr "Во всю ширину"
+
+#: views/parts/advanced-table.php:15
+#: views/wpbe.php:899
+msgid "Columns profiles"
+msgstr "Профили столбцов"
+
+#: views/parts/advanced-table.php:21
+msgid "New Post"
+msgstr "Новая запись"
+
+#: views/parts/advanced-table.php:22
+msgid "Duplicate selected post(s)."
+msgstr "Дублировать выбранные записи."
+
+#: views/parts/advanced-table.php:25
+msgid "Delete selected post(s)"
+msgstr "Удалить выбранные записи"
+
+#: views/parts/advanced-table.php:27
+msgid "Uncheck all selected posts"
+msgstr "Снять отметки со всех выбранных записей"
+
+#: views/parts/advanced-table.php:28
+msgid "Reset filters"
+msgstr "Сбросить фильтры"
+
+#: views/parts/advanced-table.php:39
+msgid "select all variations"
+msgstr "выбрать все вариации"
+
+#: views/parts/advanced-table.php:45
+msgid "Scroll right"
+msgstr "Прокрутить вправо"
+
+#: views/parts/advanced-table.php:46
+msgid "Scroll left"
+msgstr "Прокрутить влево"
+
+#: views/parts/post-gallery.php:17
+msgid "Detach image of the post"
+msgstr "Открепить изображение записи"
+
+#: views/parts/post-upsells.php:19
+#: views/wpbe.php:396
+#: views/wpbe.php:406
+#: views/wpbe.php:494
+msgid "drag and drop"
+msgstr "перетащите"
+
+#: views/parts/top_panel.php:21
+msgid "Close the panel"
+msgstr "Закрыть панель"
+
+#: views/wpbe.php:13
+msgid "No any post type permitted to edit for site editors. Ask please site administrators for details!"
+msgstr "Нет типов записей, разрешённых для редактирования редакторам сайта. Обратитесь за подробностями к администраторам сайта!"
+
+#: views/wpbe.php:38
+msgid "Your settings have been saved."
+msgstr "Ваши настройки сохранены."
+
+#. translators: %s: WordPress version
+#: views/wpbe.php:53
+#, php-format
+msgid "Compatible with WordPress v.%s"
+msgstr "Совместимо с WordPress v.%s"
+
+#: views/wpbe.php:65
+msgid "MCP server is off. Connect your AI assistant to WOLF: switch it on in the Settings tab - click to read how"
+msgstr "MCP-сервер выключен. Чтобы подключить ИИ-ассистента к WOLF, включите его на вкладке «Настройки» – нажмите, чтобы узнать как"
+
+#: views/wpbe.php:68
+msgid "MCP server is on, two-factor connection is off - switching it on in the Settings tab is recommended. Click to read how to connect your AI assistant"
+msgstr "MCP-сервер включён, двухфакторное подключение выключено – рекомендуется включить его на вкладке «Настройки». Нажмите, чтобы узнать, как подключить ИИ-ассистента"
+
+#: views/wpbe.php:71
+msgid "MCP server is on, with two-factor connection. Click to read how to connect your AI assistant"
+msgstr "MCP-сервер включён, с двухфакторным подключением. Нажмите, чтобы узнать, как подключить ИИ-ассистента"
+
+#: views/wpbe.php:88
+msgid "Upgrade"
+msgstr "Улучшить"
+
+#: views/wpbe.php:111
+msgid "ATTENTION! Your version of the WordPress is obsolete. There is no warranty of normal working with the plugin!!"
+msgstr "ВНИМАНИЕ! Ваша версия WordPress устарела. Нормальная работа плагина не гарантируется!!"
+
+#: views/wpbe.php:132
+msgid "Settings"
+msgstr "Настройки"
+
+#: views/wpbe.php:166
+msgid "Select some columns in tab \"Settings\""
+msgstr "Выберите столбцы на вкладке «Настройки»"
+
+#: views/wpbe.php:169
+msgid "Actions"
+msgstr "Действия"
+
+#: views/wpbe.php:201
+msgid "Quick search"
+msgstr "Быстрый поиск"
+
+#: views/wpbe.php:202
+msgid "Quick terms search by its name"
+msgstr "Быстрый поиск терминов по названию"
+
+#: views/wpbe.php:206
+msgid "create new term"
+msgstr "создать новый термин"
+
+#: views/wpbe.php:207
+msgid "selected only"
+msgstr "только выбранные"
+
+#: views/wpbe.php:208
+msgid "Select all terms"
+msgstr "Выбрать все термины"
+
+#: views/wpbe.php:301
+msgid "Add Image"
+msgstr "Добавить изображение"
+
+#: views/wpbe.php:307
+msgid "Replace all posts images by the selected ones"
+msgstr "Заменить все изображения записей выбранными"
+
+#: views/wpbe.php:308
+msgid "Add selected images to the already existed ones"
+msgstr "Добавить выбранные изображения к уже существующим"
+
+#: views/wpbe.php:309
+msgid "Delete selected images from the posts"
+msgstr "Удалить выбранные изображения из записей"
+
+#: views/wpbe.php:310
+msgid "Delete selected images from the posts, also delete them from the media library forever"
+msgstr "Удалить выбранные изображения из записей, а также навсегда удалить их из медиафайлов"
+
+#: views/wpbe.php:362
+msgid "REMEMBER: sequence of data maybe have sense (and maybe not), so be attentive! Do not mix in the same popup window data of array and object data!"
+msgstr "ПОМНИТЕ: порядок данных может иметь значение (а может и нет), будьте внимательны! Не смешивайте в одном окне данные массива и объекта!"
+
+#: views/wpbe.php:372
+msgid "Prepend array key/value"
+msgstr "Добавить ключ/значение массива в начало"
+
+#: views/wpbe.php:373
+msgid "Prepend object set"
+msgstr "Добавить набор объекта в начало"
+
+#: views/wpbe.php:377
+msgid "Append array key/value"
+msgstr "Добавить ключ/значение массива в конец"
+
+#: views/wpbe.php:378
+msgid "Append object set"
+msgstr "Добавить набор объекта в конец"
+
+#: views/wpbe.php:397
+#: views/wpbe.php:407
+#: views/wpbe.php:415
+msgid "key"
+msgstr "ключ"
+
+#: views/wpbe.php:398
+#: views/wpbe.php:416
+msgid "value"
+msgstr "значение"
+
+#: views/wpbe.php:429
+msgid "Note: if horizontal scroll disappeared when it must be visible, click on tab Posts Editor to make it visible"
+msgstr "Примечание: если горизонтальная прокрутка пропала, когда должна быть видна, щёлкните по вкладке «Редактор записей», чтобы она появилась"
+
+#. translators: 1: total columns count, 2: enabled columns count
+#: views/wpbe.php:460
+#, php-format
+msgid "Columns settings%1$s, columns enabled %2$s"
+msgstr "Настройки столбцов%1$s, включено столбцов: %2$s"
+
+#: views/wpbe.php:477
+msgid "Show all columns"
+msgstr "Показать все столбцы"
+
+#: views/wpbe.php:494
+#: views/wpbe.php:517
+#: views/wpbe.php:650
+#: views/wpbe.php:728
+#: views/wpbe.php:765
+msgid "premium version"
+msgstr "премиум-версия"
+
+#: views/wpbe.php:516
+#: views/wpbe.php:522
+msgid "visible for the site editor"
+msgstr "видно редактору сайта"
+
+#: views/wpbe.php:561
+msgid "cell text or number size"
+msgstr "размер текста или числа в ячейке"
+
+#: views/wpbe.php:614
+#: views/wpbe.php:796
+msgid "Save all settings"
+msgstr "Сохранить все настройки"
+
+#: views/wpbe.php:620
+msgid "General settings"
+msgstr "Общие настройки"
+
+#: views/wpbe.php:687
+msgid "Site editors post types"
+msgstr "Типы записей для редакторов сайта"
+
+#: views/wpbe.php:695
+msgid "What post types can edit site editors in the tab Posts Editor. Use comma, example: post,car,page"
+msgstr "Какие типы записей редакторы сайта могут редактировать на вкладке «Редактор записей». Через запятую, например: post,car,page"
+
+#: views/wpbe.php:700
+msgid "Separate columns and meta for post types"
+msgstr "Отдельные столбцы и метаполя для типов записей"
+
+#: views/wpbe.php:733
+msgid "Each post type has its own set of columns and meta fields."
+msgstr "У каждого типа записей свой набор столбцов и метаполей."
+
+#: views/wpbe.php:738
+msgid "Show content and excerpt text partly"
+msgstr "Показывать часть текста содержимого и отрывка"
+
+#: views/wpbe.php:770
+msgid "Show part of the text in the content and excerpt edit button"
+msgstr "Показывать часть текста на кнопке редактирования содержимого и отрывка"
+
+#: views/wpbe.php:801
+msgid "More settings (implicit)"
+msgstr "Дополнительные настройки (скрытые)"
+
+#: views/wpbe.php:823
+msgid "Show description"
+msgstr "Показывать описание"
+
+#: views/wpbe.php:832
+msgid "Edit"
+msgstr "Редактировать"
+
+#: views/wpbe.php:892
+msgid "Columns profile"
+msgstr "Профиль столбцов"
+
+#: views/wpbe.php:900
+msgid "Here you can load previously saved columns profile. After pressing on the load button, page reloading will start immediately!"
+msgstr "Здесь можно загрузить ранее сохранённый профиль столбцов. После нажатия кнопки загрузки сразу начнётся перезагрузка страницы!"
+
+#. translators: 1: profile title, 2: delete profile link
+#: views/wpbe.php:906
+#, php-format
+msgid "Current profile is: %1$s %2$s"
+msgstr "Текущий профиль: %1$s %2$s"
+
+#: views/wpbe.php:910
+msgid "remove current columns profile"
+msgstr "удалить текущий профиль столбцов"
+
+#: views/wpbe.php:922
+msgid "Select profile to load"
+msgstr "Выберите профиль для загрузки"
+
+#: views/wpbe.php:942
+msgid "New Profile"
+msgstr "Новый профиль"
+
+#: views/wpbe.php:943
+msgid "Here you can type any title and save current columns set and their order. Type here any title and then press Save button OR press Enter button on your keyboard!"
+msgstr "Введите любое название и сохраните текущий набор столбцов и их порядок. Введите название и нажмите кнопку «Сохранить» ИЛИ клавишу Enter на клавиатуре!"
+
+#: views/wpbe.php:955
+#: views/wpbe.php:1011
+msgid "Create"
+msgstr "Создать"
+
+#. translators: %s: taxonomy/term placeholder
+#: views/wpbe.php:972
+#, php-format
+msgid "New term for [%s]"
+msgstr "Новый термин для [%s]"
+
+#: views/wpbe.php:979
+msgid "New Term(s)"
+msgstr "Новые термины"
+
+#: views/wpbe.php:980
+msgid "Here you can write title for the new term. Use comma to create some new tags on the same time! New terms with already existed names will not be created!"
+msgstr "Здесь можно ввести название нового термина. Используйте запятую, чтобы создать сразу несколько меток! Термины с уже существующими названиями создаваться не будут!"
+
+#: views/wpbe.php:990
+msgid "Slug(s) of the new term"
+msgstr "Ярлыки новых терминов"
+
+#: views/wpbe.php:991
+msgid "Here you can write slug for the the new term (optionally). Use comma for slug(s) when you create some on the same time terms, or leave slug field empty to create slug(s) automatically"
+msgstr "Здесь можно ввести ярлык нового термина (необязательно). Используйте запятую для ярлыков, если создаёте сразу несколько терминов, или оставьте поле пустым, чтобы ярлыки создались автоматически"
+
+#: views/wpbe.php:1001
+msgid "Parent of the new term(s)"
+msgstr "Родитель новых терминов"
+
+#: views/wpbe.php:1002
+msgid "Here you can select parent for the the new term (optionally)"
+msgstr "Здесь можно выбрать родителя нового термина (необязательно)"
+
+#: views/wpbe.php:1045
+msgid "UPGRADE TO FULL VERSION"
+msgstr "ПЕРЕЙТИ НА ПОЛНУЮ ВЕРСИЮ"
+
+#: views/wpbe.php:1046
+msgid "WOLF - Posts Bulk Editor Professional"
+msgstr "WOLF - Posts Bulk Editor Professional"
+
+#: views/wpbe.php:1050
+msgid "BEAR - Bulk Editor Professional for WooCommerce"
+msgstr "BEAR - Bulk Editor Professional for WooCommerce"
+
+#: views/wpbe.php:1051
+msgid "BEAR - WooCommerce Bulk Editor Professional"
+msgstr "BEAR - WooCommerce Bulk Editor Professional"
+
+#: views/wpbe.php:1055
+#: views/wpbe.php:1056
+msgid "WPCS - WordPress Currency Switcher"
+
+msgstr "WPCS - WordPress Currency Switcher"

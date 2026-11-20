@@ -25,18 +25,31 @@ final class WPBE_SETTINGS {
     public $diferrent_setings_per_post = 1;
     public $override_switcher_fieds = "";
     public $use_wp_editor = 0;
+    // option keys applied by the last apply_post_type_state(), so a switch to
+    // another post type can put them back to their defaults first
+    private $applied_option_keys = array();
+    // fields per post type, see get_fields(); cleared for a type on switch
+    private static $fields_cache = array();
+    private static $tax_fields_cache = array();
+    private static $role_fields_cache = array();
 
     public function __construct() {
 
-        global $WPBE;
+        // An MCP request never reads or writes the stored current post type: that
+        // is the screen of a person working in the table, and an agent switching
+        // types would switch it under him. The MCP layer picks the type per call
+        // with switch_post_type() instead.
+        $is_mcp = defined('WPBE_MCP_REQUEST') && WPBE_MCP_REQUEST;
 
         $this->options_key .= apply_filters('wpbe_settings_key_options', get_current_user_id());
         //+++
         $this->add_more_per_page = apply_filters('wpbe_set_per_page_values', $this->add_more_per_page);
 
-        $post_type = (new WPBE_STORAGE())->get_val('wpbe_current_post_type_' . get_current_user_id());
-        if (!empty($post_type) AND post_type_exists($post_type)) {
-            $this->current_post_type = $post_type;
+        if (!$is_mcp) {
+            $post_type = (new WPBE_STORAGE())->get_val('wpbe_current_post_type_' . get_current_user_id());
+            if (!empty($post_type) AND post_type_exists($post_type)) {
+                $this->current_post_type = $post_type;
+            }
         }
 
         if (WPBE_HELPER::get_site_separate_settings()) {
@@ -45,7 +58,8 @@ final class WPBE_SETTINGS {
 
         $user = wp_get_current_user();
         $role = (array) $user->roles;
-        $this->current_user_role = $role[0];
+        // a request with no logged in user (the MCP shop key) has no role at all
+        $this->current_user_role = isset($role[0]) ? $role[0] : '';
 
         //***
         //to avoid prohibited post types visibility for site editors
@@ -53,11 +67,74 @@ final class WPBE_SETTINGS {
             $allowed_post_types = explode(',', WPBE_HELPER::get_site_editors_post_types());
             if (!in_array($this->current_post_type, $allowed_post_types)) {
                 $this->current_post_type = $allowed_post_types[0];
-                (new WPBE_STORAGE())->set_val('wpbe_current_post_type_' . get_current_user_id(), $this->current_post_type);
+                if (!$is_mcp) {
+                    (new WPBE_STORAGE())->set_val('wpbe_current_post_type_' . get_current_user_id(), $this->current_post_type);
+                }
             }
         }
 
         //***
+
+        $this->apply_post_type_state();
+    }
+
+    /**
+     * Makes this very object work with another post type, inside one request.
+     *
+     * The same object rather than a new one: every extension holds the settings
+     * it got from init_vars(), and a fresh WPBE_SETTINGS would leave history,
+     * bulk, meta and filters on the old type. Nothing is written to storage and
+     * the site editors' type list is not applied here - the MCP layer decides
+     * which types an identity may use (WPBE_MCP::use_post_type()).
+     *
+     * @param string $post_type a registered post type
+     * @return bool false when the type does not exist
+     */
+    public function switch_post_type($post_type) {
+
+        if (!post_type_exists($post_type)) {
+            return false;
+        }
+
+        // fields of the target type are built again: a list cached for it while
+        // the object was still being constructed may hold another type's meta
+        unset(self::$fields_cache[$post_type], self::$tax_fields_cache[$post_type], self::$role_fields_cache[$post_type]);
+
+        $this->current_post_type = $post_type;
+
+        $this->options_key = 'wpbe_options_' . apply_filters('wpbe_settings_key_options', get_current_user_id());
+        if (WPBE_HELPER::get_site_separate_settings()) {
+            $this->options_key .= $this->current_post_type;
+        }
+
+        // options of the previous type go back to the class defaults before the
+        // new type's options are read, as for a freshly constructed object
+        $defaults = (new ReflectionClass($this))->getDefaultProperties();
+        foreach ($this->applied_option_keys as $key) {
+            if (array_key_exists($key, $defaults)) {
+                $this->$key = $defaults[$key];
+            }
+        }
+
+        $this->apply_post_type_state();
+
+        do_action('wpbe_post_type_switched', $post_type, $this);
+
+        return true;
+    }
+
+    /**
+     * Everything the constructor derives from the current post type: the active
+     * fields, the editable and unsortable columns, and the saved options.
+     */
+    private function apply_post_type_state() {
+
+        global $WPBE;
+
+        $this->active_fields = array();
+        $this->editable = array();
+        $this->no_order = array();
+        $this->applied_option_keys = array();
 
         $this->init_fields();
 
@@ -86,6 +163,7 @@ final class WPBE_SETTINGS {
                 foreach ($options['options'] as $key => $v) {
                     if (!is_null($v)) {
                         $this->$key = $v;
+                        $this->applied_option_keys[] = $key;
                     }
                 }
             }
@@ -100,10 +178,11 @@ final class WPBE_SETTINGS {
             $this->per_page = 100;
         }
 
+        if ($WPBE->show_notes) {
             if (intval($this->per_page) > 10) {
                 $this->per_page = 10;
             }
-        
+        }
     }
 
     public function get_options() {
@@ -116,7 +195,10 @@ final class WPBE_SETTINGS {
 
     public function get_fields($use_roles = true) {
         global $WPBE;
-        static $res = array(); //lets cache it as it uses many times
+        //lets cache it as it uses many times - per post type, as one request can
+        //work with several of them (MCP), and each has its own taxonomies and meta
+        $pt = $this->current_post_type;
+        $res = isset(self::$fields_cache[$pt]) ? self::$fields_cache[$pt] : array();
 
         if (empty($res)/* AND $use_cache */) {
             $fields = wpbe_get_fields();
@@ -125,7 +207,7 @@ final class WPBE_SETTINGS {
             //get all posts taxonomies
             $taxonomy_objects = get_object_taxonomies($this->current_post_type, 'objects');
             unset($taxonomy_objects['post_type']);
-            static $tax_fileds = array(); //static is for caching data
+            $tax_fileds = isset(self::$tax_fields_cache[$pt]) ? self::$tax_fields_cache[$pt] : array(); //cached per post type
             if (!empty($taxonomy_objects)) {
 
                 if (empty($tax_fileds)) {
@@ -137,12 +219,14 @@ final class WPBE_SETTINGS {
                           }
                          */
 
-                        
+                        if ($WPBE->show_notes) {
                             $direct = FALSE;
                             if ($t->name === 'category' OR $counter === 0) {
                                 $direct = TRUE;
                             }
-                       
+                        } else {
+                            $direct = TRUE;
+                        }
                         $tax_fileds[$t->name] = array(
                             'show' => 0,
                             'title' => ucfirst(trim(str_replace('Post ', '', $t->label))),
@@ -159,6 +243,8 @@ final class WPBE_SETTINGS {
 
                         $counter++;
                     }
+
+                    self::$tax_fields_cache[$pt] = $tax_fileds;
                 }
 
                 $fields = array_merge($fields, $tax_fileds);
@@ -248,13 +334,14 @@ final class WPBE_SETTINGS {
             }
 
             //***
+            self::$fields_cache[$pt] = $res;
         }
 
 
         //lets check restricions
         if (!in_array($this->current_user_role, apply_filters('wpbe_permit_special_roles', ['administrator'])) AND $use_roles) {
 
-            static $ff = array();
+            $ff = isset(self::$role_fields_cache[$pt]) ? self::$role_fields_cache[$pt] : array();
 
             if (empty($ff)) {
                 $ff = $res;
@@ -267,6 +354,8 @@ final class WPBE_SETTINGS {
                         }
                     }
                 }
+
+                self::$role_fields_cache[$pt] = $ff;
             }
 
             return $ff;

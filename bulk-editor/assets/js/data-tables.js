@@ -208,6 +208,7 @@ function init_data_tables() {
             deferRender: true,
             data: {
                 action: 'wpbe_get_posts',
+                wpbe_nonce: wpbe_get_posts_nonce,
                 wpbe_show_variations: function () {
                     return wpbe_show_variations;//we use function to return actual value for the current moment
                 },
@@ -375,6 +376,8 @@ function wpbe_click_textinput(_this, colIndex) {
      }
      */
     var content = jQuery(_this).html();
+    //the cell holds escaped text: this is the value as the user sees and edits it
+    var content_text = jQuery('<textarea/>').html(content).val();
 
     //***
 
@@ -424,9 +427,9 @@ function wpbe_click_textinput(_this, colIndex) {
         if (jQuery.inArray(e.keyCode, [13/*, 18*/, 38, 40]) > -1) { // keyboard keys
             e.preventDefault();
 
-            if (content !== jQuery(input).val()) {
+            if (content_text !== jQuery(input).val()) {
                 wpbe_message(lang.saving, '');
-                jQuery(_this).html(jQuery(input).val());
+                jQuery(_this).text(jQuery(input).val());
                 jQuery.ajax({
                     method: "POST",
                     url: ajaxurl,
@@ -1271,7 +1274,7 @@ function wpbe_act_popupeditor(_this, post_parent) {
 function wpbe_act_gallery_editor(_this) {
     var button = _this;
 
-    jQuery('#gallery_popup_editor .wpbe-modal-title').html(jQuery(_this).data('name') + ' [' + jQuery(_this).data('key') + ']');
+    jQuery('#gallery_popup_editor .wpbe-modal-title').text(jQuery(_this).data('name') + ' [' + jQuery(_this).data('key') + ']');//the post title is text
     wpbe_popup_clicked = jQuery(_this);
     var post_id = parseInt(jQuery(_this).data('post_id'), 10);
     var key = jQuery(_this).data('key');
@@ -1528,7 +1531,9 @@ function wpbe_redraw_table_row(row, do_trigger = true) {
             wpbe_message(lang.saved, 'notice');
             var tr_index = jQuery('#post_row_' + post_id).data('row-num');
             if (row_data) {
-                data_table.row(tr_index).data(JSON.parse(row_data));
+                //the server answers with wp_send_json(), so jQuery has already parsed it: parsing the array again threw
+                //and the other ticked rows of a binded edit were never redrawn
+                data_table.row(tr_index).data(typeof row_data === 'string' ? JSON.parse(row_data) : row_data);
             }
 
 
@@ -2074,8 +2079,12 @@ function wpbe_init_image_preview(_this) {
 
     _this.t = _this.title;
     //_this.title = "";
-    var c = (_this.t != "") ? "<br/>" + _this.t : "";
-    jQuery("body").append("<p id='wpbe_img_preview'><img src='" + _this.href + "' alt='" + lang.loading + "' width='300' />" + c + "</p>");
+    //built as nodes: the title (a post title, decoded by the browser) is text, never markup
+    var preview = jQuery('<p id="wpbe_img_preview"></p>').append(jQuery('<img width="300" />').attr({src: _this.href, alt: lang.loading}));
+    if (_this.t != "") {
+        preview.append('<br/>').append(document.createTextNode(_this.t));
+    }
+    jQuery("body").append(preview);
     jQuery("#wpbe_img_preview")
             .css("top", (_this.pageY - xOffset) + "px")
             .css("left", (_this.pageX + yOffset) + "px")
@@ -2101,12 +2110,13 @@ function wpbe_td_hover(id, title, col_num) {
     //***
 
     if (id > 0) {
-        var content = '#' + id + '. ' + title + ' [<i>' + jQuery('#wpbe_col_' + col_num).text() + '</i>]';
+        //the title and the column name are text: built as nodes, never parsed as markup
+        var content = jQuery('<span/>').text('#' + id + '. ' + title + ' [').append(jQuery('<i/>').text(jQuery('#wpbe_col_' + col_num).text())).append(document.createTextNode(']'));
     } else {
         var content = '';
     }
 
-    jQuery('#wp-admin-bar-root-default li.wpbe_current_cell_view').html(content);
+    jQuery('#wp-admin-bar-root-default li.wpbe_current_cell_view').empty().append(content);
 
     return true;
 }

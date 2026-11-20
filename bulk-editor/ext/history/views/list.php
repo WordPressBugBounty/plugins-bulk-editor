@@ -23,7 +23,7 @@ if (!defined('ABSPATH')) {
                     }
                 }
                 ?>
-                <div class="wpbe_history_data wpbe_history_hidden" data-types="<?php echo($is_solo ? 1 : 2) ?>" data-author="<?php echo esc_attr($operation['user_id']) ?>"  data-date="<?php echo esc_attr(($is_solo) ? $operation["mod_date"] : $operation['started']); ?>" data-fields="<?php echo esc_attr($filds) ?>">
+                <div class="wpbe_history_data wpbe_history_hidden" data-types="<?php echo($is_solo ? 1 : 2) ?>" data-author="<?php echo esc_attr($operation['user_id']) ?>" data-via="<?php echo esc_attr(isset($operation['via_mcp']) ? intval($operation['via_mcp']) : 0) ?>" data-date="<?php echo esc_attr(($is_solo) ? $operation["mod_date"] : $operation['started']); ?>" data-fields="<?php echo esc_attr($filds) ?>">
                 </div>   
                 <div class="col-lg-4">
                     <?php if ($is_solo): ?>
@@ -34,6 +34,15 @@ if (!defined('ABSPATH')) {
                         [<span style="color: <?php echo($operation['state'] == 'completed' ? 'green' : 'red') ?>;"><small><?php
                             /* translators: %s: operation state */
                             printf(esc_html__('state: %s', 'bulk-editor'), esc_html($operation['state'])) ?></small></span>]
+                    <?php endif; ?>
+                    <?php
+                    // who did this and how - an owner looking at a month old change
+                    // needs to know whether it was a person or an agent, and whose,
+                    // before he reverts it. The label is resolved for the whole list
+                    // at once in WPBE_HISTORY::get_history().
+                    if (!empty($operation['author'])):
+                        ?>
+                        <div><small class="wpbe_history_author" style="color: <?php echo esc_attr(!empty($operation['via_mcp']) ? '#2f55d4' : '#888') ?>;"><?php echo esc_html($operation['author']) ?></small></div>
                     <?php endif; ?>
                 </div>
 

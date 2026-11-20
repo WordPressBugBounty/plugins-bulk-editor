@@ -24,7 +24,8 @@ final class WPBE_META extends WPBE_EXT {
 		$user = wp_get_current_user();
 		$role = (array) $user->roles;
 
-		if (in_array($role[0], apply_filters('wpbe_permit_special_roles', ['administrator']))) {
+		//a request with no logged in user (the MCP site key) has no role at all
+		if (isset($role[0]) AND in_array($role[0], apply_filters('wpbe_permit_special_roles', ['administrator']))) {
 			$this->add_tab($this->slug, 'panel', esc_html__('Meta Fields', 'bulk-editor'), 'attach');
 			add_action('wpbe_ext_panel_' . $this->slug, array($this, 'wpbe_ext_panel'), 1);
 		}
@@ -42,7 +43,7 @@ final class WPBE_META extends WPBE_EXT {
 	}
 
 	public function wpbe_ext_scripts() {
-		wp_enqueue_script('wpbe_ext_' . $this->slug, $this->get_ext_link() . 'assets/js/' . $this->slug . '.js', [], WPBE_VERSION);
+		wp_enqueue_script('wpbe_ext_' . $this->slug, $this->get_ext_link() . 'assets/js/' . $this->slug . '.js', [], WPBE_VERSION . '.' . filemtime(__DIR__ . '/assets/js/' . $this->slug . '.js'));
 		wp_enqueue_style('wpbe_ext_' . $this->slug, $this->get_ext_link() . 'assets/css/' . $this->slug . '.css', [], WPBE_VERSION);
 		?>
 		<script>
@@ -122,10 +123,11 @@ final class WPBE_META extends WPBE_EXT {
 		//	var_dump($this->get_current_key());
 		//	var_dump(WPBE_HELPER::get_site_separate_settings());
 
+		if ($WPBE->show_notes) {
 			if (count($metas) > 2) {
 				$metas = array_slice($metas, 0, 2);
 			}
-		
+		}
 
 		return $metas;
 	}
@@ -136,7 +138,8 @@ final class WPBE_META extends WPBE_EXT {
 			$current_type = "post";
 
 			if (!$this->settings) {
-				$type = (new WPBE_STORAGE())->get_val('wpbe_current_post_type_' . get_current_user_id());
+				// an MCP request never reads the screen's stored post type, see WPBE_SETTINGS
+				$type = (defined('WPBE_MCP_REQUEST') && WPBE_MCP_REQUEST) ? '' : (new WPBE_STORAGE())->get_val('wpbe_current_post_type_' . get_current_user_id());
 				if ($type) {
 					$current_type = $type;
 				}

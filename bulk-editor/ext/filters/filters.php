@@ -51,8 +51,13 @@ final class WPBE_FILTERS extends WPBE_EXT {
 
         $filter_data = array();
         parse_str($_REQUEST['filter_data'], $filter_data);
-        $this->storage->set_val('wpbe_filter_' . $_REQUEST['filter_current_key'], $filter_data['wpbe_filter']);
+        $this->apply_filter_data($filter_data['wpbe_filter'], $_REQUEST['filter_current_key']);
         wp_die('done');
+    }
+
+    //the filter payload goes where wpbe_apply_query_filter_data() reads it - public for the MCP extension
+    public function apply_filter_data($filter_data, $filter_key) {
+        $this->storage->set_val('wpbe_filter_' . $filter_key, $filter_data);
     }
 
     //ajax

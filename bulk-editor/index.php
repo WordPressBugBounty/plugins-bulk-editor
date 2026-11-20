@@ -7,13 +7,13 @@
   Tested up to: 7.1
   Author: realmag777
   Author URI: https://pluginus.net/
-  Version: 1.1.2
+  Version: 1.1.3
   Requires PHP: 7.4
   Tags: bulk,bulk edit,bulk editor,posts editor,bulk delete,real estate,posts manager,meta bulk edit
   Text Domain: bulk-editor
   Domain Path: /languages
   Forum URI: https://pluginus.net/support/forum/wpbe-wordpress-posts-bulk-editor-professional/
-  License: GPLv2 or later и License URI: https://www.gnu.org/licenses/gpl-2.0.html
+  License: GPLv2 or later & License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 //update_option('wpbe_options_' . get_current_user_id(), ''); //reset of the plugin settings - be care
@@ -32,6 +32,15 @@ if (defined('WPBE_PATH')) {
 	return;
 }
 
+
+// Optional Freemius integration: load only if the bootstrap file is present.
+// For marketplace builds (woo.com, Envato) just delete /freemius and freemius.php — this is skipped.
+$freemius_bootstrap = dirname(__FILE__) . '/freemius.php';
+if (file_exists($freemius_bootstrap)) {
+	require_once $freemius_bootstrap;
+}
+
+
 //***
 
 define('WPBE_PATH', plugin_dir_path(__FILE__));
@@ -39,7 +48,7 @@ define('WPBE_LINK', plugin_dir_url(__FILE__));
 define('WPBE_ASSETS_LINK', WPBE_LINK . 'assets/');
 define('WPBE_DATA_PATH', WPBE_PATH . 'data/');
 define('WPBE_PLUGIN_NAME', plugin_basename(__FILE__));
-define('WPBE_VERSION', '1.1.2');
+define('WPBE_VERSION', '1.1.3');
 //define('WPBE_VERSION', uniqid('wpbe-')); //dev
 define('WPBE_MIN_WP_VERSION', '5.0');
 
@@ -57,14 +66,14 @@ include WPBE_PATH . 'classes/models/settings.php';
 include WPBE_PATH . 'classes/models/posts.php';
 include WPBE_PATH . 'classes/ext.php';
 
-//09-10-2026
+//20-11-2026
 final class WPBE {
 
 	public $storage = NULL;
 	public $settings = NULL;
 	public $posts = NULL;
 	public $profiles = NULL;
-	private $ext = array('filters', 'bulk', 'export', 'meta', 'history', 'calculator', 'info', 'fprofiles', 'author_area');
+	private $ext = array('filters', 'bulk', 'export', 'meta', 'history', 'calculator', 'info', 'fprofiles', 'author_area', 'mcp');
 	public $show_notes = true;
 	//extensions
 	public $filters = null;
@@ -76,6 +85,7 @@ final class WPBE {
 	public $info = null;
 	public $fprofiles = null;
 	public $author_area = null;
+	public $mcp = null;
 
 	public function __construct() {
 		add_action('admin_enqueue_scripts', array($this, 'admin_enqueue_scripts'));
@@ -84,14 +94,27 @@ final class WPBE {
 
 	public function init() {
 
-		if (!is_admin()) {
+		// Brought up once per request. On an MCP request this runs from inside
+		// rest_api_init (see ext/mcp/bootstrap.php), after the 'init' call of
+		// the same request has already returned at the is_admin() check below.
+		if (!is_null($this->posts)) {
+			return;
+		}
+
+		// An MCP request is not an admin screen, and the shop-wide key has no
+		// WordPress user. It gets past the two checks below only once the
+		// bootstrap has accepted its key (or a download/upload token); a
+		// personal key runs as its user and passes can_manage_data() like him.
+		$is_mcp = defined('WPBE_MCP_REQUEST') && WPBE_MCP_REQUEST && class_exists('WPBE_MCP_BOOT') && WPBE_MCP_BOOT::may_boot();
+
+		if (!$is_mcp && !is_admin()) {
 			return;
 		}
 		//wp editor
 		add_action('admin_footer', array($this, 'wp_editor_compatibility'));
 
 		//no one operation is possible if user is not a posts administrator!!
-		if (!WPBE_HELPER::can_manage_data()) {
+		if (!WPBE_HELPER::can_manage_data() && !($is_mcp && !WPBE_MCP_BOOT::personal_user_id())) {
 			return;
 		}
 
@@ -367,6 +390,7 @@ final class WPBE {
 					autocomplete_max_elem_count: <?php echo intval($this->settings->autocomplete_max_elem_count) ?>
 				};
 				var wpbe_field_update_nonce = "<?php echo esc_attr(wp_create_nonce('wpbe_field_update')) ?>";
+				var wpbe_get_posts_nonce = "<?php echo esc_attr(wp_create_nonce('wpbe_get_posts')) ?>";
 				var wpbe_assets_link = "<?php echo esc_attr(WPBE_ASSETS_LINK) ?>";
 				var spinner = wpbe_assets_link + "/images/spinner.gif";
 				var start_page = <?php echo (isset($_GET['start_page']) ? intval($_GET['start_page']) : 0) ?>;
@@ -399,7 +423,8 @@ final class WPBE {
 
 			wp_enqueue_style('wpbe_datatables', WPBE_ASSETS_LINK . 'css/tables.css', [], WPBE_VERSION);
 			wp_enqueue_script('wpbe_datatables_net', WPBE_ASSETS_LINK . 'js/jquery.dataTables.js', array('jquery'), WPBE_VERSION);
-			wp_enqueue_script('wpbe_data_tables', WPBE_ASSETS_LINK . 'js/data-tables.js', array('wpbe_datatables_net'), WPBE_VERSION);
+			//the file time in the version: a browser holding an older copy of this script would ask for the table without its nonce
+			wp_enqueue_script('wpbe_data_tables', WPBE_ASSETS_LINK . 'js/data-tables.js', array('wpbe_datatables_net'), WPBE_VERSION . '.' . filemtime(WPBE_PATH . 'assets/js/data-tables.js'));
 			wp_enqueue_script('wpbe_jquery_growl', WPBE_ASSETS_LINK . 'js/jquery.growl.js', array('jquery'), WPBE_VERSION);
 
 			wp_enqueue_style('wpbe_switchery', WPBE_ASSETS_LINK . 'js/switchery/switchery.min.css', [], WPBE_VERSION);
@@ -499,14 +524,17 @@ final class WPBE {
 		$fileds_keys = $this->settings->get_fields_keys();
 
 		if (empty($args)) {
-			//for ajax only
+			//for ajax only: the table asks with the nonce of the WOLF screen
+			if (!isset($_REQUEST['wpbe_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_REQUEST['wpbe_nonce'])), 'wpbe_get_posts')) {
+				wp_die('0', '', array('response' => 403));
+			}
 			$args = array(
 				'lang' => apply_filters('wpbe_current_language', ''),
 				'per_page' => intval($_REQUEST['length']),
 				'offset' => intval($_REQUEST['start']),
 				'order_by' => $fileds_keys[intval($_REQUEST['order'][0]['column'])],
 				'order' => sanitize_key($_REQUEST['order'][0]['dir']),
-				'search' => $_REQUEST['search']['value']
+				'search' => isset($_REQUEST['search']['value']) ? sanitize_text_field(wp_unslash($_REQUEST['search']['value'])) : ''
 			);
 		}
 
@@ -678,6 +706,11 @@ final class WPBE {
 			$value = $this->posts->__string_replacer($value, $post_id);
 			$response = $this->posts->update_page_field($post_id, $field_key, $value, $field_type);
 
+			//a text cell gets its new value back as text, the same as wrap_field_val() draws it
+			if (isset($this->settings->active_fields[$field_key]['edit_view']) && $this->settings->active_fields[$field_key]['edit_view'] === 'textinput' && is_string($response)) {
+				$response = esc_html($response);
+			}
+
 			//echo wp_kses_post($response); //danger - breaks gallery button data-images attribute
 			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML built from trusted internal template, values escaped inside the template
 			echo $response;
@@ -707,7 +740,10 @@ final class WPBE {
 
 		//+++
 
-		if (is_array($_REQUEST['value'])) {
+		//a row is also redrawn without a value (after binded editing, for example)
+		if (!isset($_REQUEST['value'])) {
+			$value = '';
+		} elseif (is_array($_REQUEST['value'])) {
 			$value = (array) $_REQUEST['value'];
 		} else {
 			$value = trim($_REQUEST['value']);
@@ -836,6 +872,11 @@ final class WPBE {
 				if (isset($data['wpbe_site_separate_settings'])) {
 					update_option('wpbe_site_separate_settings', $data['wpbe_site_separate_settings']);
 					update_option('wpbe_show_text_editor', $data['wpbe_show_text_editor']);
+				}
+
+				//MCP server settings are site wide, not per user - see ext/mcp/bootstrap.php
+				if (isset($data['wpbe_options_global']) AND is_array($data['wpbe_options_global']) AND class_exists('WPBE_MCP_BOOT')) {
+					WPBE_MCP_BOOT::save_global_options($data['wpbe_options_global']);
 				}
 			}
 		}
@@ -1190,7 +1231,8 @@ final class WPBE {
 					$onmouseover = 'onmouseover="wpbe_init_image_preview(this)"';
 				}
 
-				$res = '<a href="' . $full . '" onclick="return wpbe_act_thumbnail(this)" ' . $onmouseover . ' title="' . $post['post_title'] . '"><img src="' . $thumbnail . '" class="attachment-thumbnail size-thumbnail" alt="" /></a>';
+				//every value is escaped for its place: a post title is written by any author, and a quote in it must not end the attribute
+				$res = '<a href="' . esc_url($full) . '" onclick="return wpbe_act_thumbnail(this)" ' . $onmouseover . ' title="' . esc_attr($post['post_title']) . '"><img src="' . esc_url($thumbnail) . '" class="attachment-thumbnail size-thumbnail" alt="" /></a>';
 				break;
 
 			case 'switcher':
@@ -1203,10 +1245,7 @@ final class WPBE {
 				break;
 
 			case 'calendar':
-				if ($this->settings->active_fields[$field_key]['type'] === 'timestamp') {
-					$val = strtotime($val);
-				}
-
+				//the date string is turned into a timestamp once, below: a second strtotime() of the number gave false and every date cell came out empty
 				$post_title = $post['post_title'];
 
 				if ($post['post_type'] === 'post_variation') {
@@ -1256,6 +1295,11 @@ final class WPBE {
 				}
 
 				$res = $this->posts->__sanitize_answer_value($field_key, $sanitize, $val);
+				//the cell is written into the table as HTML: a text value (a meta field any author can fill) is shown as text, never as markup;
+				//the inline editor reads it back through a textarea, which turns the entities into the original characters again
+				if (is_string($res)) {
+					$res = esc_html($res);
+				}
 
 				break;
 		}
@@ -1265,7 +1309,7 @@ final class WPBE {
 		if ($field_key === 'ID') {
 			$class = 'wpbe-id-permalink';
 			$title = esc_html__('see the post on the site', 'bulk-editor');
-			$res = '<a href="' . get_permalink($res) . '" class="' . $class . '" title="' . $title . '" target="_blank">' . $res . '</a>';
+			$res = '<a href="' . esc_url(get_permalink($post_id)) . '" class="' . esc_attr($class) . '" title="' . esc_attr($title) . '" target="_blank">' . intval($post_id) . '</a>';
 		}
 
 		//***
@@ -1337,6 +1381,27 @@ final class WPBE {
 		if (defined('DOING_AJAX')) {
 			if (strpos($_REQUEST['action'], 'wpbe_') !== FALSE) {
 				$init = true;
+			}
+		}
+
+		// REST requests init the plugin only for our own routes: a blanket true
+		// here loads the whole plugin on every REST request of the site,
+		// including the block editor's traffic
+		if (!$init && defined('REST_REQUEST') && REST_REQUEST) {
+			$route = isset($_SERVER['REQUEST_URI']) ? rawurldecode(sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI']))) : '';
+
+			// a site with plain permalinks addresses the route as ?rest_route=
+			if (isset($_GET['rest_route'])) {
+				$route .= ' ' . sanitize_text_field(wp_unslash($_GET['rest_route']));
+			}
+
+			$own_routes = apply_filters('wpbe_rest_init_routes', array('wpbe/v1/'));
+
+			foreach ((array) $own_routes as $needle) {
+				if (strpos($route, $needle) !== false) {
+					$init = true;
+					break;
+				}
 			}
 		}
 
@@ -1491,9 +1556,10 @@ final class WPBE {
 				</div>
 
 				<div id="pn_<?php echo esc_attr($slug) ?>_review_yes" style="display: none;">
-					<p><?php 
-					/* translators: %s: name */
-					printf(esc_html__('That\'s awesome! Could you please do us a BIG favor and give it a 5-star rating on %s to help us spread the word and boost our motivation?', 'bulk-editor'), esc_html($on)) ?></p>
+					<p><?php
+						/* translators: %s: name */
+						printf(esc_html__('That\'s awesome! Could you please do us a BIG favor and give it a 5-star rating on %s to help us spread the word and boost our motivation?', 'bulk-editor'), esc_html($on))
+						?></p>
 					<p style="font-weight: bold;">~ PluginUs.NET developers team</p>
 					<p>
 						<a href="<?php echo esc_attr($link) ?>" style="display: inline-block; margin-right: 10px;" onclick="pn_<?php echo esc_attr($slug) ?>_dismiss_review(2)" target="_blank"><?php esc_html_e('Okay, you deserve it', 'bulk-editor'); ?></a>
@@ -1545,8 +1611,38 @@ final class WPBE {
 }
 
 //***
+// Register uninstall cleanup via a hook (replaces uninstall.php).
+register_uninstall_hook(__FILE__, 'wolf_uninstall_cleanup');
+
+function wolf_uninstall_cleanup() {
+	global $wpdb;
+	$wpdb->query("DROP TABLE IF EXISTS {$wpdb->prefix}wpbe_history");
+	$wpdb->query("DROP TABLE IF EXISTS {$wpdb->prefix}wpbe_history_bulk");
+	delete_option('wpbe_history_schema');
+
+	// what the MCP server leaves behind: its settings (the secret key among
+	// them), the confirmed connection, the free build's write allowance, the
+	// assistant's notes, open selections, download and upload tickets, and the
+	// personal keys and connections of users
+	foreach (array('wpbe_options_global', 'wpbe_mcp_connection', 'wpbe_mcp_write_bucket', 'wpbe_mcp_options') as $option) {
+		delete_option($option);
+	}
+
+	foreach (array('wpbe_mcp_sel_', '_transient_wpbe_mcp_', '_transient_timeout_wpbe_mcp_') as $prefix) {
+		$names = $wpdb->get_col($wpdb->prepare("SELECT option_name FROM {$wpdb->options} WHERE option_name LIKE %s", $wpdb->esc_like($prefix) . '%'));
+		foreach ((array) $names as $name) {
+			delete_option($name);
+		}
+	}
+
+	delete_metadata('user', 0, 'wpbe_mcp_key', '', true);
+	delete_metadata('user', 0, 'wpbe_mcp_connection', '', true);
+}
 
 $WPBE = new WPBE();
 $GLOBALS['WPBE'] = $WPBE;
 add_action('init', array($WPBE, 'init'), 9999);
+// MCP endpoint. Loaded at file scope because REST routes must be registered on
+// rest_api_init, which fires after the 'init' hook the plugin itself runs on.
+require WPBE_PATH . 'ext/mcp/bootstrap.php';
 

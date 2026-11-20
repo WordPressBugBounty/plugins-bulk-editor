@@ -1,27 +1,49 @@
-=== WOLF - WordPress Posts Bulk Editor and Manager Professional ===
+=== WOLF - WordPress Posts Bulk Editor and Manager Professional. AI assistant on board (MCP Server) ===
 Author: RealMag777
 Contributors: RealMag777
 Donate link: https://bulk-editor.pro/downloads
 Plugin URI: https://bulk-editor.pro/
-Tags: bulk, bulk edit, bulk editor, posts editor, bulk delete
+Tags: bulk edit, bulk editor, bulk delete, spreadsheet, ai
 Requires at least: 5.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.1.2
+Stable tag: 1.1.3
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-WOLF (formerly WPBE) - a WordPress plugin for managing posts, pages, and custom types easily. Perfect for real estate, cars, etc.
+WOLF - bulk edit WordPress posts, pages and custom post types in one table. Filter, bulk edit, export CSV. AI assistants manage your posts via MCP.
 
 == Description ==
 
-**WOLF - WordPress Posts Bulk Editor and Manager Professional** (former name is WPBE) is WordPress plugin for managing, bulk edit and bulk delete WordPress posts, pages and custom post types data edit/delete in robust and flexible way. This plugin helps with managing real estate catalogs, cars and all another WordPress custom post types. Be professionals with managing data of your site!
+**WOLF - WordPress Posts Bulk Editor and Manager Professional** (former name is WPBE) is WordPress plugin for managing, bulk edit and bulk delete WordPress posts, pages and custom post types data edit/delete in robust and flexible way. This plugin helps with managing real estate catalogs, cars and all another WordPress custom post types. With a built-in MCP server, so an AI assistant like Claude can work with your posts directly.
 
 
 🖥️ Latest PHP 8.x - FULL COMPATIBILITY!
 
 **⚠️ ATTENTION**: THIS PLUGIN DOESN WORK CORRECTLY WITH WOOCOMMERCE PRODUCTS! FOR WOOCOMMERCE BULK EDIT USE [BEAR](https://wordpress.org/plugins/woo-bulk-editor/)
 
+🌐 Documentation: [https://bulk-editor.pro/documentation/](https://bulk-editor.pro/documentation/)
+🤖 MCP Server: [https://bulk-editor.pro/document/mcp-server/](https://bulk-editor.pro/document/mcp-server/)
+🎥 Video tutorials: [https://bulk-editor.pro/video/](https://bulk-editor.pro/video/)
+🔧 Support: [https://pluginus.net/support/forum/wpbe-wordpress-posts-bulk-editor-professional/](https://pluginus.net/support/forum/wpbe-wordpress-posts-bulk-editor-professional/)
+
+
+**Editing your site with an AI assistant**
+
+WOLF ships an MCP server, the open standard for connecting AI assistants to software. Connect Claude, your own agent or any other MCP client, and manage posts, pages and custom post types by describing what you want:
+
+* *Raise the price of every villa by 5%, but show me first*
+* *Publish all drafts in the Guides category*
+* *Write a draft blog post with this photo as its featured image*
+* *Delete the placeholder drafts in Services - actually, put them back*
+* *Export the apartments: title, price and area, as CSV*
+
+Every change is previewed before it is written and can be rolled back with one click from History. The MCP server is off until you switch it on; optional two-factor connection and personal keys for editors keep it under your control. [How to connect an AI assistant](https://bulk-editor.pro/document/mcp-server/)
+
 
 ### WOLF Features:
+
+🤖&nbsp;[AI Assistant](https://bulk-editor.pro/document/mcp-server/) (MCP Server) - connect Claude or your own agent and manage posts in plain language: filter, bulk edit, create drafts, add photos, export CSV - with a preview before every change and rollback from History
 
 🚚&nbsp;[Bulk Editing](https://bulk-editor.pro/document/wordpress-posts-bulk-edit/) of WordPress fields, taxonomies, meta fields
 
@@ -39,13 +61,13 @@ WOLF (formerly WPBE) - a WordPress plugin for managing posts, pages, and custom 
 
 🧮&nbsp;[Calculator](https://bulk-editor.pro/document/calculator/) for decimal meta fields
 
-🔗&nbsp;[Binded editing](https://bulk-editor.pro/howto/how-to-set-the-same-value-for-some-posts-on-the-same-time/) - edit several posts with two clicks!
+🔗&nbsp;[Binded editing](https://bulk-editor.pro/how-to-set-the-same-value-for-some-posts-on-the-same-time/) - edit several posts with two clicks!
 
 ✍️&nbsp;Nice and convenient WordPress Posts Editor with rich HTML elements
 
 💾&nbsp;Instant saving of entered data by AJAX
 
-📂&nbsp;[Automatic attach of any taxonomies](https://bulk-editor.pro/howto/how-to-add-custom-taxonomies/) related to the posts for further editing
+📂&nbsp;[Automatic attach of any taxonomies](https://bulk-editor.pro/how-to-add-custom-taxonomies/) related to the posts for further editing
 
 🔧&nbsp;POSSIBILITY of joint editing of the posts without interference to each other.
 
@@ -60,6 +82,8 @@ WOLF (formerly WPBE) - a WordPress plugin for managing posts, pages, and custom 
 🎲&nbsp;Randomizer for numeric meta fields
 
 🌍&nbsp;[WPML Compatible](https://wpml.org/plugin/wpbe-posts-bulk-editor-professional/)
+
+🗣️&nbsp;Translated into Spanish, German, French, Italian, Portuguese (Portugal and Brazil), Dutch, Polish, Turkish, Russian, Ukrainian, Japanese, Hebrew and Arabic
 
 
 * [📚 Documentation](https://bulk-editor.pro/documentation/)
@@ -83,6 +107,7 @@ WOLF (formerly WPBE) - a WordPress plugin for managing posts, pages, and custom 
 * ⚙️ Meta
 * 🧩 2 product meta fields
 * 📚 2 history records
+* 🤖 AI assistant (MCP server): reading is unrestricted; editing works on the fields above, up to 100 posts every 30 minutes (the allowance refills continuously, rollbacks are free)
 
 🌟 In the premium version of the plugin it is possible to manipulate with [all fields of the posts](https://bulk-editor.pro/) + Bulk Delete
 
@@ -132,6 +157,12 @@ WOLF (formerly WPBE) - a WordPress plugin for managing posts, pages, and custom 
 You need if you want to change a posts data in bulk: title, content, meta fields, post type, taxonomies and etc.
 See full list of fields and features on [the plugin site](https://bulk-editor.pro)
 
+= Can I connect an AI assistant to WOLF? =
+Yes. WOLF has a built-in MCP server: switch it on in WOLF → Settings, then give your AI assistant (Claude, Claude Code, Cursor or your own agent) the address and the key shown there. Every change is previewed before it is written and can be rolled back from History. Step by step: [How to connect an AI assistant](https://bulk-editor.pro/document/mcp-server/)
+
+= Is the MCP server safe to switch on? =
+It is off by default, and nothing answers at its address until you switch it on. The key is accepted only in a request header, never in the address. With the optional two-factor connection every assistant session also needs a token that you confirm yourself in the plugin settings. Editors can get personal keys that work only with their own role and rights.
+
 = Where can I get the Premium version of WOLF =
 [Get it on the plugin site](https://bulk-editor.pro/downloads)
 
@@ -156,6 +187,24 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 
 
 == Changelog ==
+
+= 1.1.3 =
+* New: MCP server - connect an AI assistant (Claude, Cursor or your own agent) to WOLF and manage posts, pages and custom post types from a chat: find, preview, bulk edit, roll back, create drafts, trash and restore, terms, featured images, CSV export. Off by default; switched on in the Settings tab.
+* New: personal MCP access for selected users - each gets his own key and works under his own WordPress account and rights, with a confirmed connection.
+* New: optional two-factor connection for the MCP server - every assistant session starts with a token the owner confirms in the Settings tab.
+* New: History shows who made each change, by hand or through an AI agent.
+* New: translations into Spanish, German, French, Italian, Portuguese (Portugal and Brazil), Dutch, Polish, Turkish, Russian, Ukrainian, Japanese, Hebrew and Arabic.
+* New: the MCP mark in the header of the plugin page shows whether the MCP server is off, on, or on with two-factor connection; the Help tab answers whether an AI assistant can be connected.
+* Security: post titles and text values are escaped in the table of the plugin page (Thumbnail cell, text and meta columns, popup titles). Thanks to AndrewN and the Patchstack team for the responsible disclosure.
+* Security: the request that loads the table checks a nonce and sanitizes its search value.
+* Tweak: on the WOLF page the notices of WordPress and of other plugins are hidden, so the editor starts at the top of the screen; errors are still shown.
+* Tweak: History tables are created on the first write, not only when the tab is opened.
+* Fix: the Date Published and Date modified cells of the table were always empty.
+* Fix: after a binded edit the other ticked rows show the new value at once - before, the page had to be reloaded.
+* Fix: a text cell left with Enter without a change is no longer saved again.
+* Fix: PHP warnings when a table row is redrawn without a value.
+* Fix: broken links to the documentation.
+* Removed: the outdated hint about a Cyrillic transliteration plugin in the Help tab.
 
 = 1.1.2 =
 * Security update. Thanks to iczdblindman and the Patchstack team for the responsible disclosure.
@@ -247,7 +296,7 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 
 == License ==
 
-This plugin is copyright pluginus.net &copy; 2012-2026 with [GNU General Public License][] by realmag777.
+This plugin is copyright pluginus.net &copy; 2012-2027 with [GNU General Public License][] by realmag777.
 
 This program is free software; you can redistribute it and/or modify it under the terms of the [GNU General Public License][] as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 

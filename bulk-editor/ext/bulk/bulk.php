@@ -268,12 +268,31 @@ final class WPBE_BULK extends WPBE_EXT {
 
 		//***
 
-		$fields = $this->settings->get_fields();
 		$wpbe_bulk = $this->storage->get_val('wpbe_bulk_' . strtolower($_REQUEST['bulk_key']));
-		$_REQUEST['wpbe_bulk_key'] = $_REQUEST['bulk_key'];
 
-		$is_variations_solo = intval($_REQUEST['wpbe_show_variations']);
-		$posts_ids = $_REQUEST['posts_ids'];
+		$this->do_bulk($_REQUEST['bulk_key'], $_REQUEST['posts_ids'], $wpbe_bulk, isset($_REQUEST['num_rounding']) ? $_REQUEST['num_rounding'] : 0);
+
+		wp_die('done');
+	}
+
+	/**
+	 * The bulk run itself, without the ajax plumbing around it, so the MCP
+	 * extension runs exactly the engine the Bulk Edit tab runs - a REST request
+	 * never has the nonce the ajax handler checks.
+	 *
+	 * @param string $bulk_key    key of the run, for the history head row
+	 * @param array  $posts_ids   the posts of this portion
+	 * @param array  $wpbe_bulk   the payload: 'is' => field => 1, field => value/behavior
+	 * @param mixed  $num_rounding the screen's rounding select; update_page_field() reads it from $_REQUEST
+	 */
+	public function do_bulk($bulk_key, $posts_ids, $wpbe_bulk, $num_rounding = 0) {
+
+		$fields = $this->settings->get_fields();
+		//key for history bulk operation, not related to posts keys
+		$_REQUEST['wpbe_bulk_key'] = $bulk_key;
+		$_REQUEST['num_rounding'] = $num_rounding;
+
+		$is_variations_solo = isset($_REQUEST['wpbe_show_variations']) ? intval($_REQUEST['wpbe_show_variations']) : 0;
 
 		//***
 		//as we want to change variations only but have ids of parents - lets get variations ids
@@ -450,10 +469,6 @@ final class WPBE_BULK extends WPBE_EXT {
 
 			do_action('wpbe_bulk_going', $_REQUEST['wpbe_bulk_key'], count($posts_ids));
 		}
-
-
-
-		wp_die('done');
 	}
 
 	public function wpbe_bulk_going($bulk_key, $posts_count) {

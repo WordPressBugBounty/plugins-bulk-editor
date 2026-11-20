@@ -18,6 +18,15 @@ final class WPBE_POSTS {
         $this->fields_keys = $this->settings->get_fields_keys();
     }
 
+    /**
+     * After WPBE_SETTINGS::switch_post_type(): the field keys of the new type,
+     * and no post cached under the old one.
+     */
+    public function refresh_fields() {
+        $this->fields_keys = $this->settings->get_fields_keys();
+        $this->cached_posts = array();
+    }
+
     public function gets($args) {
 
         if (!empty($args['search'])) {
@@ -469,7 +478,14 @@ final class WPBE_POSTS {
         if ($value != 0) {//if not clearing
             $value = explode('-', $value);
 
-            if (isset($this->settings->active_fields[$field_key]['set_day_end']) AND $this->settings->active_fields[$field_key]['set_day_end']) {
+            //a field whose column is switched off (written through MCP) is described by the full list
+            $def = isset($this->settings->active_fields[$field_key]) ? $this->settings->active_fields[$field_key] : array();
+            if (empty($def)) {
+                $all = $this->settings->get_fields(false);
+                $def = isset($all[$field_key]) ? $all[$field_key] : array();
+            }
+
+            if (isset($def['set_day_end']) AND $def['set_day_end']) {
                 $value = mktime(23, 59, 59, $value[1], $value[2], $value[0]);
             } else {
                 $value = mktime($value[3], $value[4], 0, $value[1], $value[2], $value[0]);
@@ -481,8 +497,8 @@ final class WPBE_POSTS {
             //$value += $gmt_offset;
 //***
 
-            if ($this->settings->active_fields[$field_key]['type'] === 'timestamp'
-                    AND $this->settings->active_fields[$field_key]['field_type'] === 'field') {
+            if (isset($def['type'], $def['field_type']) AND $def['type'] === 'timestamp'
+                    AND $def['field_type'] === 'field') {
                 $date = new DateTime();
                 $date->setTimestamp($value);
                 /*
