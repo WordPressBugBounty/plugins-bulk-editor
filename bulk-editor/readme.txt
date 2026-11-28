@@ -5,9 +5,9 @@ Donate link: https://bulk-editor.pro/downloads
 Plugin URI: https://bulk-editor.pro/
 Tags: bulk edit, bulk editor, bulk delete, spreadsheet, ai
 Requires at least: 5.0
-Tested up to: 7.1
+Tested up to: 7.2
 Requires PHP: 7.4
-Stable tag: 1.1.3
+Stable tag: 1.1.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 

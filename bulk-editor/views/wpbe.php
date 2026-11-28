@@ -112,6 +112,49 @@ if (empty(WPBE_HELPER::filter_post_types())) {
 
         <?php endif; ?>
 
+<?php
+// Black Friday to New Year campaign of the free line: up to Dec 31, 2026 (site time) the banner
+// is shown here; from Jan 1, 2027 it is gone by itself.
+$wpbe_bf2026 = $WPBE->show_notes && wp_date( 'Ymd' ) <= '20261231';
+if ( $wpbe_bf2026 ) :
+	?>
+	<div id="wpbe-bf2026-banner" style="display:none;margin:0 0 18px 0;padding:16px 44px 16px 18px;position:relative;border:1px solid #d7ddf0;border-left:4px solid #2f55d4;border-radius:4px;background:#f6f8fe;">
+		<a href="https://bulk-editor.pro/downloads?utm_source=plugin&amp;utm_medium=free_notice&amp;utm_campaign=bf2026&amp;coupon=BF2026" target="_blank" rel="noopener" style="display:block;max-width:760px;">
+			<img src="<?php echo esc_url( WPBE_ASSETS_LINK . 'images/wolf-bf2026.webp' ); ?>" width="760" height="398" alt="WOLF Bulk Editor and Posts Manager: Black Friday, Cyber Monday, Christmas and New Year, 50% off the first payment of annual and lifetime plans, code BF2026, Nov 27 - Dec 31, 2026" style="display:block;width:100%;height:auto;border-radius:4px;">
+		</a>
+		<a href="#" id="wpbe-bf2026-close" title="Hide permanently" style="position:absolute;top:10px;right:12px;text-decoration:none;color:#8a8f98;font-size:16px;line-height:1;">&times;</a>
+	</div>
+	<script>
+		( function () {
+			var key = 'wpbe_bf2026_banner_hidden'; // its own key
+			var box = document.getElementById( 'wpbe-bf2026-banner' );
+			if ( ! box ) {
+				return;
+			}
+			var hidden = false;
+			try {
+				hidden = window.localStorage.getItem( key ) === '1';
+			} catch ( e ) {
+				hidden = document.cookie.indexOf( key + '=1' ) !== -1;
+			}
+			if ( ! hidden ) {
+				box.style.display = 'block'; // reveal only when not dismissed, avoids a flash
+			}
+			document.getElementById( 'wpbe-bf2026-close' ).addEventListener( 'click', function ( ev ) {
+				ev.preventDefault();
+				if ( ! window.confirm( 'Hide this message permanently? It will not be shown again in this browser.' ) ) {
+					return;
+				}
+				try {
+					window.localStorage.setItem( key, '1' );
+				} catch ( e ) {}
+				document.cookie = key + '=1; path=/; max-age=34560000; SameSite=Lax';
+				box.style.display = 'none';
+			} );
+		} )();
+	</script>
+<?php endif; ?>
+
         <?php echo wp_kses_post(apply_filters('wpbe_top_notice', '')) ?>
 
         <div id="tabs" class="wpbe-tabs wpbe-tabs-style-shape">

@@ -4,10 +4,10 @@
   Plugin URI: https://bulk-editor.pro/
   Description: Tools for managing and bulk edit posts, pages and all custom types data in the reliable and flexible way! Be professionals with managing data of your site!
   Requires at least: 5.0
-  Tested up to: 7.1
+  Tested up to: 7.2
   Author: realmag777
   Author URI: https://pluginus.net/
-  Version: 1.1.3
+  Version: 1.1.3.1
   Requires PHP: 7.4
   Tags: bulk,bulk edit,bulk editor,posts editor,bulk delete,real estate,posts manager,meta bulk edit
   Text Domain: bulk-editor
@@ -48,7 +48,7 @@ define('WPBE_LINK', plugin_dir_url(__FILE__));
 define('WPBE_ASSETS_LINK', WPBE_LINK . 'assets/');
 define('WPBE_DATA_PATH', WPBE_PATH . 'data/');
 define('WPBE_PLUGIN_NAME', plugin_basename(__FILE__));
-define('WPBE_VERSION', '1.1.3');
+define('WPBE_VERSION', '1.1.3.1');
 //define('WPBE_VERSION', uniqid('wpbe-')); //dev
 define('WPBE_MIN_WP_VERSION', '5.0');
 
